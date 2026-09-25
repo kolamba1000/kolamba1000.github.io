@@ -7,6 +7,20 @@
 //   click/zoom/<страница>/<экран>  экран открыт крупно
 //   click/pager/<откуда>→<куда>    «Другие кейсы»
 //   click/lang/<откуда>→<куда>     переключатель языка
+// Устройство: три события на просмотр, когда страница впервые видна (как просмотр в count.js):
+//   device/<режим>/<ввод>/<ориентация>   режим сайта по точкам перелома CSS: phone до 767, tablet 768–1279,
+//                                        desktop от 1280; ввод: touch, mouse, hybrid (мышь и сенсор), none;
+//                                        ориентация экрана: portrait, landscape
+//   window/<режим>/<группа>              ширина окна браузера по группам вокруг макетов 390, 768 и 1440:
+//                                        0-359, 360-389, 390-429, 430-767, 768-1023, 1024-1279,
+//                                        1280-1439, 1440-1919, 1920+
+//   screen/<ширина>x<высота>@<плотность>  экран в CSS-пикселях (у сенсорных в вертикальном виде),
+//                                        плотность округлена до 1, 1.25, 1.5, 2, 2.5 или 3+
+// И не больше одного раза за просмотр каждое:
+//   device/rotate/<режим>-<ориентация>→<режим>-<ориентация>   экран повернули
+//   device/resize/<режим>→<режим>        окно изменили так, что сменился режим сайта (без поворота)
+// Всё определяется медиавыражениями и размерами экрана, без cookies и хранилищ; значения сгруппированы
+// и отправляются отдельными событиями, поэтому в отчёте не складываются в описание одного человека.
 // Свои визиты не считаются после открытия https://kolamba1000.github.io/#toggle-goatcounter (запоминается в браузере).
 // На localhost count.js ничего не отправляет.
 (() => {
@@ -67,4 +81,85 @@
     else if (a.classList.contains('pager-link')) send(`click/pager${page}→${href}`);
     else if (a.classList.contains('lang__link') && !a.hasAttribute('aria-current')) send(`click/lang/${lang(page) || 'root'}→${lang(href) || href}`);
   }, true);
+
+  // ---------- Устройство ----------
+  const mq = (query) => window.matchMedia(query).matches;
+  // Режим и ввод теми же медиавыражениями, что и в CSS сайта
+  const mode = () => (mq('(min-width: 1280px)') ? 'desktop' : mq('(min-width: 768px)') ? 'tablet' : 'phone');
+  const input = () => {
+    if (mq('(pointer: coarse)')) return 'touch';
+    if (mq('(pointer: fine)')) return mq('(any-pointer: coarse)') ? 'hybrid' : 'mouse';
+    return 'none';
+  };
+  // Ориентация экрана, а не окна: узкое высокое окно на мониторе остаётся landscape
+  const orient = () => {
+    const type = screen.orientation && screen.orientation.type;
+    if (type) return type.startsWith('portrait') ? 'portrait' : 'landscape';
+    return mq('(orientation: portrait)') ? 'portrait' : 'landscape';
+  };
+  const windowGroups = [
+    [360, 'phone', '0-359'], [390, 'phone', '360-389'], [430, 'phone', '390-429'], [768, 'phone', '430-767'],
+    [1024, 'tablet', '768-1023'], [1280, 'tablet', '1024-1279'],
+    [1440, 'desktop', '1280-1439'], [1920, 'desktop', '1440-1919'], [Infinity, 'desktop', '1920+'],
+  ];
+  const dpr = () => {
+    const ratio = window.devicePixelRatio || 1;
+    if (ratio >= 2.75) return '3+';
+    return String([1, 1.25, 1.5, 2, 2.5].reduce((a, b) => (Math.abs(b - ratio) <= Math.abs(a - ratio) ? b : a)));
+  };
+  const names = {
+    phone: 'телефон', tablet: 'планшет', desktop: 'десктоп',
+    touch: 'сенсор', mouse: 'мышь', hybrid: 'мышь и сенсор', none: 'без указателя',
+    portrait: 'вертикально', landscape: 'горизонтально',
+  };
+  const state = () => ({ mode: mode(), orient: orient() });
+
+  const device = () => {
+    const now = state();
+    const how = input();
+    send(`device/${now.mode}/${how}/${now.orient}`, `Устройство · ${names[now.mode]} · ${names[how]} · ${names[now.orient]}`);
+    // innerWidth, как в медиавыражениях: вместе с полосой прокрутки
+    const [, group, range] = windowGroups.find(([max]) => window.innerWidth < max);
+    send(`window/${group}/${range}`, `Окно ${range.replace('-', '–')} px · ${names[group]}`);
+    // Телефон и планшет поворачивают: одна модель остаётся одной строкой
+    let [w, h] = [screen.width, screen.height];
+    if (how === 'touch' && w > h) [w, h] = [h, w];
+    const ratio = dpr();
+    send(`screen/${w}x${h}@${ratio}`, `Экран ${w}×${h} · плотность ${ratio}`);
+
+    // Поворот и смена режима: по одному разу за просмотр, когда размеры успокоились
+    let last = now;
+    let rotated = false;
+    let resized = false;
+    let timer;
+    const check = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        const next = state();
+        if (next.orient !== last.orient) {
+          if (!rotated) {
+            rotated = true;
+            send(`device/rotate/${last.mode}-${last.orient}→${next.mode}-${next.orient}`,
+              `Поворот · ${names[last.mode]} ${names[last.orient]} → ${names[next.mode]} ${names[next.orient]}`);
+          }
+        } else if (next.mode !== last.mode && !resized) {
+          resized = true;
+          send(`device/resize/${last.mode}→${next.mode}`, `Окно изменено · ${names[last.mode]} → ${names[next.mode]}`);
+        }
+        last = next;
+      }, 500);
+    };
+    window.addEventListener('resize', check);
+    if (screen.orientation) screen.orientation.addEventListener('change', check);
+  };
+  // Как count.js: страницу, открытую в фоновой вкладке, считаем, когда её впервые показали
+  if (document.visibilityState === 'visible' || !('visibilityState' in document)) device();
+  else {
+    const shown = () => {
+      if (document.visibilityState !== 'visible') return;
+      document.removeEventListener('visibilitychange', shown);
+      device();
+    };
+    document.addEventListener('visibilitychange', shown);
+  }
 })();
