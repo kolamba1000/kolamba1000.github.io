@@ -11,18 +11,23 @@
   const links = document.querySelectorAll('a.zoom');
   if (!links.length) return;
 
+  // Узко: ссылка подменяется обёрткой <span class="zoom"> с тем же содержимым (ссылка без адреса считалась бы
+  // «некликабельной ссылкой» у поисковиков). Шире: ссылка возвращается на место со своими обработчиками
   const gated = [...links].filter((link) => link.closest('[data-zoom-from]'));
   if (gated.length) {
     const from = matchMedia(`(min-width: ${gated[0].closest('[data-zoom-from]').dataset.zoomFrom}px)`);
-    const apply = () => gated.forEach((link) => {
-      const more = link.querySelector('.visually-hidden');
-      if (from.matches && link.dataset.href) {
-        link.setAttribute('href', link.dataset.href);
-      } else if (!from.matches && link.hasAttribute('href')) {
-        link.dataset.href = link.getAttribute('href');
-        link.removeAttribute('href');
-      }
-      if (more) more.hidden = !from.matches;
+    const spans = new Map(gated.map((link) => {
+      const span = document.createElement('span');
+      span.className = link.className;
+      return [link, span];
+    }));
+    const apply = () => spans.forEach((span, link) => {
+      const [on, off] = from.matches ? [link, span] : [span, link];
+      if (on.isConnected) return;
+      off.replaceWith(on);
+      on.append(...off.childNodes);
+      const more = on.querySelector('.visually-hidden');
+      if (more) more.hidden = on === span;
     });
     apply();
     from.addEventListener('change', apply);
