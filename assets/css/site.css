@@ -538,19 +538,20 @@ a {
 
 /* ---------- Hero ---------- */
 .hero {
-  padding-block: var(--space-7) var(--space-8);
+  padding-block: var(--space-6) var(--space-7);
 }
 
 @media (min-width: 1280px) {
   .hero {
-    padding-top: var(--space-8);
+    padding-top: var(--space-7);
   }
 }
 
+/* Подзаголовок ближе к заголовку (12), строка формата отдельно (16) */
 .hero__inner {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-4);
 }
 
 .hero__title {
@@ -559,6 +560,7 @@ a {
 
 /* pretty разрывал «usability / tests» на телефоне; переносы держат неразрывные пробелы */
 .hero__subtitle {
+  margin-top: calc(var(--space-3) - var(--space-4));
   text-wrap: wrap;
 }
 
