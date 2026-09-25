@@ -1,0 +1,1008 @@
+/* Лендинг кейса «Лента» (дашборд прогноза спроса). Свой шрифт и цвета кейса, спецификация: docs/handoff-case-lenta.md
+   Кадры Figma: RU 1:3125 / 1:3389 / 1:3653, EN 1:3917 / 1:4181 / 1:4445 */
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/montserrat/montserrat-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/montserrat/montserrat-cyrillic.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+.lenta {
+  --l-navy: #001E64;
+  --l-blue: #003C96;
+  --l-sun: #FFB900;
+  --l-sky: #B4C8FF;
+  --l-link: #2FCBFF;
+  --l-text: #4D4D4D;
+  --l-muted: #6B6B6B;
+  --l-faint: #8C8C8C;
+  --l-bg: #FFFFFF;
+  --l-bg-alt: #F3F3F3;
+  --l-border: #D0D0D0;
+  --l-line: #E0E0E0;
+  --l-positive: #007841;
+  --l-negative: #AA2332;
+  --l-warning: #8A5A00;
+  --l-pad: 20px;
+
+  color: var(--l-text);
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@media (min-width: 768px) {
+  .lenta {
+    --l-pad: 48px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .lenta {
+    --l-pad: 96px;
+  }
+}
+
+/* ---------- Секции: фон на всю ширину, колонка до 1248 по центру ---------- */
+.lenta-section {
+  padding: 48px var(--l-pad);
+  background: var(--l-bg);
+}
+
+.lenta-section--grey {
+  background: var(--l-bg-alt);
+}
+
+.lenta-section--dark {
+  background: var(--l-navy);
+  color: var(--l-sky);
+}
+
+.lenta-section--task {
+  padding-block: 36px;
+}
+
+@media (min-width: 768px) {
+  .lenta-section {
+    padding-block: 72px;
+  }
+
+  .lenta-section--task {
+    padding-block: 54px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .lenta-section {
+    padding-block: 96px;
+  }
+
+  .lenta-section--task {
+    padding-block: 72px;
+  }
+}
+
+.lenta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  max-width: 1248px;
+  margin-inline: auto;
+}
+
+.lenta-inner > * {
+  max-width: 100%;
+}
+
+/* Заголовок секции с подзаголовком: зазор 16 */
+.lenta-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Ширины текстовых блоков из макета десктопа; на планшете и телефоне в макете блоки на всю колонку (738 / 350) */
+@media (min-width: 1280px) {
+  .lw-640 { max-width: 640px; }
+  .lw-660 { max-width: 660px; }
+  .lw-700 { max-width: 700px; }
+  .lw-760 { max-width: 760px; }
+  .lw-780 { max-width: 780px; }
+  .lw-800 { max-width: 800px; }
+  .lw-820 { max-width: 820px; }
+  .lw-900 { max-width: 900px; }
+}
+
+/* ---------- Тексты ---------- */
+.lenta-eyebrow {
+  color: var(--l-blue);
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.lenta-section--dark .lenta-eyebrow {
+  color: var(--l-sun);
+}
+
+/* Заголовки переносятся как в Figma: общий text-wrap: balance сайта переставлял строки H1 */
+.lenta h1,
+.lenta h2,
+.lenta h3 {
+  text-wrap: wrap;
+}
+
+.lenta-h1 {
+  color: #FFFFFF;
+  font-size: 32px;
+  line-height: 1.18;
+  font-weight: 600;
+}
+
+.lenta-h2 {
+  color: var(--l-navy);
+  font-size: 32px;
+  line-height: 1.22;
+  font-weight: 600;
+}
+
+.lenta-h2--screens { line-height: 1.18; }
+.lenta-h2--task { font-size: 30px; }
+.lenta-h2--next { line-height: 1.26; color: #FFFFFF; }
+
+@media (min-width: 768px) {
+  .lenta-h1 { font-size: 52px; }
+  .lenta-h2--screens { font-size: 36px; }
+  .lenta-h2--next { font-size: 34px; }
+}
+
+.lenta-lead {
+  font-size: 19px;
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.lenta-sub {
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.lenta-sub--150 { line-height: 1.5; }
+.lenta-sub--normal { line-height: 21px; }
+
+.lenta-text {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.lenta-section--dark .lenta-text {
+  font-weight: 500;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Ручные переносы строк из макета: .lenta-br-wide на планшете и десктопе, .lenta-br-tablet только на планшете,
+   .lenta-br-narrow на телефоне и планшете, .lenta-br-no-tablet на телефоне и десктопе */
+.lenta-br-wide,
+.lenta-br-tablet {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .lenta-br-wide { display: inline; }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .lenta-br-tablet { display: inline; }
+  .lenta-br-no-tablet { display: none; }
+}
+
+@media (min-width: 1280px) {
+  .lenta-br-narrow { display: none; }
+}
+
+/* ---------- Обложка ---------- */
+/* Строки переносятся по месту, как в макете: в RU на телефоне каждая на своей строке, в EN «Role…» и «Tool» рядом */
+.lenta-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+/* Ссылка на рабочий прототип: скрыта атрибутом hidden, пока нет адреса (решение пользователя 26.09.2026) */
+.lenta-prototype {
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.lenta-prototype a {
+  color: var(--l-link);
+}
+
+/* ---------- Экраны ----------
+   .lenta-shot: место с пропорциями из макета (--frame), картинка вписана целиком, как FIT в Figma.
+   .zoom: ссылка ровно по картинке (--img). Внутри картинки у экрана прозрачное или белое поле с тенью:
+   --st --sr --sb --sl — положение самого экрана в картинке (измерено по исходникам). По нему стоят
+   значок «развернуть» (угол экрана + 12, на тач-экранах + 8), рамка при наведении и кольцо фокуса */
+.lenta-shot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: var(--frame);
+}
+
+.lenta-shot .zoom {
+  width: var(--fit, 100%);
+  aspect-ratio: var(--img);
+  border-radius: 0;
+}
+
+.lenta-shot picture {
+  display: block;
+  height: 100%;
+}
+
+.lenta-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* Текст alt, если картинка не загрузилась */
+  color: var(--l-muted);
+  font-size: 14px;
+  line-height: 18px;
+}
+
+/* Семейства исходников: широкие экраны 4000 × 2320 и 2000 × 1160, экраны 1440 (3040 × 2080), планшетные 1828 px */
+.lenta-shot--hero,
+.lenta-shot--1920,
+.lenta-shot--wide,
+.lenta-shot--art,
+.lenta-shot--state {
+  --img: 2400 / 1392;
+  --st: 2.443%; --sr: 2%; --sb: 4.526%; --sl: 2%;
+}
+
+.lenta-shot--1440,
+.lenta-shot--review,
+.lenta-shot--handoff {
+  --img: 2400 / 1642;
+  --st: 2.741%; --sr: 2.667%; --sb: 5.055%; --sl: 2.667%;
+}
+
+.lenta-shot--834 {
+  --img: 1828 / 1310;
+  --st: 4.275%; --sr: 4.376%; --sb: 0%; --sl: 4.376%;
+}
+
+.lenta-shot--review-tablet {
+  --img: 1828 / 2548;
+  --st: 2.198%; --sr: 4.376%; --sb: 4.082%; --sl: 4.376%;
+}
+
+.lenta-shot--hero { --frame: 1248 / 724; }
+.lenta-shot--1920 { --frame: 379 / 220; }
+.lenta-shot--1440 { --frame: 322 / 220; }
+.lenta-shot--834 { --frame: 307 / 220; }
+.lenta-shot--wide { --frame: 608 / 353; }
+.lenta-shot--art { --frame: 568 / 330; }
+.lenta-shot--review { --frame: 526 / 360; }
+.lenta-shot--review-tablet { --frame: 258 / 360; }
+.lenta-shot--state { --frame: 330 / 264; }
+/* Место 460 × 307 шире картинки (1,498 против 1,462): картинка вписана по высоте, ширина 97,54% */
+.lenta-shot--handoff { --frame: 460 / 307; --fit: 97.54%; }
+
+.lenta-shot .zoom__button {
+  top: calc(var(--st) + 12px);
+  right: calc(var(--sr) + 12px);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .lenta-shot .zoom__button {
+    top: calc(var(--st) + 8px);
+    right: calc(var(--sr) + 8px);
+  }
+}
+
+/* Рамка по краю экрана: прозрачная, при наведении border/strong; кольцо фокуса по ней же */
+.lenta-shot .zoom::after {
+  content: "";
+  position: absolute;
+  inset: var(--st) var(--sr) var(--sb) var(--sl);
+  border: 1px solid transparent;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .lenta-shot .zoom:hover::after {
+    border-color: var(--color-border-strong);
+  }
+}
+
+.lenta-shot .zoom:focus-visible {
+  outline: none;
+}
+
+.lenta-shot .zoom:focus-visible::after {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 0;
+}
+
+/* Кольцо gray-900 не видно на тёмно-синем фоне: на обложке белое */
+.lenta-section--dark .zoom:focus-visible::after {
+  outline-color: #FFFFFF;
+}
+
+/* ---------- Экраны: три размера ---------- */
+.lenta-trio {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.lenta-trio__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.lenta-caption {
+  color: var(--l-muted);
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .lenta-trio { gap: 32px; }
+}
+
+@media (min-width: 1280px) {
+  .lenta-trio {
+    flex-direction: row;
+    align-items: flex-start;
+    width: auto;
+  }
+
+  .lenta-trio .lenta-shot {
+    width: auto;
+    height: 220px;
+  }
+}
+
+/* Две карточки с экраном и подписью */
+.lenta-showcase {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .lenta-showcase { gap: 32px; }
+}
+
+@media (min-width: 1280px) {
+  .lenta-showcase { grid-template-columns: 1fr 1fr; }
+}
+
+.lenta-shotcard {
+  background: var(--l-bg);
+  border: 1px solid var(--l-border);
+  border-radius: 16px;
+}
+
+.lenta-shotcard__caption {
+  padding: 14px 18px;
+  border-top: 1px solid var(--l-border);
+  color: var(--l-muted);
+  font-size: 14px;
+  line-height: 17px;
+}
+
+/* ---------- Карточки ---------- */
+.lenta-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .lenta-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .lenta-cards--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.lenta-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 28px;
+  background: var(--l-bg);
+  border: 1px solid var(--l-border);
+  border-radius: 16px;
+}
+
+/* «Боль» прижата к низу карточки, как Space between в макете */
+.lenta-card--split {
+  justify-content: space-between;
+}
+
+.lenta-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lenta-h3 {
+  color: var(--l-navy);
+  font-size: 19px;
+  line-height: 23px;
+  font-weight: 600;
+}
+
+.lenta-card p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.lenta-card .lenta-pain {
+  color: var(--l-blue);
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+/* ---------- Процесс ---------- */
+.lenta-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.lenta-rail__stages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+  color: var(--l-text);
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+.lenta-rail__line {
+  height: 1px;
+  background: var(--l-line);
+}
+
+@media (min-width: 768px) {
+  .lenta-rail__stages {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* ---------- Решение: текст слева, экран в карточке справа ---------- */
+.lenta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.lenta-row__text {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .lenta-row { gap: 32px; }
+}
+
+@media (min-width: 1280px) {
+  .lenta-row {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 48px;
+  }
+
+  .lenta-row__text {
+    flex: 1;
+  }
+}
+
+.lenta-art {
+  padding: 16px;
+  background: var(--l-bg);
+  border: 1px solid var(--l-border);
+  border-radius: 16px;
+}
+
+@media (min-width: 1280px) {
+  .lenta-art {
+    flex: none;
+    width: 602px;
+  }
+
+  .lenta-art--handoff {
+    width: 494px;
+  }
+}
+
+.lenta-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 1280px) {
+  .lenta-stats {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+.lenta-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lenta-stat__value {
+  color: var(--l-navy);
+  font-size: 40px;
+  line-height: 49px;
+  font-weight: 700;
+}
+
+.lenta-stat__value--before {
+  color: var(--l-faint);
+}
+
+.lenta-stat__label {
+  color: var(--l-muted);
+  font-size: 13px;
+  line-height: 16px;
+}
+
+/* ---------- Цвет не должен путать ---------- */
+.lenta-diffs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .lenta-diffs {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .lenta-diffs {
+    display: flex;
+    width: auto;
+  }
+}
+
+.lenta-diff-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px;
+  background: var(--l-bg-alt);
+  border: 1px solid var(--l-border);
+  border-radius: 16px;
+}
+
+.lenta-diff-card__label {
+  color: var(--l-muted);
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.lenta-diff-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lenta-diff {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.lenta-diff img {
+  flex: none;
+}
+
+.lenta-diff--positive { color: var(--l-positive); }
+.lenta-diff--negative { color: var(--l-negative); }
+.lenta-diff--up { color: var(--l-blue); }
+.lenta-diff--down { color: var(--l-warning); }
+
+/* ---------- Два цикла ревью ---------- */
+.lenta-reviews {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .lenta-reviews { gap: 32px; }
+}
+
+@media (min-width: 1280px) {
+  .lenta-reviews {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+.lenta-review {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 26px;
+  background: var(--l-bg);
+  border: 1px solid var(--l-border);
+  border-radius: 16px;
+}
+
+.lenta-review > * {
+  width: 100%;
+}
+
+.lenta-review .lenta-tag {
+  width: auto;
+  padding: 5px 12px;
+  background: var(--l-bg-alt);
+  border-radius: 999px;
+  color: var(--l-blue);
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.lenta-review p {
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.lenta-review .lenta-review__subject {
+  color: var(--l-navy);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.lenta-review .lenta-review__status {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.lenta-review__status--open { color: var(--l-warning); }
+.lenta-review__status--fixed { color: var(--l-positive); }
+
+/* Серая подложка под экраном: отступ 20 сверху и снизу; на десктопе экран высотой 360 по центру */
+.lenta-review__media {
+  display: flex;
+  justify-content: center;
+  padding-block: 20px;
+  background: var(--l-bg-alt);
+}
+
+@media (min-width: 1280px) {
+  .lenta-review__media .lenta-shot {
+    width: auto;
+    height: 360px;
+  }
+}
+
+/* ---------- Состояния ---------- */
+.lenta-states {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .lenta-states { gap: 32px; }
+}
+
+@media (min-width: 1280px) {
+  .lenta-states {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+.lenta-state {
+  display: flex;
+  flex-direction: column;
+  background: var(--l-bg);
+  border: 1px solid var(--l-border);
+  border-radius: 16px;
+}
+
+.lenta-state__media {
+  display: flex;
+  justify-content: center;
+  padding-block: 16px;
+  background: var(--l-bg-alt);
+  border-radius: 15px 15px 0 0;
+}
+
+@media (min-width: 1280px) {
+  .lenta-state__media .lenta-shot {
+    width: 330px;
+  }
+}
+
+.lenta-state__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px;
+  border-top: 1px solid var(--l-border);
+}
+
+.lenta-label {
+  color: var(--l-blue);
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.lenta-state__title {
+  color: var(--l-navy);
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 600;
+}
+
+.lenta-state__text {
+  color: var(--l-muted);
+  font-size: 13px;
+  line-height: 16px;
+}
+
+/* ---------- Передача ---------- */
+.lenta-handoff-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lenta-handoff-stats .lenta-stat {
+  gap: 6px;
+}
+
+.lenta-handoff-stats .lenta-stat__value {
+  font-size: 44px;
+  line-height: 54px;
+}
+
+.lenta-handoff-stats .lenta-stat__label {
+  line-height: 1.35;
+}
+
+/* Десктоп: цифры в ряд, между ними линия 1 × 78 с зазорами 32 (линия нарисована рамкой второй цифры) */
+@media (min-width: 1280px) {
+  .lenta-handoff-stats {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .lenta-handoff-stats .lenta-stat:first-child { width: 176px; }
+
+  .lenta-handoff-stats .lenta-stat + .lenta-stat {
+    width: 233px;
+    padding-left: 32px;
+    border-left: 1px solid var(--l-line);
+  }
+}
+
+.lenta-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lenta-checks li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.lenta-checks img {
+  flex: none;
+}
+
+.lenta-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lenta-questions h3 {
+  color: var(--l-navy);
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+.lenta-questions ul {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Маркер «•» и два пробела, как в макете: вторая строка пункта начинается от края */
+.lenta-questions li::before {
+  content: "•";
+  margin-right: 0.55em;
+}
+
+/* ---------- Дальше ---------- */
+.lenta-next {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lenta-next li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.lenta-next img {
+  flex: none;
+}
+
+.lenta-goal {
+  color: rgb(255 255 255 / 0.72);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* ---------- Экран в карточке (просьба пользователя 26.09.2026) ----------
+   Нажимается вся карточка: псевдоэлемент ссылки растянут на карточку, как у карточек кейсов на главной.
+   Значок «развернуть» в правом верхнем углу карточки, при наведении темнеет рамка карточки,
+   кольцо фокуса вокруг карточки. Экраны без карточки (обложка, три размера) выделяются рамкой по экрану */
+.lenta-zoomcard {
+  position: relative;
+}
+
+.lenta-zoomcard .zoom {
+  position: static;
+}
+
+.lenta-zoomcard .zoom::after {
+  inset: 0;
+  border: 0;
+  border-radius: 16px;
+}
+
+.lenta-zoomcard .zoom__button {
+  top: 12px;
+  right: 12px;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .lenta-zoomcard .zoom__button {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media (hover: hover) {
+  .lenta-zoomcard:has(.zoom:hover) {
+    border-color: var(--color-border-strong);
+  }
+}
+
+.lenta-zoomcard .zoom:focus-visible::after {
+  outline: none;
+}
+
+.lenta-zoomcard:has(.zoom:focus-visible) {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 0;
+}
+
+/* ---------- Экран на серой подложке в карточке «Два цикла ревью» (просьба пользователя 26.09.2026) ----------
+   Нажимается подложка с экраном, а не вся карточка: значок в правом верхнем углу подложки,
+   при наведении рамка border/strong по краю подложки, кольцо фокуса по нему же */
+.lenta-zoomarea {
+  position: relative;
+}
+
+.lenta-zoomarea .zoom {
+  position: static;
+}
+
+.lenta-zoomarea .zoom::after {
+  inset: 0;
+}
+
+.lenta-zoomarea .zoom__button {
+  top: 12px;
+  right: 12px;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .lenta-zoomarea .zoom__button {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+/* Узкие телефоны (уже 360, макета нет): заголовки уменьшены пропорционально колонке 350 → 280 (×0,8),
+   иначе склейки вроде «390 строк» или «From benchmarks» шире колонки и слово рвётся посередине */
+@media (max-width: 359px) {
+  .lenta-h1,
+  .lenta-h2 {
+    font-size: 26px;
+  }
+
+  .lenta-h2--task {
+    font-size: 24px;
+  }
+}

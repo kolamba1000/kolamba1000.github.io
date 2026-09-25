@@ -1,0 +1,427 @@
+/* Лендинг кейса «Сложные маршруты». Свой шрифт и цвета кейса, спецификация: docs/handoff-case-routes.md
+   Кадры Figma: RU 1:2178 / 1:2317 / 1:2456, EN 1:2604 / 1:2743 / 1:2882 */
+
+@font-face {
+  font-family: "Golos Text";
+  src: url("/assets/fonts/golos/golos-text-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Golos Text";
+  src: url("/assets/fonts/golos/golos-text-cyrillic.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+.routes {
+  --r-text: #0D0D0D;
+  --r-text-secondary: #545454;
+  --r-bg: #FFFFFF;
+  --r-bg-alt: #F7F7F6;
+  --r-border: #E3E1DC;
+  --r-accent: #FFE356;
+  --r-pad: 20px;
+
+  color: var(--r-text);
+  font-family: "Golos Text", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@media (min-width: 768px) {
+  .routes {
+    --r-pad: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .routes {
+    --r-pad: 120px;
+  }
+}
+
+/* ---------- Секции: фон на всю ширину, содержимое не шире 1200 по центру ---------- */
+.routes-section {
+  padding: 48px var(--r-pad);
+  background: var(--r-bg);
+}
+
+.routes-section:nth-child(even) {
+  background: var(--r-bg-alt);
+}
+
+.routes-section__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.routes-section--hero {
+  padding-block: 64px 48px;
+}
+
+.routes-section--hero .routes-section__inner {
+  gap: 24px;
+}
+
+.routes-section--wide-gap .routes-section__inner {
+  gap: 48px;
+}
+
+.routes-section--conclusion {
+  padding-block: 64px;
+}
+
+@media (min-width: 768px) {
+  .routes-section {
+    padding-block: 64px;
+  }
+
+  .routes-section--hero {
+    padding-block: 96px 64px;
+  }
+
+  .routes-section--conclusion {
+    padding-block: 96px;
+  }
+}
+
+/* ---------- Тексты ---------- */
+.routes-h1 {
+  max-width: 800px;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  text-align: center;
+}
+
+.routes-h2 {
+  max-width: 720px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .routes-h1 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .routes-h2 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .routes-h1 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+}
+
+.routes-h3 {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  text-wrap: pretty;
+}
+
+.routes-small {
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--r-text-secondary);
+}
+
+.routes-caption {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--r-text-secondary);
+}
+
+.routes-center {
+  width: 100%;
+  text-align: center;
+}
+
+/* Заголовок секции с подзаголовком: зазор 16 */
+.routes-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.routes-heading > * {
+  width: 100%;
+}
+
+/* Ширины текстовых блоков из макета десктопа; на узких экранах текст идёт на всю колонку */
+.w-640 { max-width: 640px; }
+.w-720 { max-width: 720px; }
+.w-780 { max-width: 780px; }
+.w-800 { max-width: 800px; }
+.w-900 { max-width: 900px; }
+.w-944 { max-width: 944px; }
+.w-960 { max-width: 960px; }
+
+/* ---------- Обложка ---------- */
+.routes-badge {
+  padding: 8px 16px;
+  background: var(--r-bg-alt);
+  border-radius: 999px;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+}
+
+/* ---------- Экраны продукта ---------- */
+.routes-shot {
+  width: 100%;
+}
+
+.routes-shot img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--r-border);
+  border-radius: 8px;
+  background: var(--r-bg-alt);
+  /* Текст alt, если картинка не загрузилась */
+  color: var(--r-text-secondary);
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@media (min-width: 768px) {
+  .routes-shot img {
+    border-radius: 16px;
+  }
+}
+
+.routes-shot--926 { max-width: 926px; }
+.routes-shot--750 { max-width: 750px; }
+
+/* «До» и «После»: в макете десктопа и планшета картинка целиком (FIT), без рамки;
+   на телефоне свои кадрирования с рамкой и подписью */
+.routes-compare {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.routes-compare__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .routes-shot--fit img {
+    border: 0;
+    border-radius: 0;
+    background: none;
+  }
+
+  .routes-shot--before { max-width: 942px; }
+  .routes-shot--after { max-width: 939px; }
+}
+
+.routes-shot figcaption {
+  margin-top: 4px;
+}
+
+@media (min-width: 768px) {
+  .routes-shot figcaption {
+    display: none;
+  }
+}
+
+/* ---------- Карточки проблем ---------- */
+.routes-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .routes-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+.routes-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  background: var(--r-bg);
+  border: 1px solid var(--r-border);
+  border-radius: 16px;
+}
+
+@media (min-width: 768px) {
+  .routes-card {
+    padding: 32px;
+  }
+}
+
+.routes-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.routes-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  background: var(--r-accent);
+  border-radius: 999px;
+}
+
+/* ---------- Цитаты ---------- */
+.routes-quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding-top: 16px;
+}
+
+@media (min-width: 768px) {
+  .routes-quotes {
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .routes-quotes {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .routes-quote {
+    flex: 1;
+  }
+}
+
+.routes-quote {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 16px;
+  border-left: 4px solid var(--r-accent);
+}
+
+/* ---------- Что показали тесты ---------- */
+.routes-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 24px;
+  background: var(--r-bg);
+  border: 1px solid var(--r-border);
+  border-radius: 16px;
+}
+
+@media (min-width: 768px) {
+  .routes-panel {
+    padding: 32px;
+  }
+}
+
+.routes-panel--gap-8 {
+  gap: 8px;
+}
+
+.routes-iterations {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .routes-iterations {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+.routes-iteration {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: var(--r-bg-alt);
+  border-radius: 12px;
+}
+
+.routes-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--r-accent);
+}
+
+.routes-mark--no {
+  background: var(--r-text-secondary);
+}
+
+/* ---------- Сценарии ---------- */
+.routes-scenario {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.routes-scenario__text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* «До» и «После» на десктопе и планшете: рамка карточки нарисована в самой картинке (FIT в макете),
+   поэтому обводку наведения рисуем поверх по её скруглению (26 px на 2400 px ширины картинки) */
+@media (min-width: 768px) {
+  .routes-shot--before .zoom { border-radius: 1.0833% / 7.558%; }
+  .routes-shot--after .zoom { border-radius: 1.0833% / 3.283%; }
+
+  .routes-shot--fit .zoom::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+}
+
+@media (hover: hover) and (min-width: 768px) {
+  .routes-shot--fit .zoom:hover::after {
+    border-color: var(--color-border-strong);
+  }
+}

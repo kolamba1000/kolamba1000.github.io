@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://kolamba1000.github.io/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kolamba1000.github.io/ru/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kolamba1000.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kolamba1000.github.io/en/"/>
+  </url>
+  <url>
+    <loc>https://kolamba1000.github.io/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kolamba1000.github.io/ru/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kolamba1000.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kolamba1000.github.io/en/"/>
+  </url>
+  <url>
+    <loc>https://kolamba1000.github.io/en/cases/shifted/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kolamba1000.github.io/ru/cases/shifted/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kolamba1000.github.io/en/cases/shifted/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kolamba1000.github.io/en/cases/shifted/"/>
+  </url>
+  <url>
+    <loc>https://kolamba1000.github.io/ru/cases/shifted/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kolamba1000.github.io/ru/cases/shifted/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kolamba1000.github.io/en/cases/shifted/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kolamba1000.github.io/en/cases/shifted/"/>
+  </url>
+  <url>
+    <loc>https://kolamba1000.github.io/en/cases/complex-routes/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kolamba1000.github.io/ru/cases/complex-routes/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kolamba1000.github.io/en/cases/complex-routes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kolamba1000.github.io/en/cases/complex-routes/"/>
+  </url>
+  <url>
+    <loc>https://kolamba1000.github.io/ru/cases/complex-routes/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kolamba1000.github.io/ru/cases/complex-routes/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kolamba1000.github.io/en/cases/complex-routes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kolamba1000.github.io/en/cases/complex-routes/"/>
+  </url>
+  <url>
+    <loc>https://kolamba1000.github.io/en/cases/demand-forecast/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kolamba1000.github.io/ru/cases/demand-forecast/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kolamba1000.github.io/en/cases/demand-forecast/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kolamba1000.github.io/en/cases/demand-forecast/"/>
+  </url>
+  <url>
+    <loc>https://kolamba1000.github.io/ru/cases/demand-forecast/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kolamba1000.github.io/ru/cases/demand-forecast/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kolamba1000.github.io/en/cases/demand-forecast/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kolamba1000.github.io/en/cases/demand-forecast/"/>
+  </url>
+</urlset>

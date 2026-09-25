@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Complex routes · Pavel Menkov</title>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/icons/favicon-en.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon-en.png">
+  <meta name="description" content="A feature in a travel service that lets users buy tickets with transfers (plane, train, bus) and tickets for long trips with several destinations in one flow">
+  <link rel="canonical" href="https://kolamba1000.github.io/en/cases/complex-routes/">
+  <link rel="alternate" hreflang="ru" href="https://kolamba1000.github.io/ru/cases/complex-routes/">
+  <link rel="alternate" hreflang="en" href="https://kolamba1000.github.io/en/cases/complex-routes/">
+  <link rel="alternate" hreflang="x-default" href="https://kolamba1000.github.io/en/cases/complex-routes/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://kolamba1000.github.io/en/cases/complex-routes/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ru_RU">
+  <meta property="og:title" content="Complex routes · Pavel Menkov">
+  <meta property="og:description" content="A feature in a travel service that lets users buy tickets with transfers (plane, train, bus) and tickets for long trips with several destinations in one flow">
+  <meta property="og:image" content="https://kolamba1000.github.io/assets/og/complex-routes-en.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Complex routes case study: a route card with transfers">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="/assets/fonts/golos/golos-text-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="/assets/js/lang-scroll.js" defer></script>
+  <script src="/assets/js/back-bar.js" defer></script>
+  <link rel="stylesheet" href="/assets/css/case-routes.css">
+  <script src="/assets/js/zoom.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to&nbsp;content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="name-link t-body-m-strong" href="/en/">Pavel Menkov</a>
+      <nav class="site-nav" aria-label="Contacts and&nbsp;language">
+        <span class="from-tablet">
+          <a class="nav-link t-label-md" href="https://t.me/PeMendo">Telegram</a>
+          <a class="nav-link t-label-md" href="mailto:phontaniwe@gmail.com">phontaniwe@gmail.com</a>
+          <a class="nav-link t-label-md" href="https://www.linkedin.com/in/pavel-menkov-669a09234/">LinkedIn</a>
+        </span>
+        <span class="only-phone">
+          <a class="nav-link t-label-md" href="#contacts">Contacts</a>
+        </span>
+        <span class="divider" aria-hidden="true"></span>
+        <ul class="lang">
+          <li><a class="lang__link t-label-md" href="/ru/cases/complex-routes/" hreflang="ru" lang="ru">RU<span class="visually-hidden">, русский</span></a></li>
+          <li><a class="lang__link t-label-md" href="/en/cases/complex-routes/" aria-current="page">EN<span class="visually-hidden">, English</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="back-bar">
+      <div class="container">
+        <a class="name-link t-body-m-strong back-bar__link" href="/en/#cases">←&nbsp;All case studies</a>
+      </div>
+    </div>
+
+    <!-- typograph:start -->
+    <article class="routes" aria-labelledby="case-title">
+      <section class="routes-section routes-section--hero">
+        <div class="routes-section__inner">
+          <h1 class="routes-h1" id="case-title">Complex routes</h1>
+          <p class="routes-center w-720">A&nbsp;feature in&nbsp;a&nbsp;travel service that&nbsp;lets users buy tickets with&nbsp;transfers (plane, train, bus) and&nbsp;tickets for&nbsp;long trips with&nbsp;several destinations in&nbsp;one&nbsp;flow</p>
+          <p class="routes-badge">Product designer, solo · 1&nbsp;sprint ·&nbsp;Figma</p>
+          <figure class="routes-shot">
+            <a class="zoom" href="/assets/cases/complex-routes/en/hero-2400.jpg" data-zoom-src="/assets/cases/complex-routes/en/hero-2400.webp" data-zoom-width="1200">
+              <picture>
+                <source type="image/webp" sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/hero-800.webp 800w, /assets/cases/complex-routes/en/hero-1400.webp 1400w, /assets/cases/complex-routes/en/hero-2400.webp 2400w">
+                <img sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/hero-800.jpg 800w, /assets/cases/complex-routes/en/hero-1400.jpg 1400w, /assets/cases/complex-routes/en/hero-2400.jpg 2400w" src="/assets/cases/complex-routes/en/hero-800.jpg" width="2400" height="764" alt="Route card with&nbsp;9&nbsp;cities and&nbsp;7&nbsp;transfers: dates, times, cities, types of&nbsp;transport and&nbsp;the&nbsp;total price from&nbsp;€6,127">
+              </picture>
+              <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+            </a>
+          </figure>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-problems">
+        <div class="routes-section__inner">
+          <h2 class="routes-h2" id="routes-problems">Key user&nbsp;problems</h2>
+          <ul class="routes-cards w-944">
+            <li class="routes-card">
+              <span class="routes-icon"><img src="/assets/cases/complex-routes/icons/zap.svg" width="24" height="24" alt=""></span>
+              <div class="routes-card__text">
+                <h3 class="routes-h3">High cognitive&nbsp;load</h3>
+                <p>If&nbsp;a&nbsp;trip is&nbsp;complex, people have to&nbsp;buy different tickets that&nbsp;are often not connected. They compare routes in&nbsp;their&nbsp;heads or&nbsp;write them in&nbsp;notes, so&nbsp;they don’t get&nbsp;confused</p>
+              </div>
+            </li>
+            <li class="routes-card">
+              <span class="routes-icon"><img src="/assets/cases/complex-routes/icons/clock.svg" width="24" height="24" alt=""></span>
+              <div class="routes-card__text">
+                <h3 class="routes-h3">Long checkout</h3>
+                <p>Buying tickets takes more time, because each&nbsp;ticket has to&nbsp;be bought separately and&nbsp;the&nbsp;process starts&nbsp;again</p>
+              </div>
+            </li>
+          </ul>
+          <ul class="routes-quotes w-944" aria-label="Quotes from respondents">
+            <li class="routes-quote">
+              <p>“I&nbsp;write down my&nbsp;travel routes on&nbsp;a&nbsp;piece of&nbsp;paper”</p>
+              <p class="routes-small">Anya, 32 · Experienced&nbsp;traveler</p>
+            </li>
+            <li class="routes-quote">
+              <p>“I&nbsp;check everything like&nbsp;crazy and&nbsp;keep the&nbsp;route in&nbsp;my&nbsp;head, because I’m afraid to&nbsp;forget&nbsp;something”</p>
+              <p class="routes-small">Andrey, 26 · Travels with&nbsp;friends</p>
+            </li>
+            <li class="routes-quote">
+              <p>“Once I&nbsp;had to&nbsp;buy tickets for&nbsp;different types of&nbsp;transport separately. I&nbsp;had to&nbsp;start the&nbsp;checkout from&nbsp;scratch three times. It&nbsp;was&nbsp;terrible”</p>
+              <p class="routes-small">Katya, 35 · Travels with&nbsp;family</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-business">
+        <div class="routes-section__inner">
+          <h2 class="routes-h2" id="routes-business">Key business&nbsp;problems</h2>
+          <ul class="routes-cards w-944">
+            <li class="routes-card">
+              <span class="routes-icon"><img src="/assets/cases/complex-routes/icons/warning.svg" width="24" height="24" alt=""></span>
+              <div class="routes-card__text">
+                <h3 class="routes-h3">Gap with&nbsp;competitors</h3>
+                <p>Competitors already offer complex routes, so&nbsp;the&nbsp;service loses some&nbsp;clients and&nbsp;falls behind&nbsp;the&nbsp;market</p>
+              </div>
+            </li>
+            <li class="routes-card">
+              <span class="routes-icon"><img src="/assets/cases/complex-routes/icons/percent.svg" width="24" height="24" alt=""></span>
+              <div class="routes-card__text">
+                <h3 class="routes-h3">Low AOV</h3>
+                <p>Users can’t buy the&nbsp;whole route in&nbsp;one order, so&nbsp;the&nbsp;service loses part of&nbsp;the&nbsp;revenue from&nbsp;every&nbsp;such&nbsp;trip</p>
+              </div>
+            </li>
+          </ul>
+          <p class="routes-small routes-center w-780">Hypothesis from&nbsp;my&nbsp;own estimate: after&nbsp;launch, profit is&nbsp;expected to&nbsp;grow by&nbsp;10% and&nbsp;AOV by&nbsp;15%</p>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-switch">
+        <div class="routes-section__inner">
+          <div class="routes-heading">
+            <h2 class="routes-h2" id="routes-switch">Smart switch to&nbsp;a&nbsp;complex&nbsp;route</h2>
+            <p class="routes-center w-720">A&nbsp;user looks for&nbsp;tickets from&nbsp;Moscow to&nbsp;Tolyatti and&nbsp;doesn’t know that&nbsp;there are no&nbsp;direct flights. The&nbsp;system changes the&nbsp;flow to&nbsp;complex routes by&nbsp;itself and&nbsp;immediately shows a&nbsp;hint with&nbsp;an&nbsp;explanation and&nbsp;next&nbsp;steps</p>
+          </div>
+          <p class="routes-small routes-center w-640">Before&nbsp;the&nbsp;final version, other approaches were considered: a&nbsp;different switching logic, a&nbsp;different route card design and&nbsp;a&nbsp;different way to&nbsp;show the&nbsp;transfer warning. The&nbsp;final version was chosen after&nbsp;tests</p>
+          <div class="routes-compare">
+            <div class="routes-compare__item">
+              <p class="routes-small routes-center">Before</p>
+              <figure class="routes-shot routes-shot--fit routes-shot--before">
+                <a class="zoom" href="/assets/cases/complex-routes/en/before-2400.jpg" data-zoom-src="/assets/cases/complex-routes/en/before-2400.webp" data-zoom-width="942">
+                  <picture>
+                    <source media="(max-width: 767px)" type="image/webp" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/phone-before-800.webp 800w, /assets/cases/complex-routes/en/phone-before-1400.webp 1400w" width="1926" height="345">
+                    <source media="(max-width: 767px)" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/phone-before-800.jpg 800w, /assets/cases/complex-routes/en/phone-before-1400.jpg 1400w" width="1926" height="345">
+                    <source type="image/webp" sizes="(min-width: 1280px) 942px, calc(100vw - 80px)" srcset="/assets/cases/complex-routes/en/before-800.webp 800w, /assets/cases/complex-routes/en/before-1400.webp 1400w, /assets/cases/complex-routes/en/before-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 942px, calc(100vw - 80px)" srcset="/assets/cases/complex-routes/en/before-800.jpg 800w, /assets/cases/complex-routes/en/before-1400.jpg 1400w, /assets/cases/complex-routes/en/before-2400.jpg 2400w" src="/assets/cases/complex-routes/en/before-800.jpg" width="2400" height="344" loading="lazy" alt="Search form before&nbsp;the&nbsp;changes: from, to, dates, number of&nbsp;passengers and&nbsp;the&nbsp;Search button">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                </a>
+                <figcaption class="routes-caption">Desktop screen, narrowed for&nbsp;phone</figcaption>
+              </figure>
+            </div>
+            <div class="routes-compare__item">
+              <p class="routes-small routes-center">After</p>
+              <figure class="routes-shot routes-shot--fit routes-shot--after">
+                <a class="zoom" href="/assets/cases/complex-routes/en/after-2400.jpg" data-zoom-src="/assets/cases/complex-routes/en/after-2400.webp" data-zoom-width="939">
+                  <picture>
+                    <source media="(max-width: 767px)" type="image/webp" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/phone-after-800.webp 800w, /assets/cases/complex-routes/en/phone-after-1400.webp 1400w" width="1926" height="799">
+                    <source media="(max-width: 767px)" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/phone-after-800.jpg 800w, /assets/cases/complex-routes/en/phone-after-1400.jpg 1400w" width="1926" height="799">
+                    <source type="image/webp" sizes="(min-width: 1280px) 939px, calc(100vw - 80px)" srcset="/assets/cases/complex-routes/en/after-800.webp 800w, /assets/cases/complex-routes/en/after-1400.webp 1400w, /assets/cases/complex-routes/en/after-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 939px, calc(100vw - 80px)" srcset="/assets/cases/complex-routes/en/after-800.jpg 800w, /assets/cases/complex-routes/en/after-1400.jpg 1400w, /assets/cases/complex-routes/en/after-2400.jpg 2400w" src="/assets/cases/complex-routes/en/after-800.jpg" width="2400" height="792" loading="lazy" alt="Search form after&nbsp;the&nbsp;changes: a&nbsp;hint above the&nbsp;fields says there are no&nbsp;direct flights and&nbsp;the&nbsp;route will include a&nbsp;transfer">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                </a>
+                <figcaption class="routes-caption">Desktop screen, narrowed for&nbsp;phone</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-tests">
+        <div class="routes-section__inner">
+          <div class="routes-panel w-960">
+            <h2 class="routes-h3" id="routes-tests">What the&nbsp;tests&nbsp;showed</h2>
+            <p>Usability tests showed that&nbsp;users need a&nbsp;clear hint that&nbsp;the&nbsp;route has changed. Without&nbsp;it, it&nbsp;is&nbsp;hard to&nbsp;decide: go on&nbsp;to&nbsp;the&nbsp;tickets or&nbsp;choose a&nbsp;city with&nbsp;a&nbsp;direct&nbsp;flight</p>
+            <ul class="routes-iterations">
+              <li class="routes-iteration">
+                <span class="routes-mark routes-mark--no"><img src="/assets/cases/complex-routes/icons/x.svg" width="16" height="16" alt=""></span>
+                <p class="routes-small">1st version</p>
+                <p class="routes-h3">Users did not notice that&nbsp;the&nbsp;route became&nbsp;complex</p>
+              </li>
+              <li class="routes-iteration">
+                <span class="routes-mark"><img src="/assets/cases/complex-routes/icons/check.svg" width="16" height="16" alt=""></span>
+                <p class="routes-small">Final version</p>
+                <p class="routes-h3">Users saw at&nbsp;once that&nbsp;the&nbsp;route had&nbsp;changed</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="routes-section routes-section--wide-gap" aria-labelledby="routes-scenarios">
+        <div class="routes-section__inner">
+          <h2 class="routes-h2" id="routes-scenarios">The&nbsp;feature covers different&nbsp;scenarios</h2>
+          <div class="routes-scenario">
+            <div class="routes-scenario__text">
+              <h3 class="routes-h3">Family trip</h3>
+              <p>When the&nbsp;whole family travels together, passengers usually stay in&nbsp;one group all&nbsp;the&nbsp;way. This&nbsp;is&nbsp;the&nbsp;main scenario, so&nbsp;by&nbsp;default the&nbsp;number of&nbsp;passengers is&nbsp;the&nbsp;same for&nbsp;the&nbsp;whole&nbsp;route</p>
+              <p class="routes-small">Solves Katya’s problem: buying the&nbsp;whole trip in&nbsp;one order, not part by&nbsp;part</p>
+            </div>
+            <figure class="routes-shot">
+              <a class="zoom" href="/assets/cases/complex-routes/en/family-2400.jpg" data-zoom-src="/assets/cases/complex-routes/en/family-2400.webp" data-zoom-width="1200">
+                <picture>
+                  <source type="image/webp" sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/family-800.webp 800w, /assets/cases/complex-routes/en/family-1400.webp 1400w, /assets/cases/complex-routes/en/family-2400.webp 2400w">
+                  <img sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/family-800.jpg 800w, /assets/cases/complex-routes/en/family-1400.jpg 1400w, /assets/cases/complex-routes/en/family-2400.jpg 2400w" src="/assets/cases/complex-routes/en/family-800.jpg" width="2400" height="880" loading="lazy" alt="Complex route form with&nbsp;three flights, one number of&nbsp;passengers for&nbsp;the&nbsp;whole route and&nbsp;the&nbsp;Split passengers button">
+                </picture>
+                <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+              </a>
+              <figcaption class="routes-caption">Desktop screen, narrowed for&nbsp;phone</figcaption>
+            </figure>
+          </div>
+          <div class="routes-scenario">
+            <div class="routes-scenario__text">
+              <h3 class="routes-h3">Business trip</h3>
+              <p>When colleagues split up&nbsp;on&nbsp;different days, the&nbsp;service lets users set the&nbsp;number of&nbsp;passengers for&nbsp;each&nbsp;flight&nbsp;separately</p>
+            </div>
+            <figure class="routes-shot">
+              <a class="zoom" href="/assets/cases/complex-routes/en/business-2400.jpg" data-zoom-src="/assets/cases/complex-routes/en/business-2400.webp" data-zoom-width="1200">
+                <picture>
+                  <source type="image/webp" sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/business-800.webp 800w, /assets/cases/complex-routes/en/business-1400.webp 1400w, /assets/cases/complex-routes/en/business-2400.webp 2400w">
+                  <img sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/business-800.jpg 800w, /assets/cases/complex-routes/en/business-1400.jpg 1400w, /assets/cases/complex-routes/en/business-2400.jpg 2400w" src="/assets/cases/complex-routes/en/business-800.jpg" width="2400" height="880" loading="lazy" alt="Complex route form where the&nbsp;number of&nbsp;passengers is&nbsp;set for&nbsp;each&nbsp;flight, with&nbsp;the&nbsp;Merge passengers button">
+                </picture>
+                <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+              </a>
+              <figcaption class="routes-caption">Desktop screen, narrowed for&nbsp;phone</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-results">
+        <div class="routes-section__inner">
+          <div class="routes-heading">
+            <h2 class="routes-h2" id="routes-results">Search results</h2>
+            <p class="routes-center w-720">After&nbsp;the&nbsp;user presses the&nbsp;“Search” button, they see a&nbsp;results screen with&nbsp;all&nbsp;available&nbsp;tickets</p>
+          </div>
+          <figure class="routes-shot">
+            <a class="zoom" href="/assets/cases/complex-routes/en/results-2400.jpg" data-zoom-src="/assets/cases/complex-routes/en/results-2400.webp" data-zoom-width="1200">
+              <picture>
+                <source type="image/webp" sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/results-800.webp 800w, /assets/cases/complex-routes/en/results-1400.webp 1400w, /assets/cases/complex-routes/en/results-2400.webp 2400w">
+                <img sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/results-800.jpg 800w, /assets/cases/complex-routes/en/results-1400.jpg 1400w, /assets/cases/complex-routes/en/results-2400.jpg 2400w" src="/assets/cases/complex-routes/en/results-800.jpg" width="2400" height="834" loading="lazy" alt="Search results: a&nbsp;round trip with&nbsp;train and&nbsp;flight connections and&nbsp;the&nbsp;total price from&nbsp;€762">
+              </picture>
+              <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+            </a>
+          </figure>
+          <p class="routes-center w-900">Users liked this&nbsp;design: the&nbsp;route cards were easy to&nbsp;understand, and&nbsp;the&nbsp;“Services” section got special&nbsp;praise</p>
+          <p class="routes-small routes-center w-780">Replaces Andrey’s habit of&nbsp;writing the&nbsp;route on&nbsp;paper</p>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-setup">
+        <div class="routes-section__inner">
+          <div class="routes-heading">
+            <h2 class="routes-h2" id="routes-setup">Route setup</h2>
+            <p class="routes-center w-720">The&nbsp;service lets users fully customize the&nbsp;route, like&nbsp;in&nbsp;a&nbsp;builder</p>
+          </div>
+          <figure class="routes-shot routes-shot--926">
+            <a class="zoom" href="/assets/cases/complex-routes/en/setup-2400.jpg" data-zoom-src="/assets/cases/complex-routes/en/setup-2400.webp" data-zoom-width="926">
+              <picture>
+                <source media="(max-width: 767px)" type="image/webp" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/phone-setup-800.webp 800w, /assets/cases/complex-routes/en/phone-setup-1400.webp 1400w" width="1661" height="1200">
+                <source media="(max-width: 767px)" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/phone-setup-800.jpg 800w, /assets/cases/complex-routes/en/phone-setup-1400.jpg 1400w" width="1661" height="1200">
+                <source type="image/webp" sizes="(min-width: 1280px) 926px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/setup-800.webp 800w, /assets/cases/complex-routes/en/setup-1400.webp 1400w, /assets/cases/complex-routes/en/setup-2400.webp 2400w">
+                <img sizes="(min-width: 1280px) 926px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/setup-800.jpg 800w, /assets/cases/complex-routes/en/setup-1400.jpg 1400w, /assets/cases/complex-routes/en/setup-2400.jpg 2400w" src="/assets/cases/complex-routes/en/setup-800.jpg" width="2400" height="1845" loading="lazy" alt="Route setup: for&nbsp;each&nbsp;part of&nbsp;the&nbsp;route, a&nbsp;choice of&nbsp;eight offers from&nbsp;different services, baggage and&nbsp;refund options">
+              </picture>
+              <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+            </a>
+          </figure>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-partner">
+        <div class="routes-section__inner">
+          <div class="routes-heading">
+            <h2 class="routes-h2" id="routes-partner">A&nbsp;ticket can be bought only inside&nbsp;the&nbsp;service</h2>
+            <p class="routes-center w-780">If&nbsp;a&nbsp;part of&nbsp;the&nbsp;route is&nbsp;cheaper at&nbsp;a&nbsp;partner, this&nbsp;part is&nbsp;not included in&nbsp;the&nbsp;total order, and&nbsp;the&nbsp;user needs a&nbsp;clear explanation of&nbsp;what&nbsp;happened</p>
+          </div>
+          <figure class="routes-shot routes-shot--750">
+            <a class="zoom" href="/assets/cases/complex-routes/en/partner-1545.jpg" data-zoom-src="/assets/cases/complex-routes/en/partner-1545.webp" data-zoom-width="750">
+              <picture>
+                <source media="(max-width: 767px)" type="image/webp" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/phone-partner-800.webp 800w, /assets/cases/complex-routes/en/phone-partner-1400.webp 1400w" width="1493" height="659">
+                <source media="(max-width: 767px)" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/phone-partner-800.jpg 800w, /assets/cases/complex-routes/en/phone-partner-1400.jpg 1400w" width="1493" height="659">
+                <source type="image/webp" sizes="(min-width: 768px) 750px, calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/partner-800.webp 800w, /assets/cases/complex-routes/en/partner-1400.webp 1400w, /assets/cases/complex-routes/en/partner-1545.webp 1545w">
+                <img sizes="(min-width: 768px) 750px, calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/partner-800.jpg 800w, /assets/cases/complex-routes/en/partner-1400.jpg 1400w, /assets/cases/complex-routes/en/partner-1545.jpg 1545w" src="/assets/cases/complex-routes/en/partner-800.jpg" width="1545" height="857" loading="lazy" alt="Partner offers and&nbsp;a&nbsp;notice that&nbsp;the&nbsp;tickets can’t be sold together: the&nbsp;flight is&nbsp;booked on&nbsp;the&nbsp;partner’s site">
+              </picture>
+              <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+            </a>
+          </figure>
+          <p class="routes-small routes-center w-780">Tests showed: at&nbsp;first, users did not understand that&nbsp;this&nbsp;ticket is&nbsp;bought separately. After&nbsp;a&nbsp;clear notice, they understood it&nbsp;at&nbsp;once</p>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-details">
+        <div class="routes-section__inner">
+          <h2 class="routes-h2 w-780" id="routes-details">Route details and&nbsp;passenger&nbsp;data</h2>
+          <figure class="routes-shot routes-shot--750">
+            <a class="zoom" href="/assets/cases/complex-routes/en/details-2228.jpg" data-zoom-src="/assets/cases/complex-routes/en/details-2228.webp" data-zoom-width="750">
+              <picture>
+                <source type="image/webp" sizes="(min-width: 768px) 750px, calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/details-800.webp 800w, /assets/cases/complex-routes/en/details-1400.webp 1400w, /assets/cases/complex-routes/en/details-2228.webp 2228w">
+                <img sizes="(min-width: 768px) 750px, calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/details-800.jpg 800w, /assets/cases/complex-routes/en/details-1400.jpg 1400w, /assets/cases/complex-routes/en/details-2228.jpg 2228w" src="/assets/cases/complex-routes/en/details-800.jpg" width="2228" height="1236" loading="lazy" alt="Checkout: the&nbsp;Route details section, buyer contact info and&nbsp;passenger data with&nbsp;the&nbsp;Use profile data switch">
+              </picture>
+              <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+            </a>
+          </figure>
+          <p class="routes-center w-900">Users especially noted two things: the&nbsp;“Route details” section lets them check the&nbsp;data twice, and&nbsp;the&nbsp;“Data from&nbsp;profile” switch makes filling in&nbsp;the&nbsp;fields&nbsp;faster</p>
+          <p class="routes-small routes-center">Answers the&nbsp;needs of&nbsp;Andrey and&nbsp;Katya: checking every&nbsp;detail of&nbsp;the&nbsp;route and&nbsp;buying tickets&nbsp;fast</p>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-success">
+        <div class="routes-section__inner">
+          <h2 class="routes-h2" id="routes-success">Success</h2>
+          <figure class="routes-shot">
+            <a class="zoom" href="/assets/cases/complex-routes/en/success-2400.jpg" data-zoom-src="/assets/cases/complex-routes/en/success-2400.webp" data-zoom-width="1200">
+              <picture>
+                <source media="(max-width: 767px)" type="image/webp" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/phone-success-800.webp 800w, /assets/cases/complex-routes/en/phone-success-1400.webp 1400w" width="1911" height="901">
+                <source media="(max-width: 767px)" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/phone-success-800.jpg 800w, /assets/cases/complex-routes/en/phone-success-1400.jpg 1400w" width="1911" height="901">
+                <source type="image/webp" sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/success-800.webp 800w, /assets/cases/complex-routes/en/success-1400.webp 1400w, /assets/cases/complex-routes/en/success-2400.webp 2400w">
+                <img sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/en/success-800.jpg 800w, /assets/cases/complex-routes/en/success-1400.jpg 1400w, /assets/cases/complex-routes/en/success-2400.jpg 2400w" src="/assets/cases/complex-routes/en/success-800.jpg" width="2400" height="1020" loading="lazy" alt="Payment success screen: the&nbsp;tickets are booked, with&nbsp;Book hotels and&nbsp;Download tickets buttons, route details and&nbsp;passenger info">
+              </picture>
+              <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+            </a>
+          </figure>
+          <ul class="routes-cards w-944">
+            <li class="routes-card">
+              <span class="routes-icon"><img src="/assets/cases/complex-routes/icons/heart.svg" width="24" height="24" alt=""></span>
+              <h3 class="routes-h3">Hotel booking:<br>benefit for&nbsp;the&nbsp;user</h3>
+            </li>
+            <li class="routes-card">
+              <span class="routes-icon"><img src="/assets/cases/complex-routes/icons/orders.svg" width="24" height="24" alt=""></span>
+              <h3 class="routes-h3">Extra revenue:<br>benefit for&nbsp;the&nbsp;business</h3>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="routes-section routes-section--conclusion routes-section--wide-gap" aria-labelledby="routes-conclusion">
+        <div class="routes-section__inner">
+          <div class="routes-heading">
+            <h2 class="routes-h2" id="routes-conclusion">Conclusion</h2>
+            <p class="routes-center w-800">Tests with&nbsp;real users showed that&nbsp;the&nbsp;feature reduces cognitive load and&nbsp;saves time on&nbsp;a&nbsp;complex route. After&nbsp;launch, this&nbsp;should help the&nbsp;business catch up&nbsp;with&nbsp;competitors and&nbsp;increase&nbsp;AOV</p>
+          </div>
+          <div class="routes-panel routes-panel--gap-8 w-800">
+            <h3 class="routes-h3">What was the&nbsp;hardest&nbsp;part</h3>
+            <p>The&nbsp;hardest part was not the&nbsp;separate screens, but&nbsp;the&nbsp;logic of&nbsp;switching between&nbsp;the&nbsp;normal and&nbsp;the&nbsp;complex flow. It&nbsp;was also hard to&nbsp;show the&nbsp;route setup in&nbsp;a&nbsp;clear way, so&nbsp;the&nbsp;user can build the&nbsp;route like&nbsp;in&nbsp;a&nbsp;builder and&nbsp;not get lost in&nbsp;details. These&nbsp;parts were redesigned several times after&nbsp;tests</p>
+          </div>
+        </div>
+      </section>
+    </article>
+    <!-- typograph:end -->
+
+    <section class="pager" aria-labelledby="pager-title">
+      <div class="container">
+        <h2 class="section__title t-h2" id="pager-title">More case studies</h2>
+        <ul class="pager__list">
+          <li>
+            <a class="pager-link" href="/en/cases/shifted/">
+              <span class="t-label-sm c-secondary"><span aria-hidden="true">←&nbsp;</span>Previous case study</span>
+              <span class="t-h4">Shifted: AI-powered used&nbsp;car&nbsp;marketplace</span>
+            </a>
+          </li>
+          <li>
+            <a class="pager-link pager-link--next" href="/en/cases/demand-forecast/">
+              <span class="t-label-sm c-secondary">Next case study<span aria-hidden="true">&nbsp;→</span></span>
+              <span class="t-h4">Demand forecast&nbsp;dashboard</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <section class="contacts" id="contacts" aria-labelledby="contacts-title">
+        <div class="contacts__intro">
+          <h2 class="t-label-sm c-secondary" id="contacts-title">Contacts</h2>
+          <p class="t-body-l">Open to&nbsp;offers: on-site or&nbsp;remote, and&nbsp;open&nbsp;to&nbsp;relocation</p>
+        </div>
+        <ul class="contacts__list">
+          <li class="contact">
+            <span class="t-label-sm c-secondary" id="contact-telegram">Telegram</span>
+            <a class="value-link t-body-m-strong" href="https://t.me/PeMendo" aria-describedby="contact-telegram">@PeMendo</a>
+          </li>
+          <li class="contact">
+            <span class="t-label-sm c-secondary" id="contact-email">Email</span>
+            <a class="value-link t-body-m-strong" href="mailto:phontaniwe@gmail.com" aria-describedby="contact-email">phontaniwe@gmail.com</a>
+          </li>
+          <li class="contact">
+            <span class="t-label-sm c-secondary" id="contact-linkedin">LinkedIn</span>
+            <a class="value-link t-body-m-strong" href="https://www.linkedin.com/in/pavel-menkov-669a09234/" aria-describedby="contact-linkedin">pavel-menkov</a>
+          </li>
+        </ul>
+      </section>
+      <div class="footer-bar">
+        <p class="t-body-s c-secondary">©&nbsp;2026&nbsp;Pavel Menkov</p>
+        <div class="footer-bar__right">
+          <ul class="lang" aria-label="Language">
+            <li><a class="lang__link t-label-md" href="/ru/cases/complex-routes/" hreflang="ru" lang="ru">RU<span class="visually-hidden">, русский</span></a></li>
+            <li><a class="lang__link t-label-md" href="/en/cases/complex-routes/" aria-current="page">EN<span class="visually-hidden">, English</span></a></li>
+          </ul>
+          <span class="divider" aria-hidden="true"></span>
+          <a class="nav-link t-label-md" href="#top">Back to&nbsp;top&nbsp;↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

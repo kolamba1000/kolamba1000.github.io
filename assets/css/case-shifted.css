@@ -1,0 +1,920 @@
+/* Лендинг кейса Shifted (маркетплейс б/у авто с ИИ). Свои шрифты и цвета кейса, спецификация: docs/handoff-case-shifted.md
+   Кадры Figma: RU 1:32 / 1:726 / 1:1453, EN 1:4820 / 1:5516 / 1:6243 */
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/fonts/manrope/manrope-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/fonts/manrope/manrope-cyrillic.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* Знак рубля есть только в подмножестве latin-ext: файл грузится, если на странице есть «₽» */
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/fonts/manrope/manrope-latin-ext.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+20BD;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/jetbrains-mono/jetbrains-mono-latin.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/jetbrains-mono/jetbrains-mono-cyrillic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+.sh {
+  --s-bg: #0F1416;
+  --s-surface: #1B2022;
+  --s-surface-2: #252B2D;
+  --s-accent-bg: #344A52;
+  --s-outline: #40484B;
+  --s-text: #F4F6FA;
+  --s-muted: #9AA1B0;
+  --s-accent: #86D1EA;
+  --s-danger: #F2B8B5;
+  --s-pad: 16px;
+  --s-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  background: var(--s-bg);
+  color: var(--s-text);
+  font-family: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media (min-width: 768px) {
+  .sh { --s-pad: 40px; }
+}
+
+@media (min-width: 1280px) {
+  .sh { --s-pad: 80px; }
+}
+
+/* ---------- Секции: фон на всю ширину, колонка до 1280 по центру, линия сверху ---------- */
+.sh-section {
+  padding: 48px var(--s-pad);
+  border-top: 1px solid var(--s-outline);
+}
+
+.sh-hero {
+  padding-top: 32px;
+  padding-bottom: 0;
+  border-top: 0;
+}
+
+@media (min-width: 768px) {
+  .sh-section { padding-block: 64px; }
+  .sh-hero { padding-top: 32px; padding-bottom: 0; }
+}
+
+@media (min-width: 1280px) {
+  .sh-section { padding-block: 96px; }
+  .sh-hero { padding-top: 32px; padding-bottom: 0; }
+}
+
+.sh-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.sh-hero .sh-inner {
+  gap: 64px;
+}
+
+/* Ширины текстов из макета десктопа; на планшете и телефоне тексты на всю колонку, как в макетах */
+@media (min-width: 1280px) {
+  .sw-720 { max-width: 720px; }
+  .sw-800 { max-width: 800px; }
+  .sw-880 { max-width: 880px; }
+  .sw-900 { max-width: 900px; }
+  .sw-960 { max-width: 960px; }
+  .sw-1040 { max-width: 1040px; }
+  .sw-1120 { max-width: 1120px; }
+}
+
+/* ---------- Тексты ---------- */
+/* Заголовки переносятся как в Figma: общий text-wrap: balance сайта переставлял бы строки */
+.sh h1,
+.sh h2,
+.sh h3,
+.sh h4 {
+  text-wrap: wrap;
+}
+
+/* h4 (колонки CJM, имена персон) в общем сбросе сайта нет: браузерные отступы 1,33em */
+.sh h4 {
+  margin: 0;
+}
+
+.sh-eyebrow,
+.sh-brand {
+  color: var(--s-accent);
+  font-family: var(--s-mono);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 0.56px;
+  text-transform: uppercase;
+}
+
+.sh-brand {
+  color: var(--s-text);
+}
+
+.sh-label,
+.sh-label-accent,
+.sh-index,
+.sh-num,
+.sh-meta dt,
+.sh-cjm__column dt,
+.sh-tag,
+.sh-chart__level,
+.sh-chart__drop {
+  color: var(--s-muted);
+  font-family: var(--s-mono);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.48px;
+  text-transform: uppercase;
+}
+
+.sh-label-accent,
+.sh-num {
+  color: var(--s-accent);
+}
+
+.sh-h1 {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.sh-h2 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  letter-spacing: -0.48px;
+}
+
+/* heading/md: CJM, «Персоны», имена, заголовки карточек с экранами и «Решения» */
+.sh-h3m {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  letter-spacing: -0.24px;
+}
+
+/* heading/sm: заголовки карточек */
+.sh-h3 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.sh-lead,
+.sh-text-lg {
+  color: var(--s-muted);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.sh-text-lg {
+  color: var(--s-text);
+}
+
+.sh-muted {
+  color: var(--s-muted);
+}
+
+.sh-strong {
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .sh-h1 { font-size: 56px; line-height: 64px; letter-spacing: -1.12px; }
+  .sh-h2 { font-size: 40px; line-height: 48px; letter-spacing: -0.6px; }
+  .sh-h3m { font-size: 28px; line-height: 36px; letter-spacing: -0.28px; }
+  .sh-h3 { font-size: 24px; line-height: 32px; }
+  .sh-lead,
+  .sh-text-lg { font-size: 18px; line-height: 28px; }
+}
+
+@media (min-width: 1280px) {
+  .sh-h1 { font-size: 72px; line-height: 80px; letter-spacing: -1.44px; }
+  .sh-h2 { font-size: 48px; line-height: 56px; letter-spacing: -0.72px; }
+  .sh-h3m { font-size: 32px; line-height: 40px; letter-spacing: -0.32px; }
+}
+
+/* Узкие телефоны (уже 360, макета нет): заголовки уменьшены пропорционально колонке 358 → 288 (×0,8) */
+@media (max-width: 359px) {
+  .sh-h1 { font-size: 32px; line-height: 40px; letter-spacing: -0.64px; }
+  .sh-h2 { font-size: 26px; line-height: 32px; letter-spacing: -0.39px; }
+  .sh-h3m { font-size: 20px; line-height: 28px; letter-spacing: -0.2px; }
+}
+
+/* Шапка секции: метка, заголовок, подзаголовок через 16 */
+.sh-head,
+.sh-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sh-hero__text {
+  gap: 24px;
+}
+
+.sh-subhead {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ---------- Обложка ---------- */
+.sh-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--s-outline);
+}
+
+.sh-meta > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sh-meta dd {
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .sh-meta { flex-wrap: nowrap; gap: 32px; }
+}
+
+@media (min-width: 1280px) {
+  .sh-meta { gap: 64px; }
+}
+
+/* Три телефона в поле с обрезкой. Положение от центра поля (из макета каждой ширины), боковые повёрнуты на 8°.
+   Под ними размытый эллипс: LAYER_BLUR 140 / 103 / 48 в Figma = blur(70 / 51,5 / 24 px) */
+.sh-phones {
+  --glow-w: 300px; --glow-h: 150px; --glow-y: 260px; --glow-blur: 24px;
+  --c-w: 200px; --c-h: 460px; --c-y: 24px;
+  --s-w: 150px; --s-h: 334px; --l-dx: -105.5px; --l-y: 80px; --r-dx: 104.1px; --r-y: 76.8px;
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .sh-phones {
+    --glow-w: 648px; --glow-h: 324px; --glow-y: 274px; --glow-blur: 51.5px;
+    --c-w: 250px; --c-h: 576px; --c-y: 25px;
+    --s-w: 221px; --s-h: 492px; --l-dx: -228.4px; --l-y: 94.2px; --r-dx: 228.2px; --r-y: 94px;
+    height: 480px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sh-phones {
+    --glow-w: 880px; --glow-h: 440px; --glow-y: 380px; --glow-blur: 70px;
+    --c-w: 340px; --c-h: 782px; --c-y: 41.5px;
+    --s-w: 300px; --s-h: 668px; --l-dx: -310px; --l-y: 136px; --r-dx: 310px; --r-y: 135.6px;
+    height: 700px;
+  }
+}
+
+/* В кадрах EN центральный телефон выше: 15 на планшете и 29 на десктопе (в RU 25 и 41,5) */
+@media (min-width: 768px) {
+  .sh-phones:lang(en) { --c-y: 15px; }
+}
+
+@media (min-width: 1280px) {
+  .sh-phones:lang(en) { --c-y: 29px; }
+}
+
+.sh-phones__glow {
+  position: absolute;
+  top: var(--glow-y);
+  left: calc(50% - var(--glow-w) / 2);
+  width: var(--glow-w);
+  height: var(--glow-h);
+  background: var(--s-accent);
+  border-radius: 50%;
+  filter: blur(var(--glow-blur));
+}
+
+.sh-phone {
+  position: absolute;
+  display: block;
+}
+
+.sh-phone img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sh-phone--center {
+  top: var(--c-y);
+  left: calc(50% - var(--c-w) / 2);
+  width: var(--c-w);
+  height: var(--c-h);
+}
+
+.sh-phone--left,
+.sh-phone--right {
+  width: var(--s-w);
+  height: var(--s-h);
+}
+
+.sh-phone--left {
+  top: var(--l-y);
+  left: calc(50% + var(--l-dx) - var(--s-w) / 2);
+  transform: rotate(-8deg);
+}
+
+.sh-phone--right {
+  top: var(--r-y);
+  left: calc(50% + var(--r-dx) - var(--s-w) / 2);
+  transform: rotate(8deg);
+}
+
+/* ---------- Карточки ---------- */
+.sh-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: var(--s-surface);
+  border: 1px solid var(--s-outline);
+  border-radius: 24px;
+}
+
+.sh-card--accent {
+  background: var(--s-accent-bg);
+  border-color: var(--s-accent);
+}
+
+@media (min-width: 768px) {
+  .sh-card { padding: 32px; }
+}
+
+/* Списки с точкой: 8 px и зазор 16 в «Моей роли», 6 px и зазор 12 в персонах и MVP */
+.sh-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sh-bullets li {
+  display: flex;
+  gap: 12px;
+}
+
+.sh-bullets li::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  margin: 9px 1px 0;
+  background: var(--s-accent);
+  border-radius: 50%;
+}
+
+.sh-bullets--lg li {
+  gap: 16px;
+}
+
+.sh-bullets--lg li::before {
+  width: 8px;
+  height: 8px;
+  margin: 8px 0 0;
+}
+
+.sh-bullets--off li::before {
+  background: var(--s-outline);
+}
+
+/* Сетки карточек: 3 / 2 + 1 / столбец; 2 / 2 / столбец; 4 / 2 / столбец */
+.sh-grid2,
+.sh-grid3,
+.sh-grid4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .sh-grid2,
+  .sh-grid3,
+  .sh-grid4 {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .sh-grid2--16,
+  .sh-grid3:not(.sh-grid3--24) { gap: 16px; }
+
+  .sh-grid3 > :last-child { grid-column: 1 / -1; }
+}
+
+@media (min-width: 1280px) {
+  .sh-grid3 { grid-template-columns: repeat(3, 1fr); }
+  .sh-grid3 > :last-child { grid-column: auto; }
+  .sh-grid4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Задача и роль: 496 + остаток на десктопе */
+.sh-taskrow {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .sh-taskrow { gap: 24px; }
+}
+
+@media (min-width: 1280px) {
+  .sh-taskrow { grid-template-columns: 496px 1fr; }
+}
+
+/* Цифры: 56 / 48 / 40 */
+.sh-stat__value {
+  color: var(--s-accent);
+  font-family: var(--s-mono);
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 500;
+  letter-spacing: -0.8px;
+}
+
+@media (min-width: 768px) {
+  .sh-stat__value { font-size: 48px; line-height: 56px; letter-spacing: -0.96px; }
+}
+
+@media (min-width: 1280px) {
+  .sh-stat__value { font-size: 56px; line-height: 64px; letter-spacing: -1.12px; }
+}
+
+.sh-stat__label {
+  color: var(--s-muted);
+}
+
+.sh-pain {
+  gap: 12px;
+}
+
+/* ---------- Исследование: CJM ---------- */
+.sh-cjm {
+  gap: 24px;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .sh-cjm { padding: 32px; }
+}
+
+.sh-cjm__head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* График: пунктир уровней, кривая через четыре точки от --x0 до края минус --xr (из макета каждой ширины) */
+.sh-chart {
+  --x0: 88px; --xr: 6px;
+  position: relative;
+  height: 152px;
+}
+
+@media (min-width: 768px) {
+  .sh-chart { --x0: 100px; --xr: 38px; height: 144px; }
+}
+
+@media (min-width: 1280px) {
+  .sh-chart { --x0: 143px; --xr: 141px; }
+}
+
+.sh-chart__guide {
+  position: absolute;
+  top: var(--y);
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: repeating-linear-gradient(to right, var(--s-outline) 0 4px, transparent 4px 8px);
+}
+
+.sh-chart__level {
+  position: absolute;
+  top: var(--y);
+  left: 0;
+  white-space: nowrap;
+}
+
+.sh-chart__curve {
+  position: absolute;
+  top: 24px;
+  left: var(--x0);
+  width: calc(100% - var(--x0) - var(--xr));
+  height: 96px;
+  overflow: visible;
+}
+
+/* Точка 16 px с кольцом цвета карточки 4 px (обводка снаружи в Figma) */
+.sh-chart__dot {
+  position: absolute;
+  top: calc(var(--y) - 8px);
+  left: calc(var(--x0) + (100% - var(--x0) - var(--xr)) * var(--i) / 3 - 8px);
+  width: 16px;
+  height: 16px;
+  background: var(--s-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--s-surface);
+}
+
+.sh-chart__dot--drop {
+  background: var(--s-danger);
+}
+
+/* Подпись падения: справа от третьей точки на десктопе, слева от неё на планшете, под графиком у правого края на телефоне */
+.sh-chart__drop {
+  position: absolute;
+  top: 132px;
+  right: 0;
+  color: var(--s-danger);
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .sh-chart__drop {
+    top: 124px;
+    right: auto;
+    left: calc(var(--x0) + (100% - var(--x0) - var(--xr)) * 2 / 3 - 18px);
+    transform: translateX(-100%);
+  }
+}
+
+@media (min-width: 1280px) {
+  .sh-chart__drop {
+    left: calc(var(--x0) + (100% - var(--x0) - var(--xr)) * 2 / 3 + 18px);
+    transform: none;
+  }
+}
+
+.sh-cjm__columns {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .sh-cjm__columns { grid-template-columns: 1fr 1fr; gap: 24px; }
+}
+
+@media (min-width: 1280px) {
+  .sh-cjm__columns { grid-template-columns: repeat(4, 1fr); }
+}
+
+.sh-cjm__column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: var(--s-surface-2);
+  border-radius: 16px;
+}
+
+.sh-cjm__column dl {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sh-cjm__column dl > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ---------- Персоны ---------- */
+.sh-persona {
+  gap: 24px;
+}
+
+.sh-persona__head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sh-persona__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sh-persona__group .sh-bullets {
+  gap: 8px;
+}
+
+/* «Как отвечает продукт» прижато к низу карточки: карточки в ряду одной высоты */
+.sh-persona__response {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+  padding: 16px;
+  background: var(--s-accent-bg);
+  border-radius: 16px;
+}
+
+/* ---------- Конкуренты ---------- */
+.sh-competitor {
+  gap: 24px;
+  padding: 24px 20px;
+}
+
+@media (min-width: 768px) {
+  .sh-competitor { padding: 28px 24px; }
+}
+
+.sh-competitor__group,
+.sh-competitor__group ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sh-competitor__group li {
+  display: flex;
+  gap: 8px;
+}
+
+.sh-sign {
+  flex: none;
+  width: 9px;
+  color: var(--s-accent);
+  font-family: var(--s-mono);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.sh-sign--minus {
+  color: var(--s-danger);
+}
+
+/* Карточка Shifted среди конкурентов: название голубым капсом, подписи групп белым */
+.sh-competitor.sh-card--accent .sh-h3 {
+  color: var(--s-accent);
+  text-transform: uppercase;
+}
+
+.sh-competitor.sh-card--accent .sh-label {
+  color: var(--s-text);
+}
+
+/* ---------- Решение ---------- */
+.sh-feature .sh-lead {
+  color: var(--s-muted);
+}
+
+/* ---------- Карточки с экранами ---------- */
+.sh-flow {
+  gap: 32px;
+  padding: 24px 20px;
+}
+
+@media (min-width: 768px) {
+  .sh-flow { padding: 32px 32px 40px; }
+}
+
+.sh-flow__head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Экраны: столбцом на телефоне; по два в ряд на планшете, нечётный последний по центру;
+   в ряд на десктопе (352 с зазором 80, узкие 268 с зазором 48) */
+.sh-screens {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sh-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .sh-screens {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px 24px;
+  }
+
+  .sh-screen {
+    width: calc(50% - 12px);
+  }
+
+  /* «Подробности»: колонки «01 и 03» и «02», как в макете планшета */
+  .sh-screens--details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .sh-screens--details .sh-screen { width: auto; }
+  .sh-screens--details .sh-screen:nth-child(2) { grid-column: 2; grid-row: 1 / span 2; }
+  .sh-screens--details .sh-screen:nth-child(3) { grid-column: 1; grid-row: 2; }
+}
+
+@media (min-width: 1280px) {
+  .sh-screens,
+  .sh-screens--details {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 80px;
+  }
+
+  .sh-screen,
+  .sh-screens--details .sh-screen {
+    flex: 0 1 352px;
+    width: auto;
+  }
+
+  .sh-screens--narrow { gap: 48px; }
+  .sh-screens--narrow .sh-screen { flex-basis: 268px; }
+}
+
+.sh-caption {
+  display: flex;
+  gap: 12px;
+}
+
+.sh-num {
+  flex: none;
+}
+
+.sh-num--danger {
+  color: var(--s-danger);
+}
+
+/* Экран: картинка целиком, углы экрана прозрачные и скруглены (56 px на 824 = 6,8% ширины, у списков 24 px = 2,9%).
+   Ссылка «открыть крупно» по картинке, рамка при наведении и кольцо фокуса идут по тому же скруглению */
+.sh-shot {
+  container-type: inline-size;
+}
+
+.sh-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Текст alt, если картинка не загрузилась */
+  color: var(--s-muted);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.sh-shot .zoom {
+  border-radius: 6.8cqi;
+}
+
+.sh-shot--list .zoom {
+  border-radius: 2.9cqi;
+}
+
+.sh-shot .zoom::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .sh-shot .zoom[href]:hover::after {
+    border-color: var(--color-border-strong);
+  }
+}
+
+/* Телефон: окна просмотра нет (data-zoom-from="768" у лендинга, решение пользователя 26.09.2026), экраны и так почти
+   в натуральную величину. Значок скрыт стилями сразу, до загрузки скрипта; без JavaScript экран открывает картинку */
+@media (max-width: 767px) {
+  .sh-shot .zoom__button {
+    display: none;
+  }
+}
+
+/* Кольцо gray-900 не видно на тёмном фоне кейса: белое */
+.sh-shot .zoom:focus-visible {
+  outline-color: var(--s-text);
+}
+
+/* Окно просмотра: у скриншотов прозрачные углы, белая подложка окна проступала бы в них */
+.lightbox__img {
+  background: transparent;
+  border-radius: 0;
+}
+
+@media (max-width: 767px) {
+  .lightbox__img {
+    border-radius: 0;
+  }
+}
+
+/* ---------- Гипотезы и MVP ---------- */
+.sh-hypotheses {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Телефон: номер и текст в строку, метка под ними; от планшета номер, текст и метка в одну строку по центру */
+.sh-hypothesis {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  padding: 20px;
+}
+
+.sh-hypothesis__num {
+  color: var(--s-accent);
+  font-family: var(--s-mono);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 0.56px;
+}
+
+.sh-hypothesis__text {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.sh-tag {
+  grid-column: 1 / -1;
+  justify-self: start;
+  padding: 8px 16px;
+  border: 1px solid var(--s-outline);
+  border-radius: 16px;
+}
+
+@media (min-width: 768px) {
+  .sh-hypothesis {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 32px;
+  }
+
+  .sh-hypothesis__text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .sh-tag {
+    grid-column: auto;
+    white-space: nowrap;
+  }
+}
+
+.sh-mvp .sh-bullets {
+  gap: 16px;
+}

@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demand forecast dashboard · Pavel Menkov</title>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/icons/favicon-en.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon-en.png">
+  <meta name="description" content="A tool for Lenta. Store managers use it to plan baking and order ingredients for each day. Analysts compare real sales with the forecast">
+  <link rel="canonical" href="https://kolamba1000.github.io/en/cases/demand-forecast/">
+  <link rel="alternate" hreflang="ru" href="https://kolamba1000.github.io/ru/cases/demand-forecast/">
+  <link rel="alternate" hreflang="en" href="https://kolamba1000.github.io/en/cases/demand-forecast/">
+  <link rel="alternate" hreflang="x-default" href="https://kolamba1000.github.io/en/cases/demand-forecast/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://kolamba1000.github.io/en/cases/demand-forecast/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ru_RU">
+  <meta property="og:title" content="Demand forecast dashboard · Pavel Menkov">
+  <meta property="og:description" content="A tool for Lenta. Store managers use it to plan baking and order ingredients for each day. Analysts compare real sales with the forecast">
+  <meta property="og:image" content="https://kolamba1000.github.io/assets/og/demand-forecast-en.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Demand forecast dashboard case study: the Lenta forecast table">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="/assets/fonts/montserrat/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="/assets/js/lang-scroll.js" defer></script>
+  <script src="/assets/js/back-bar.js" defer></script>
+  <link rel="stylesheet" href="/assets/css/case-lenta.css">
+  <script src="/assets/js/zoom.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to&nbsp;content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="name-link t-body-m-strong" href="/en/">Pavel Menkov</a>
+      <nav class="site-nav" aria-label="Contacts and&nbsp;language">
+        <span class="from-tablet">
+          <a class="nav-link t-label-md" href="https://t.me/PeMendo">Telegram</a>
+          <a class="nav-link t-label-md" href="mailto:phontaniwe@gmail.com">phontaniwe@gmail.com</a>
+          <a class="nav-link t-label-md" href="https://www.linkedin.com/in/pavel-menkov-669a09234/">LinkedIn</a>
+        </span>
+        <span class="only-phone">
+          <a class="nav-link t-label-md" href="#contacts">Contacts</a>
+        </span>
+        <span class="divider" aria-hidden="true"></span>
+        <ul class="lang">
+          <li><a class="lang__link t-label-md" href="/ru/cases/demand-forecast/" hreflang="ru" lang="ru">RU<span class="visually-hidden">, русский</span></a></li>
+          <li><a class="lang__link t-label-md" href="/en/cases/demand-forecast/" aria-current="page">EN<span class="visually-hidden">, English</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="back-bar">
+      <div class="container">
+        <a class="name-link t-body-m-strong back-bar__link" href="/en/#cases">←&nbsp;All case studies</a>
+      </div>
+    </div>
+
+    <!-- typograph:start -->
+    <article class="lenta" aria-labelledby="case-title">
+      <section class="lenta-section lenta-section--dark">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Product design</p>
+          <div class="lenta-heading">
+            <h1 class="lenta-h1 lw-900" id="case-title">Demand forecast dashboard<br class="lenta-br-no-tablet"> for&nbsp;in-house production goods</h1>
+            <p class="lenta-lead lw-660">A&nbsp;tool for&nbsp;Lenta. Store managers use it&nbsp;to&nbsp;plan baking and&nbsp;order ingredients for&nbsp;each&nbsp;day. Analysts compare real sales with&nbsp;the&nbsp;forecast</p>
+          </div>
+          <ul class="lenta-meta">
+            <li>Role: product designer,&nbsp;solo</li>
+            <li>Tool: Figma</li>
+            <li>Screen sizes: 1920 · 1440 ·&nbsp;834</li>
+          </ul>
+          <!-- Link to the working prototype: show it when the address is ready (remove hidden, set href and text) -->
+          <p class="lenta-prototype" hidden><a href="#">[Link to&nbsp;working prototype]</a></p>
+          <div class="lenta-shot lenta-shot--hero">
+            <a class="zoom" href="/assets/cases/demand-forecast/en/hero-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/en/hero-2400.webp" data-zoom-width="1248">
+              <picture>
+                <source type="image/webp" sizes="(min-width: 1344px) 1248px, (min-width: 1280px) calc(100vw - 192px), (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/en/hero-800.webp 800w, /assets/cases/demand-forecast/en/hero-1400.webp 1400w, /assets/cases/demand-forecast/en/hero-2400.webp 2400w">
+                <img sizes="(min-width: 1344px) 1248px, (min-width: 1280px) calc(100vw - 192px), (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/en/hero-800.jpg 800w, /assets/cases/demand-forecast/en/hero-1400.jpg 1400w, /assets/cases/demand-forecast/en/hero-2400.jpg 2400w" src="/assets/cases/demand-forecast/en/hero-800.jpg" width="2400" height="1392" alt="Forecast screen on&nbsp;desktop: a&nbsp;table with&nbsp;the&nbsp;daily bread sales forecast, filters by&nbsp;store, product group and&nbsp;dates, and&nbsp;a&nbsp;total row for&nbsp;15&nbsp;products">
+              </picture>
+              <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--grey" aria-labelledby="lenta-screens">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Screens</p>
+          <div class="lenta-heading">
+            <h2 class="lenta-h2 lenta-h2--screens lw-800" id="lenta-screens">2&nbsp;desktop sizes and&nbsp;1&nbsp;tablet&nbsp;size</h2>
+            <p class="lenta-sub lenta-sub--150 lw-760">Forecast, sales stats, and&nbsp;the&nbsp;infographic use one design system.<br class="lenta-br-wide"> It&nbsp;works from&nbsp;a&nbsp;1920&nbsp;desktop to&nbsp;an&nbsp;834&nbsp;tablet</p>
+          </div>
+          <ul class="lenta-trio">
+            <li class="lenta-trio__item">
+              <div class="lenta-shot lenta-shot--1920">
+                <a class="zoom" href="/assets/cases/demand-forecast/en/trio-1920-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/en/trio-1920-2400.webp" data-zoom-width="1248">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 379px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/en/trio-1920-800.webp 800w, /assets/cases/demand-forecast/en/trio-1920-1400.webp 1400w, /assets/cases/demand-forecast/en/trio-1920-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 379px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/en/trio-1920-800.jpg 800w, /assets/cases/demand-forecast/en/trio-1920-1400.jpg 1400w, /assets/cases/demand-forecast/en/trio-1920-2400.jpg 2400w" src="/assets/cases/demand-forecast/en/trio-1920-800.jpg" width="2400" height="1392" loading="lazy" alt="Forecast screen on&nbsp;a&nbsp;1920 × 1080&nbsp;desktop: all&nbsp;filters in&nbsp;one row and&nbsp;a&nbsp;table for&nbsp;14&nbsp;days">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                </a>
+              </div>
+              <p class="lenta-caption">1920×1080</p>
+            </li>
+            <li class="lenta-trio__item">
+              <div class="lenta-shot lenta-shot--1440">
+                <a class="zoom" href="/assets/cases/demand-forecast/en/trio-1440-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/en/trio-1440-2400.webp" data-zoom-width="948">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 322px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/en/trio-1440-800.webp 800w, /assets/cases/demand-forecast/en/trio-1440-1400.webp 1400w, /assets/cases/demand-forecast/en/trio-1440-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 322px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/en/trio-1440-800.jpg 800w, /assets/cases/demand-forecast/en/trio-1440-1400.jpg 1400w, /assets/cases/demand-forecast/en/trio-1440-2400.jpg 2400w" src="/assets/cases/demand-forecast/en/trio-1440-800.jpg" width="2400" height="1642" loading="lazy" alt="Forecast screen on&nbsp;a&nbsp;1440 × 960&nbsp;desktop: the&nbsp;title takes two lines, the&nbsp;Save and&nbsp;Apply buttons sit below the&nbsp;filters">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                </a>
+              </div>
+              <p class="lenta-caption">1440×960</p>
+            </li>
+            <li class="lenta-trio__item">
+              <div class="lenta-shot lenta-shot--834">
+                <a class="zoom" href="/assets/cases/demand-forecast/en/trio-834-1828.jpg" data-zoom-src="/assets/cases/demand-forecast/en/trio-834-1828.webp" data-zoom-width="570">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 307px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/en/trio-834-800.webp 800w, /assets/cases/demand-forecast/en/trio-834-1400.webp 1400w, /assets/cases/demand-forecast/en/trio-834-1828.webp 1828w">
+                    <img sizes="(min-width: 1280px) 307px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/en/trio-834-800.jpg 800w, /assets/cases/demand-forecast/en/trio-834-1400.jpg 1400w, /assets/cases/demand-forecast/en/trio-834-1828.jpg 1828w" src="/assets/cases/demand-forecast/en/trio-834-800.jpg" width="1828" height="1310" loading="lazy" alt="Forecast screen on&nbsp;an&nbsp;834 × 1194&nbsp;tablet: tabs at&nbsp;the&nbsp;top, search and&nbsp;filters, a&nbsp;table for&nbsp;two days">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                </a>
+              </div>
+              <p class="lenta-caption">834×1194</p>
+            </li>
+          </ul>
+          <ul class="lenta-showcase">
+            <li class="lenta-shotcard lenta-zoomcard">
+              <div class="lenta-shot lenta-shot--wide">
+                <a class="zoom" href="/assets/cases/demand-forecast/en/showcase-infographic-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/en/showcase-infographic-2400.webp" data-zoom-width="1248">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 608px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/en/showcase-infographic-800.webp 800w, /assets/cases/demand-forecast/en/showcase-infographic-1400.webp 1400w, /assets/cases/demand-forecast/en/showcase-infographic-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 608px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/en/showcase-infographic-800.jpg 800w, /assets/cases/demand-forecast/en/showcase-infographic-1400.jpg 1400w, /assets/cases/demand-forecast/en/showcase-infographic-2400.jpg 2400w" src="/assets/cases/demand-forecast/en/showcase-infographic-800.jpg" width="2400" height="1392" loading="lazy" alt="Infographic screen: five forecast quality numbers, a&nbsp;chart of&nbsp;quality levels by&nbsp;product and&nbsp;the&nbsp;Top 5&nbsp;deviations list">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                </a>
+              </div>
+              <p class="lenta-shotcard__caption">Infographic: five key numbers and&nbsp;the&nbsp;main chart in&nbsp;five&nbsp;seconds</p>
+            </li>
+            <li class="lenta-shotcard lenta-zoomcard">
+              <div class="lenta-shot lenta-shot--wide">
+                <a class="zoom" href="/assets/cases/demand-forecast/en/showcase-compare-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/en/showcase-compare-2400.webp" data-zoom-width="1248">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 608px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/en/showcase-compare-800.webp 800w, /assets/cases/demand-forecast/en/showcase-compare-1400.webp 1400w, /assets/cases/demand-forecast/en/showcase-compare-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 608px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/en/showcase-compare-800.jpg 800w, /assets/cases/demand-forecast/en/showcase-compare-1400.jpg 1400w, /assets/cases/demand-forecast/en/showcase-compare-2400.jpg 2400w" src="/assets/cases/demand-forecast/en/showcase-compare-800.jpg" width="2400" height="1392" loading="lazy" alt="Store comparison: each&nbsp;product has rows for&nbsp;three stores with&nbsp;their&nbsp;IDs and&nbsp;a&nbsp;total for&nbsp;all&nbsp;stores">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                </a>
+              </div>
+              <p class="lenta-shotcard__caption">Store comparison: each&nbsp;row is&nbsp;one product-store&nbsp;pair</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--task" aria-labelledby="lenta-task">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Task</p>
+          <div class="lenta-heading lw-900">
+            <h2 class="lenta-h2 lenta-h2--task lw-820" id="lenta-task">Help plan&nbsp;production</h2>
+            <p class="lenta-sub">Every&nbsp;day, a&nbsp;store manager decides how much to&nbsp;bake and&nbsp;how much to&nbsp;order. An&nbsp;analyst compares real sales with&nbsp;the&nbsp;forecast and&nbsp;looks for&nbsp;model errors. One interface for&nbsp;everyone</p>
+          </div>
+          <ul class="lenta-cards">
+            <li class="lenta-card lenta-card--split">
+              <div class="lenta-card__text">
+                <h3 class="lenta-h3">Store manager</h3>
+                <p>Decides how much to&nbsp;bake and&nbsp;order every&nbsp;day. Right now, they rely on&nbsp;experience and&nbsp;yesterday’s&nbsp;leftovers</p>
+              </div>
+              <p class="lenta-pain">Pain point: guesses by&nbsp;eye, wastes&nbsp;time</p>
+            </li>
+            <li class="lenta-card lenta-card--split">
+              <div class="lenta-card__text">
+                <h3 class="lenta-h3">Analyst</h3>
+                <p>Compares real sales with&nbsp;the&nbsp;forecast and&nbsp;looks for&nbsp;model&nbsp;errors</p>
+              </div>
+              <p class="lenta-pain">Pain point: checks everything by&nbsp;hand in&nbsp;spreadsheets</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--grey" aria-labelledby="lenta-limits">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Limits</p>
+          <h2 class="lenta-h2 lw-820" id="lenta-limits">Limits of&nbsp;the&nbsp;design</h2>
+          <ul class="lenta-cards lenta-cards--4">
+            <li class="lenta-card">
+              <h3 class="lenta-h3">ID, no&nbsp;name</h3>
+              <p>A&nbsp;store shows up&nbsp;as&nbsp;an&nbsp;ID, like&nbsp;12345. There is&nbsp;no&nbsp;store name in&nbsp;the&nbsp;interface</p>
+            </li>
+            <li class="lenta-card">
+              <h3 class="lenta-h3">Direction only</h3>
+              <p>The&nbsp;gap between&nbsp;real sales and&nbsp;the&nbsp;forecast is&nbsp;a&nbsp;number and&nbsp;a&nbsp;color. The&nbsp;design decides the&nbsp;direction</p>
+            </li>
+            <li class="lenta-card">
+              <h3 class="lenta-h3">Different detail&nbsp;levels</h3>
+              <p>The&nbsp;forecast is&nbsp;by&nbsp;day. Real sales are by&nbsp;week. The&nbsp;design joins them in&nbsp;one&nbsp;table</p>
+            </li>
+            <li class="lenta-card">
+              <h3 class="lenta-h3">No&nbsp;formula</h3>
+              <p>The&nbsp;quality score from&nbsp;1&nbsp;to&nbsp;10&nbsp;is&nbsp;shown as&nbsp;is, with&nbsp;no&nbsp;formula behind&nbsp;it</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="lenta-section" aria-labelledby="lenta-process">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Process</p>
+          <div class="lenta-heading lw-820">
+            <h2 class="lenta-h2" id="lenta-process">From&nbsp;benchmarks to&nbsp;handoff</h2>
+            <p class="lenta-sub">First, research and&nbsp;benchmarks. Then visual style, a&nbsp;design system, screens, and&nbsp;copy. At&nbsp;the&nbsp;end, two rounds of&nbsp;review. Each&nbsp;step built on&nbsp;the&nbsp;one before&nbsp;it, and&nbsp;review sent work back a&nbsp;step when needed. Result: 125&nbsp;variables and&nbsp;67&nbsp;components in&nbsp;the&nbsp;design system, 243&nbsp;frames in&nbsp;three&nbsp;sizes</p>
+          </div>
+          <div class="lenta-rail">
+            <ol class="lenta-rail__stages">
+              <li>Benchmarks</li>
+              <li>Visual style</li>
+              <li>Design system</li>
+              <li>Screens and&nbsp;copy</li>
+              <li>Handoff</li>
+            </ol>
+            <div class="lenta-rail__line" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--grey" aria-labelledby="lenta-table">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Solution</p>
+          <div class="lenta-row">
+            <div class="lenta-row__text">
+              <div class="lenta-heading">
+                <h2 class="lenta-h2" id="lenta-table">One table instead of&nbsp;390&nbsp;rows</h2>
+                <p class="lenta-text">15&nbsp;products times 26&nbsp;stores makes 390&nbsp;rows, if&nbsp;every&nbsp;pair gets its&nbsp;own row.<br> I&nbsp;did it&nbsp;another way. Each&nbsp;row is&nbsp;one product: the&nbsp;total across&nbsp;all&nbsp;stores. Click a&nbsp;row to&nbsp;see each&nbsp;store. No&nbsp;number gets&nbsp;lost</p>
+              </div>
+              <ul class="lenta-stats">
+                <li class="lenta-stat">
+                  <span class="lenta-stat__value lenta-stat__value--before">390</span>
+                  <span class="lenta-stat__label">rows, if&nbsp;every&nbsp;pair gets its&nbsp;own row</span>
+                </li>
+                <li class="lenta-stat">
+                  <span class="lenta-stat__value">26</span>
+                  <span class="lenta-stat__label">stores open with&nbsp;one click</span>
+                </li>
+              </ul>
+            </div>
+            <div class="lenta-art lenta-zoomcard">
+              <div class="lenta-shot lenta-shot--art">
+                <a class="zoom" href="/assets/cases/demand-forecast/en/decision-table-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/en/decision-table-2400.webp" data-zoom-width="1248">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 568px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/en/decision-table-800.webp 800w, /assets/cases/demand-forecast/en/decision-table-1400.webp 1400w, /assets/cases/demand-forecast/en/decision-table-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 568px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/en/decision-table-800.jpg 800w, /assets/cases/demand-forecast/en/decision-table-1400.jpg 1400w, /assets/cases/demand-forecast/en/decision-table-2400.jpg 2400w" src="/assets/cases/demand-forecast/en/decision-table-800.jpg" width="2400" height="1392" loading="lazy" alt="Forecast table where a&nbsp;product row shows the&nbsp;total for&nbsp;26&nbsp;stores, with&nbsp;the&nbsp;store rows and&nbsp;their&nbsp;IDs opened below it">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lenta-section" aria-labelledby="lenta-color">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Solution</p>
+          <div class="lenta-heading lw-780">
+            <h2 class="lenta-h2" id="lenta-color">Color should not&nbsp;confuse</h2>
+            <p class="lenta-text">A&nbsp;forecast miss is&nbsp;bad both ways: too little stock or&nbsp;too much waste. Red and&nbsp;green read as&nbsp;‘bad’ and&nbsp;‘good’</p>
+          </div>
+          <div class="lenta-diffs">
+            <div class="lenta-diff-card">
+              <p class="lenta-diff-card__label">Before</p>
+              <ul>
+                <li class="lenta-diff lenta-diff--positive"><img src="/assets/cases/demand-forecast/icons/arrow-up-green.svg" width="16" height="16" alt="">above forecast</li>
+                <li class="lenta-diff lenta-diff--negative"><img src="/assets/cases/demand-forecast/icons/arrow-down-red.svg" width="16" height="16" alt="">below forecast</li>
+              </ul>
+            </div>
+            <div class="lenta-diff-card">
+              <p class="lenta-diff-card__label">After</p>
+              <ul>
+                <li class="lenta-diff lenta-diff--up"><img src="/assets/cases/demand-forecast/icons/arrow-up-blue.svg" width="16" height="16" alt="">above forecast</li>
+                <li class="lenta-diff lenta-diff--down"><img src="/assets/cases/demand-forecast/icons/arrow-down-brown.svg" width="16" height="16" alt="">below forecast</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--grey" aria-labelledby="lenta-top5">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Solution</p>
+          <div class="lenta-row">
+            <div class="lenta-row__text">
+              <div class="lenta-heading">
+                <h2 class="lenta-h2" id="lenta-top5">Top 5&nbsp;deviations, not all&nbsp;26</h2>
+                <p class="lenta-text">The&nbsp;infographic could list all&nbsp;26&nbsp;stores. Instead, it&nbsp;shows only five:<br class="lenta-br-wide"> the&nbsp;ones with&nbsp;the&nbsp;biggest gap from&nbsp;the&nbsp;forecast. The&nbsp;design already points to&nbsp;where the&nbsp;problem&nbsp;is</p>
+              </div>
+              <ul class="lenta-stats">
+                <li class="lenta-stat">
+                  <span class="lenta-stat__value lenta-stat__value--before">26</span>
+                  <span class="lenta-stat__label">stores in&nbsp;total</span>
+                </li>
+                <li class="lenta-stat">
+                  <span class="lenta-stat__value">5</span>
+                  <span class="lenta-stat__label">shown as&nbsp;the&nbsp;most notable</span>
+                </li>
+              </ul>
+            </div>
+            <div class="lenta-art lenta-zoomcard">
+              <div class="lenta-shot lenta-shot--art">
+                <a class="zoom" href="/assets/cases/demand-forecast/en/showcase-infographic-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/en/showcase-infographic-2400.webp" data-zoom-width="1248">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 568px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/en/showcase-infographic-800.webp 800w, /assets/cases/demand-forecast/en/showcase-infographic-1400.webp 1400w, /assets/cases/demand-forecast/en/showcase-infographic-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 568px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/en/showcase-infographic-800.jpg 800w, /assets/cases/demand-forecast/en/showcase-infographic-1400.jpg 1400w, /assets/cases/demand-forecast/en/showcase-infographic-2400.jpg 2400w" src="/assets/cases/demand-forecast/en/showcase-infographic-800.jpg" width="2400" height="1392" loading="lazy" alt="Infographic: on&nbsp;the&nbsp;right, the&nbsp;Top 5&nbsp;deviations list, each&nbsp;product with&nbsp;the&nbsp;gap between&nbsp;real sales and&nbsp;the&nbsp;forecast and&nbsp;an&nbsp;arrow">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lenta-section" aria-labelledby="lenta-filter">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Solution</p>
+          <div class="lenta-row">
+            <div class="lenta-row__text">
+              <div class="lenta-heading">
+                <h2 class="lenta-h2" id="lenta-filter">The&nbsp;design names the&nbsp;filter</h2>
+                <p class="lenta-text">Saving a&nbsp;filter usually means typing a&nbsp;name for&nbsp;it. Here the&nbsp;name builds itself: city, store, and&nbsp;product. All&nbsp;that’s left is&nbsp;to&nbsp;click&nbsp;‘Save’</p>
+              </div>
+              <ul class="lenta-stats">
+                <li class="lenta-stat">
+                  <span class="lenta-stat__value">3</span>
+                  <span class="lenta-stat__label">parts in&nbsp;the&nbsp;name: city, store, product</span>
+                </li>
+              </ul>
+            </div>
+            <div class="lenta-art lenta-zoomcard">
+              <div class="lenta-shot lenta-shot--art">
+                <a class="zoom" href="/assets/cases/demand-forecast/en/filter-2000.jpg" data-zoom-src="/assets/cases/demand-forecast/en/filter-2000.webp" data-zoom-width="1248">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 568px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/en/filter-800.webp 800w, /assets/cases/demand-forecast/en/filter-1400.webp 1400w, /assets/cases/demand-forecast/en/filter-2000.webp 2000w">
+                    <img sizes="(min-width: 1280px) 568px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/en/filter-800.jpg 800w, /assets/cases/demand-forecast/en/filter-1400.jpg 1400w, /assets/cases/demand-forecast/en/filter-2000.jpg 2000w" src="/assets/cases/demand-forecast/en/filter-800.jpg" width="2000" height="1160" loading="lazy" alt="The&nbsp;open list of&nbsp;saved filters with&nbsp;names built from&nbsp;city, store ID and&nbsp;product, and&nbsp;the&nbsp;empty forecast screen below it">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--grey" aria-labelledby="lenta-review">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Review</p>
+          <h2 class="lenta-h2 lw-700" id="lenta-review">Two rounds of&nbsp;review</h2>
+          <ul class="lenta-reviews">
+            <li class="lenta-review">
+              <p class="lenta-tag">Round 1</p>
+              <p>The&nbsp;filter panel collapses after&nbsp;‘Apply’</p>
+              <p>The&nbsp;chart on&nbsp;1440&nbsp;moved down. The&nbsp;table got more&nbsp;room</p>
+              <div class="lenta-review__media lenta-zoomarea">
+                <div class="lenta-shot lenta-shot--review">
+                  <a class="zoom" href="/assets/cases/demand-forecast/en/review-chart-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/en/review-chart-2400.webp" data-zoom-width="948">
+                    <picture>
+                      <source type="image/webp" sizes="(min-width: 1280px) 526px, (min-width: 768px) calc(100vw - 150px), calc(100vw - 94px)" srcset="/assets/cases/demand-forecast/en/review-chart-800.webp 800w, /assets/cases/demand-forecast/en/review-chart-1400.webp 1400w, /assets/cases/demand-forecast/en/review-chart-2400.webp 2400w">
+                      <img sizes="(min-width: 1280px) 526px, (min-width: 768px) calc(100vw - 150px), calc(100vw - 94px)" srcset="/assets/cases/demand-forecast/en/review-chart-800.jpg 800w, /assets/cases/demand-forecast/en/review-chart-1400.jpg 1400w, /assets/cases/demand-forecast/en/review-chart-2400.jpg 2400w" src="/assets/cases/demand-forecast/en/review-chart-800.jpg" width="2400" height="1642" loading="lazy" alt="Forecast screen at&nbsp;1440&nbsp;with&nbsp;the&nbsp;daily sales chart open: only two table rows are visible below it">
+                    </picture>
+                    <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                  </a>
+                </div>
+              </div>
+              <h3 class="lenta-review__subject">The&nbsp;‘Forecast’ chart at&nbsp;1440</h3>
+              <p class="lenta-review__status lenta-review__status--open">Open. At&nbsp;1440, with&nbsp;the&nbsp;chart open, the&nbsp;table shows only 1–&#8288;2&nbsp;rows.<br> A&nbsp;fix is&nbsp;coming</p>
+            </li>
+            <li class="lenta-review">
+              <p class="lenta-tag">Round 2</p>
+              <p>‘Accurate forecasts’ renamed to&nbsp;‘Quality&nbsp;8–&#8288;10’</p>
+              <p>‘Top 5’ collapses on&nbsp;tablet. The&nbsp;chart gets more&nbsp;room</p>
+              <div class="lenta-review__media lenta-zoomarea">
+                <div class="lenta-shot lenta-shot--review-tablet">
+                  <a class="zoom" href="/assets/cases/demand-forecast/en/review-tablet-1828.jpg" data-zoom-src="/assets/cases/demand-forecast/en/review-tablet-1828.webp" data-zoom-width="570">
+                    <picture>
+                      <source type="image/webp" sizes="(min-width: 1280px) 258px, (min-width: 768px) calc(100vw - 150px), calc(100vw - 94px)" srcset="/assets/cases/demand-forecast/en/review-tablet-800.webp 800w, /assets/cases/demand-forecast/en/review-tablet-1400.webp 1400w, /assets/cases/demand-forecast/en/review-tablet-1828.webp 1828w">
+                      <img sizes="(min-width: 1280px) 258px, (min-width: 768px) calc(100vw - 150px), calc(100vw - 94px)" srcset="/assets/cases/demand-forecast/en/review-tablet-800.jpg 800w, /assets/cases/demand-forecast/en/review-tablet-1400.jpg 1400w, /assets/cases/demand-forecast/en/review-tablet-1828.jpg 1828w" src="/assets/cases/demand-forecast/en/review-tablet-800.jpg" width="1828" height="2548" loading="lazy" alt="Infographic on&nbsp;an&nbsp;834&nbsp;tablet: key numbers in&nbsp;two rows, the&nbsp;quality level chart and&nbsp;the&nbsp;collapsed Top 5&nbsp;deviations list with&nbsp;three rows and&nbsp;a&nbsp;Show all&nbsp;link">
+                    </picture>
+                    <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                  </a>
+                </div>
+              </div>
+              <h3 class="lenta-review__subject">The&nbsp;infographic at&nbsp;tablet&nbsp;834</h3>
+              <p class="lenta-review__status lenta-review__status--fixed">Fixed. On&nbsp;tablet, ‘Top 5’ now collapses to&nbsp;three rows with&nbsp;a&nbsp;‘Show all’ link. The&nbsp;chart got more&nbsp;room</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="lenta-section" aria-labelledby="lenta-states">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">States</p>
+          <div class="lenta-heading lw-760">
+            <h2 class="lenta-h2 lw-700" id="lenta-states">States and&nbsp;edge&nbsp;cases</h2>
+            <p class="lenta-sub lenta-sub--normal">44&nbsp;state frames, 6&nbsp;of&nbsp;them critical: what the&nbsp;user sees when something goes&nbsp;wrong</p>
+          </div>
+          <ul class="lenta-states">
+            <li class="lenta-state lenta-zoomcard">
+              <div class="lenta-state__media">
+                <div class="lenta-shot lenta-shot--state">
+                  <a class="zoom" href="/assets/cases/demand-forecast/en/state-period-2000.jpg" data-zoom-src="/assets/cases/demand-forecast/en/state-period-2000.webp" data-zoom-width="1248">
+                    <picture>
+                      <source type="image/webp" sizes="(min-width: 1280px) 330px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/en/state-period-800.webp 800w, /assets/cases/demand-forecast/en/state-period-1400.webp 1400w, /assets/cases/demand-forecast/en/state-period-2000.webp 2000w">
+                      <img sizes="(min-width: 1280px) 330px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/en/state-period-800.jpg 800w, /assets/cases/demand-forecast/en/state-period-1400.jpg 1400w, /assets/cases/demand-forecast/en/state-period-2000.jpg 2000w" src="/assets/cases/demand-forecast/en/state-period-800.jpg" width="2000" height="1160" loading="lazy" alt="Custom period: the&nbsp;calendar says there is&nbsp;no&nbsp;data for&nbsp;the&nbsp;selected dates, and&nbsp;the&nbsp;Done button is&nbsp;disabled">
+                    </picture>
+                    <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                  </a>
+                </div>
+              </div>
+              <div class="lenta-state__body">
+                <p class="lenta-label">Custom period</p>
+                <h3 class="lenta-state__title">Dates with&nbsp;no&nbsp;data</h3>
+                <p class="lenta-state__text">The&nbsp;calendar shows: ‘No data for&nbsp;these&nbsp;dates. Data starts from&nbsp;Jan 1, 2023.’ The&nbsp;‘Done’ button is&nbsp;disabled</p>
+              </div>
+            </li>
+            <li class="lenta-state lenta-zoomcard">
+              <div class="lenta-state__media">
+                <div class="lenta-shot lenta-shot--state">
+                  <a class="zoom" href="/assets/cases/demand-forecast/en/state-zero-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/en/state-zero-2400.webp" data-zoom-width="1248">
+                    <picture>
+                      <source type="image/webp" sizes="(min-width: 1280px) 330px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/en/state-zero-800.webp 800w, /assets/cases/demand-forecast/en/state-zero-1400.webp 1400w, /assets/cases/demand-forecast/en/state-zero-2400.webp 2400w">
+                      <img sizes="(min-width: 1280px) 330px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/en/state-zero-800.jpg 800w, /assets/cases/demand-forecast/en/state-zero-1400.jpg 1400w, /assets/cases/demand-forecast/en/state-zero-2400.jpg 2400w" src="/assets/cases/demand-forecast/en/state-zero-800.jpg" width="2400" height="1392" loading="lazy" alt="Sales stats: in&nbsp;the&nbsp;quality column, a&nbsp;product with&nbsp;a&nbsp;zero value shows no&nbsp;score instead of&nbsp;a&nbsp;number">
+                    </picture>
+                    <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                  </a>
+                </div>
+              </div>
+              <div class="lenta-state__body">
+                <p class="lenta-label">Zero values</p>
+                <h3 class="lenta-state__title">Real sales or&nbsp;forecast:&nbsp;zero</h3>
+                <p class="lenta-state__text">If&nbsp;the&nbsp;forecast is&nbsp;zero or&nbsp;real sales are zero, the&nbsp;quality score is&nbsp;not calculated. Instead, it&nbsp;shows<br class="lenta-br-narrow"> ‘— no&nbsp;score’</p>
+              </div>
+            </li>
+            <li class="lenta-state lenta-zoomcard">
+              <div class="lenta-state__media">
+                <div class="lenta-shot lenta-shot--state">
+                  <a class="zoom" href="/assets/cases/demand-forecast/en/state-retry-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/en/state-retry-2400.webp" data-zoom-width="1248">
+                    <picture>
+                      <source type="image/webp" sizes="(min-width: 1280px) 330px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/en/state-retry-800.webp 800w, /assets/cases/demand-forecast/en/state-retry-1400.webp 1400w, /assets/cases/demand-forecast/en/state-retry-2400.webp 2400w">
+                      <img sizes="(min-width: 1280px) 330px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/en/state-retry-800.jpg 800w, /assets/cases/demand-forecast/en/state-retry-1400.jpg 1400w, /assets/cases/demand-forecast/en/state-retry-2400.jpg 2400w" src="/assets/cases/demand-forecast/en/state-retry-800.jpg" width="2400" height="1392" loading="lazy" alt="Loading error: a&nbsp;message that&nbsp;the&nbsp;data could not load, a&nbsp;disabled Loading… button and&nbsp;a&nbsp;grey table placeholder">
+                    </picture>
+                    <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                  </a>
+                </div>
+              </div>
+              <div class="lenta-state__body">
+                <p class="lenta-label">Server error</p>
+                <h3 class="lenta-state__title">Retry after&nbsp;a&nbsp;failure</h3>
+                <p class="lenta-state__text">The&nbsp;‘Loading…’ button is&nbsp;disabled while the&nbsp;retry runs. This&nbsp;stops a&nbsp;double&nbsp;click</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--grey" aria-labelledby="lenta-handoff">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Handoff</p>
+          <h2 class="lenta-h2 lw-700" id="lenta-handoff">What goes to&nbsp;developers</h2>
+          <div class="lenta-row">
+            <div class="lenta-row__text">
+              <ul class="lenta-handoff-stats">
+                <li class="lenta-stat">
+                  <span class="lenta-stat__value">24</span>
+                  <span class="lenta-stat__label">outline icon assets</span>
+                </li>
+                <li class="lenta-stat">
+                  <span class="lenta-stat__value">10</span>
+                  <span class="lenta-stat__label">open questions</span>
+                </li>
+              </ul>
+              <ul class="lenta-checks">
+                <li><img src="/assets/cases/demand-forecast/icons/check.svg" width="22" height="22" alt="">Components, variables, and&nbsp;styles are named just like&nbsp;in&nbsp;Figma</li>
+                <li><img src="/assets/cases/demand-forecast/icons/check.svg" width="22" height="22" alt="">The&nbsp;chart is&nbsp;not a&nbsp;component. It’s a&nbsp;spec: axes, colors, number of&nbsp;series</li>
+                <li><img src="/assets/cases/demand-forecast/icons/check.svg" width="22" height="22" alt="">The&nbsp;quality score formula is&nbsp;unknown. This&nbsp;is&nbsp;an&nbsp;open&nbsp;question</li>
+              </ul>
+              <div class="lenta-questions">
+                <h3>Top 3&nbsp;questions:</h3>
+                <ul>
+                  <li>Full list of&nbsp;stores and&nbsp;cities</li>
+                  <li>Does the&nbsp;data have a&nbsp;‘kg’ unit for&nbsp;items sold by&nbsp;weight?</li>
+                  <li>Formula and&nbsp;threshold for&nbsp;‘Deviation from&nbsp;average’</li>
+                </ul>
+              </div>
+            </div>
+            <div class="lenta-art lenta-art--handoff lenta-zoomcard">
+              <div class="lenta-shot lenta-shot--handoff">
+                <a class="zoom" href="/assets/cases/demand-forecast/en/handoff-chart-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/en/handoff-chart-2400.webp" data-zoom-width="948">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 460px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/en/handoff-chart-800.webp 800w, /assets/cases/demand-forecast/en/handoff-chart-1400.webp 1400w, /assets/cases/demand-forecast/en/handoff-chart-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 460px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/en/handoff-chart-800.jpg 800w, /assets/cases/demand-forecast/en/handoff-chart-1400.jpg 1400w, /assets/cases/demand-forecast/en/handoff-chart-2400.jpg 2400w" src="/assets/cases/demand-forecast/en/handoff-chart-800.jpg" width="2400" height="1642" loading="lazy" alt="Forecast screen with&nbsp;the&nbsp;daily sales chart above the&nbsp;product table">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, open full size</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--dark" aria-labelledby="lenta-next">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Next</p>
+          <div class="lenta-heading lw-760">
+            <h2 class="lenta-h2 lenta-h2--next" id="lenta-next">A&nbsp;usability test with&nbsp;real store managers and&nbsp;analysts</h2>
+            <p class="lenta-text lw-640">Next, this&nbsp;needs testing with&nbsp;real people. There are also open questions: the&nbsp;quality score formula, linking store ID to&nbsp;store name, and&nbsp;the&nbsp;step size for&nbsp;the&nbsp;1440&nbsp;chart</p>
+          </div>
+          <ul class="lenta-next">
+            <li><img src="/assets/cases/demand-forecast/icons/chevron.svg" width="20" height="20" alt="">A&nbsp;usability test with&nbsp;real store managers and&nbsp;analysts</li>
+            <li><img src="/assets/cases/demand-forecast/icons/chevron.svg" width="20" height="20" alt="">Confirm the&nbsp;quality formula and&nbsp;id → store name&nbsp;link</li>
+            <li><img src="/assets/cases/demand-forecast/icons/chevron.svg" width="20" height="20" alt="">Finish the&nbsp;chart on&nbsp;1440</li>
+          </ul>
+          <p class="lenta-goal">Goal: less waste, fewer lost&nbsp;sales</p>
+          <!-- Link to the working prototype: show it when the address is ready (remove hidden, set href and text) -->
+          <p class="lenta-prototype" hidden><a href="#">[Link to&nbsp;working prototype]</a></p>
+        </div>
+      </section>
+    </article>
+    <!-- typograph:end -->
+
+    <section class="pager" aria-labelledby="pager-title">
+      <div class="container">
+        <h2 class="section__title t-h2" id="pager-title">More case studies</h2>
+        <ul class="pager__list">
+          <li>
+            <a class="pager-link" href="/en/cases/complex-routes/">
+              <span class="t-label-sm c-secondary"><span aria-hidden="true">←&nbsp;</span>Previous case study</span>
+              <span class="t-h4">Complex routes</span>
+            </a>
+          </li>
+          <li>
+            <a class="pager-link pager-link--next" href="/en/cases/shifted/">
+              <span class="t-label-sm c-secondary">Next case study<span aria-hidden="true">&nbsp;→</span></span>
+              <span class="t-h4">Shifted: AI-powered used&nbsp;car&nbsp;marketplace</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <section class="contacts" id="contacts" aria-labelledby="contacts-title">
+        <div class="contacts__intro">
+          <h2 class="t-label-sm c-secondary" id="contacts-title">Contacts</h2>
+          <p class="t-body-l">Open to&nbsp;offers: on-site or&nbsp;remote, and&nbsp;open&nbsp;to&nbsp;relocation</p>
+        </div>
+        <ul class="contacts__list">
+          <li class="contact">
+            <span class="t-label-sm c-secondary" id="contact-telegram">Telegram</span>
+            <a class="value-link t-body-m-strong" href="https://t.me/PeMendo" aria-describedby="contact-telegram">@PeMendo</a>
+          </li>
+          <li class="contact">
+            <span class="t-label-sm c-secondary" id="contact-email">Email</span>
+            <a class="value-link t-body-m-strong" href="mailto:phontaniwe@gmail.com" aria-describedby="contact-email">phontaniwe@gmail.com</a>
+          </li>
+          <li class="contact">
+            <span class="t-label-sm c-secondary" id="contact-linkedin">LinkedIn</span>
+            <a class="value-link t-body-m-strong" href="https://www.linkedin.com/in/pavel-menkov-669a09234/" aria-describedby="contact-linkedin">pavel-menkov</a>
+          </li>
+        </ul>
+      </section>
+      <div class="footer-bar">
+        <p class="t-body-s c-secondary">©&nbsp;2026&nbsp;Pavel Menkov</p>
+        <div class="footer-bar__right">
+          <ul class="lang" aria-label="Language">
+            <li><a class="lang__link t-label-md" href="/ru/cases/demand-forecast/" hreflang="ru" lang="ru">RU<span class="visually-hidden">, русский</span></a></li>
+            <li><a class="lang__link t-label-md" href="/en/cases/demand-forecast/" aria-current="page">EN<span class="visually-hidden">, English</span></a></li>
+          </ul>
+          <span class="divider" aria-hidden="true"></span>
+          <a class="nav-link t-label-md" href="#top">Back to&nbsp;top&nbsp;↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

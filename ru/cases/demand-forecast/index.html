@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Дашборд прогноза спроса · Павел Меньков</title>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/icons/favicon-ru.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon-ru.png">
+  <meta name="description" content="Инструмент для «Ленты»: менеджеры магазинов планируют выпечку и заказ сырья по прогнозу на день, аналитики сравнивают факт с прогнозом">
+  <link rel="canonical" href="https://kolamba1000.github.io/ru/cases/demand-forecast/">
+  <link rel="alternate" hreflang="ru" href="https://kolamba1000.github.io/ru/cases/demand-forecast/">
+  <link rel="alternate" hreflang="en" href="https://kolamba1000.github.io/en/cases/demand-forecast/">
+  <link rel="alternate" hreflang="x-default" href="https://kolamba1000.github.io/en/cases/demand-forecast/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://kolamba1000.github.io/ru/cases/demand-forecast/">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="Дашборд прогноза спроса · Павел Меньков">
+  <meta property="og:description" content="Инструмент для «Ленты»: менеджеры магазинов планируют выпечку и заказ сырья по прогнозу на день, аналитики сравнивают факт с прогнозом">
+  <meta property="og:image" content="https://kolamba1000.github.io/assets/og/demand-forecast-ru.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Кейс «Дашборд прогноза спроса»: таблица прогноза «Ленты»">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="/assets/fonts/montserrat/montserrat-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/ibm-plex-sans-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="/assets/js/lang-scroll.js" defer></script>
+  <script src="/assets/js/back-bar.js" defer></script>
+  <link rel="stylesheet" href="/assets/css/case-lenta.css">
+  <script src="/assets/js/zoom.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к&nbsp;содержимому</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="name-link t-body-m-strong" href="/ru/">Павел Меньков</a>
+      <nav class="site-nav" aria-label="Контакты и&nbsp;язык">
+        <span class="from-tablet">
+          <a class="nav-link t-label-md" href="https://t.me/PeMendo">Telegram</a>
+          <a class="nav-link t-label-md" href="mailto:phontaniwe@gmail.com">phontaniwe@gmail.com</a>
+          <a class="nav-link t-label-md" href="https://www.linkedin.com/in/pavel-menkov-669a09234/">LinkedIn</a>
+        </span>
+        <span class="only-phone">
+          <a class="nav-link t-label-md" href="#contacts">Контакты</a>
+        </span>
+        <span class="divider" aria-hidden="true"></span>
+        <ul class="lang">
+          <li><a class="lang__link t-label-md" href="/ru/cases/demand-forecast/" aria-current="page">RU<span class="visually-hidden">, русский</span></a></li>
+          <li><a class="lang__link t-label-md" href="/en/cases/demand-forecast/" hreflang="en" lang="en">EN<span class="visually-hidden">, English</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="back-bar">
+      <div class="container">
+        <a class="name-link t-body-m-strong back-bar__link" href="/ru/#cases">←&nbsp;Все кейсы</a>
+      </div>
+    </div>
+
+    <!-- typograph:start -->
+    <article class="lenta" aria-labelledby="case-title">
+      <section class="lenta-section lenta-section--dark">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Продуктовый дизайн</p>
+          <div class="lenta-heading">
+            <h1 class="lenta-h1 lw-900" id="case-title">Дашборд прогноза спроса товаров собственного производства</h1>
+            <p class="lenta-lead lw-660">Инструмент для&nbsp;«Ленты». Менеджеры магазинов планируют выпечку и&nbsp;заказ сырья по&nbsp;прогнозу на&nbsp;день. Аналитики сравнивают факт с&nbsp;прогнозом</p>
+          </div>
+          <ul class="lenta-meta">
+            <li>Роль: продуктовый дизайнер, соло</li>
+            <li>Инструмент: Figma</li>
+            <li>Разрешения: 1920 · 1440 · 834</li>
+          </ul>
+          <!-- Ссылка на рабочий прототип: показать, когда будет адрес (убрать hidden, вписать href и текст) -->
+          <p class="lenta-prototype" hidden><a href="#">[Ссылка на&nbsp;рабочий прототип]</a></p>
+          <div class="lenta-shot lenta-shot--hero">
+            <a class="zoom" href="/assets/cases/demand-forecast/ru/hero-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/ru/hero-2400.webp" data-zoom-width="1248">
+              <picture>
+                <source type="image/webp" sizes="(min-width: 1344px) 1248px, (min-width: 1280px) calc(100vw - 192px), (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/ru/hero-800.webp 800w, /assets/cases/demand-forecast/ru/hero-1400.webp 1400w, /assets/cases/demand-forecast/ru/hero-2400.webp 2400w">
+                <img sizes="(min-width: 1344px) 1248px, (min-width: 1280px) calc(100vw - 192px), (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/ru/hero-800.jpg 800w, /assets/cases/demand-forecast/ru/hero-1400.jpg 1400w, /assets/cases/demand-forecast/ru/hero-2400.jpg 2400w" src="/assets/cases/demand-forecast/ru/hero-800.jpg" width="2400" height="1392" alt="Экран «Прогноз» на&nbsp;десктопе: таблица прогноза продаж хлеба по&nbsp;дням, фильтры по&nbsp;магазину, группе товаров и&nbsp;датам, итоговая строка по&nbsp;15&nbsp;товарам">
+              </picture>
+              <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--grey" aria-labelledby="lenta-screens">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Экраны</p>
+          <div class="lenta-heading">
+            <h2 class="lenta-h2 lenta-h2--screens lw-800" id="lenta-screens">2&nbsp;разрешения десктопа и&nbsp;1&nbsp;планшета</h2>
+            <p class="lenta-sub lenta-sub--150 lw-760">У&nbsp;прогноза, статистики продаж и&nbsp;инфографики одна дизайн-система.<br>Она работает от&nbsp;десктопа 1920&nbsp;до&nbsp;планшета 834</p>
+          </div>
+          <ul class="lenta-trio">
+            <li class="lenta-trio__item">
+              <div class="lenta-shot lenta-shot--1920">
+                <a class="zoom" href="/assets/cases/demand-forecast/ru/trio-1920-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/ru/trio-1920-2400.webp" data-zoom-width="1248">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 379px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/ru/trio-1920-800.webp 800w, /assets/cases/demand-forecast/ru/trio-1920-1400.webp 1400w, /assets/cases/demand-forecast/ru/trio-1920-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 379px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/ru/trio-1920-800.jpg 800w, /assets/cases/demand-forecast/ru/trio-1920-1400.jpg 1400w, /assets/cases/demand-forecast/ru/trio-1920-2400.jpg 2400w" src="/assets/cases/demand-forecast/ru/trio-1920-800.jpg" width="2400" height="1392" loading="lazy" alt="Экран «Прогноз» на&nbsp;десктопе 1920 × 1080: все фильтры в&nbsp;одну строку, таблица на&nbsp;14&nbsp;дней">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                </a>
+              </div>
+              <p class="lenta-caption">1920×1080</p>
+            </li>
+            <li class="lenta-trio__item">
+              <div class="lenta-shot lenta-shot--1440">
+                <a class="zoom" href="/assets/cases/demand-forecast/ru/trio-1440-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/ru/trio-1440-2400.webp" data-zoom-width="948">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 322px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/ru/trio-1440-800.webp 800w, /assets/cases/demand-forecast/ru/trio-1440-1400.webp 1400w, /assets/cases/demand-forecast/ru/trio-1440-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 322px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/ru/trio-1440-800.jpg 800w, /assets/cases/demand-forecast/ru/trio-1440-1400.jpg 1400w, /assets/cases/demand-forecast/ru/trio-1440-2400.jpg 2400w" src="/assets/cases/demand-forecast/ru/trio-1440-800.jpg" width="2400" height="1642" loading="lazy" alt="Экран «Прогноз» на&nbsp;десктопе 1440 × 960: заголовок в&nbsp;две строки, кнопки «Сохранить» и&nbsp;«Применить» под&nbsp;фильтрами">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                </a>
+              </div>
+              <p class="lenta-caption">1440×960</p>
+            </li>
+            <li class="lenta-trio__item">
+              <div class="lenta-shot lenta-shot--834">
+                <a class="zoom" href="/assets/cases/demand-forecast/ru/trio-834-1828.jpg" data-zoom-src="/assets/cases/demand-forecast/ru/trio-834-1828.webp" data-zoom-width="570">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 307px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/ru/trio-834-800.webp 800w, /assets/cases/demand-forecast/ru/trio-834-1400.webp 1400w, /assets/cases/demand-forecast/ru/trio-834-1828.webp 1828w">
+                    <img sizes="(min-width: 1280px) 307px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 40px)" srcset="/assets/cases/demand-forecast/ru/trio-834-800.jpg 800w, /assets/cases/demand-forecast/ru/trio-834-1400.jpg 1400w, /assets/cases/demand-forecast/ru/trio-834-1828.jpg 1828w" src="/assets/cases/demand-forecast/ru/trio-834-800.jpg" width="1828" height="1310" loading="lazy" alt="Экран «Прогноз» на&nbsp;планшете 834 × 1194: вкладки сверху, поиск и&nbsp;фильтры, таблица на&nbsp;два дня">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                </a>
+              </div>
+              <p class="lenta-caption">834×1194</p>
+            </li>
+          </ul>
+          <ul class="lenta-showcase">
+            <li class="lenta-shotcard lenta-zoomcard">
+              <div class="lenta-shot lenta-shot--wide">
+                <a class="zoom" href="/assets/cases/demand-forecast/ru/showcase-infographic-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/ru/showcase-infographic-2400.webp" data-zoom-width="1248">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 608px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/ru/showcase-infographic-800.webp 800w, /assets/cases/demand-forecast/ru/showcase-infographic-1400.webp 1400w, /assets/cases/demand-forecast/ru/showcase-infographic-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 608px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/ru/showcase-infographic-800.jpg 800w, /assets/cases/demand-forecast/ru/showcase-infographic-1400.jpg 1400w, /assets/cases/demand-forecast/ru/showcase-infographic-2400.jpg 2400w" src="/assets/cases/demand-forecast/ru/showcase-infographic-800.jpg" width="2400" height="1392" loading="lazy" alt="Экран «Инфографика»: пять показателей качества прогноза, график уровней качества по&nbsp;товарам и&nbsp;список «Топ-5&nbsp;отклонений»">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                </a>
+              </div>
+              <p class="lenta-shotcard__caption">Инфографика: пять показателей и&nbsp;главный график за&nbsp;пять секунд</p>
+            </li>
+            <li class="lenta-shotcard lenta-zoomcard">
+              <div class="lenta-shot lenta-shot--wide">
+                <a class="zoom" href="/assets/cases/demand-forecast/ru/showcase-compare-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/ru/showcase-compare-2400.webp" data-zoom-width="1248">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 608px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/ru/showcase-compare-800.webp 800w, /assets/cases/demand-forecast/ru/showcase-compare-1400.webp 1400w, /assets/cases/demand-forecast/ru/showcase-compare-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 608px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/ru/showcase-compare-800.jpg 800w, /assets/cases/demand-forecast/ru/showcase-compare-1400.jpg 1400w, /assets/cases/demand-forecast/ru/showcase-compare-2400.jpg 2400w" src="/assets/cases/demand-forecast/ru/showcase-compare-800.jpg" width="2400" height="1392" loading="lazy" alt="Сравнение точек продаж: у&nbsp;каждого товара строки по&nbsp;трём магазинам с&nbsp;их id и&nbsp;итог по&nbsp;всем точкам">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                </a>
+              </div>
+              <p class="lenta-shotcard__caption">Сравнение точек продаж: в&nbsp;каждой строке пара «товар, ТК»</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--task" aria-labelledby="lenta-task">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Задача</p>
+          <div class="lenta-heading lw-900">
+            <h2 class="lenta-h2 lenta-h2--task lw-820" id="lenta-task">Помочь планировать производство</h2>
+            <p class="lenta-sub">Менеджер магазина каждый день решает, сколько испечь и&nbsp;сколько сырья заказать. Аналитик сравнивает факт с&nbsp;прогнозом и&nbsp;ищет ошибки модели. Один интерфейс для&nbsp;всех</p>
+          </div>
+          <ul class="lenta-cards">
+            <li class="lenta-card lenta-card--split">
+              <div class="lenta-card__text">
+                <h3 class="lenta-h3">Менеджер магазина</h3>
+                <p>Каждый день решает, сколько испечь и&nbsp;сколько сырья заказать. Сейчас ориентируется на&nbsp;опыт и&nbsp;вчерашние остатки</p>
+              </div>
+              <p class="lenta-pain">Боль: угадывает на&nbsp;глаз, тратит время</p>
+            </li>
+            <li class="lenta-card lenta-card--split">
+              <div class="lenta-card__text">
+                <h3 class="lenta-h3">Аналитик</h3>
+                <p>Сравнивает факт с&nbsp;прогнозом и&nbsp;ищет ошибки модели</p>
+              </div>
+              <p class="lenta-pain">Боль: сверяет вручную в&nbsp;таблицах</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--grey" aria-labelledby="lenta-limits">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Ограничения</p>
+          <h2 class="lenta-h2 lw-820" id="lenta-limits">Ограничения дизайна</h2>
+          <ul class="lenta-cards lenta-cards--4">
+            <li class="lenta-card">
+              <h3 class="lenta-h3">id без&nbsp;названия</h3>
+              <p>Точка продаж показана как&nbsp;id, например 12345. Названия магазина в&nbsp;интерфейсе нет</p>
+            </li>
+            <li class="lenta-card">
+              <h3 class="lenta-h3">Только направление</h3>
+              <p>Отклонение факта от&nbsp;прогноза показано числом и&nbsp;цветом. Направление задаёт дизайн</p>
+            </li>
+            <li class="lenta-card">
+              <h3 class="lenta-h3">Разная детализация</h3>
+              <p>Прогноз показан по&nbsp;дням. Факт показан по&nbsp;неделям. Дизайн сводит их в&nbsp;одной таблице</p>
+            </li>
+            <li class="lenta-card">
+              <h3 class="lenta-h3">Без&nbsp;формулы</h3>
+              <p>Оценка качества 1–&#8288;10&nbsp;показана как&nbsp;есть, без&nbsp;формулы расчёта</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="lenta-section" aria-labelledby="lenta-process">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Процесс</p>
+          <div class="lenta-heading lw-820">
+            <h2 class="lenta-h2" id="lenta-process">Путь от&nbsp;бенчмарков до&nbsp;передачи</h2>
+            <p class="lenta-sub">Сначала исследование и&nbsp;бенчмарки, потом визуальный язык, дизайн-система, экраны и&nbsp;тексты. В&nbsp;конце два цикла ревью. Каждый шаг опирался на&nbsp;предыдущий: ревью возвращало работу на&nbsp;шаг назад. Получилось 125&nbsp;переменных и&nbsp;67&nbsp;компонентов дизайн-системы, 243&nbsp;кадра в&nbsp;трёх разрешениях</p>
+          </div>
+          <div class="lenta-rail">
+            <ol class="lenta-rail__stages">
+              <li>Бенчмарки</li>
+              <li>Визуальный язык</li>
+              <li>Дизайн-система</li>
+              <li>Экраны и&nbsp;тексты</li>
+              <li>Передача</li>
+            </ol>
+            <div class="lenta-rail__line" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--grey" aria-labelledby="lenta-table">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Решение</p>
+          <div class="lenta-row">
+            <div class="lenta-row__text">
+              <div class="lenta-heading">
+                <h2 class="lenta-h2" id="lenta-table">Одна таблица вместо&nbsp;390&nbsp;строк</h2>
+                <p class="lenta-text">15&nbsp;товаров и&nbsp;26&nbsp;точек продаж дают 390&nbsp;строк, если показать каждую пару отдельно.<br class="lenta-br-tablet"> Я&nbsp;посчитал иначе. Строка показывает товар: сумма сразу по&nbsp;всем точкам продаж. Точки открываются по&nbsp;клику. Ни&nbsp;одна цифра не&nbsp;пропадает</p>
+              </div>
+              <ul class="lenta-stats">
+                <li class="lenta-stat">
+                  <span class="lenta-stat__value lenta-stat__value--before">390</span>
+                  <span class="lenta-stat__label">строк, если показать каждую пару</span>
+                </li>
+                <li class="lenta-stat">
+                  <span class="lenta-stat__value">26</span>
+                  <span class="lenta-stat__label">точек продаж открываются по&nbsp;клику</span>
+                </li>
+              </ul>
+            </div>
+            <div class="lenta-art lenta-zoomcard">
+              <div class="lenta-shot lenta-shot--art">
+                <a class="zoom" href="/assets/cases/demand-forecast/ru/decision-table-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/ru/decision-table-2400.webp" data-zoom-width="1248">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 568px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/ru/decision-table-800.webp 800w, /assets/cases/demand-forecast/ru/decision-table-1400.webp 1400w, /assets/cases/demand-forecast/ru/decision-table-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 568px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/ru/decision-table-800.jpg 800w, /assets/cases/demand-forecast/ru/decision-table-1400.jpg 1400w, /assets/cases/demand-forecast/ru/decision-table-2400.jpg 2400w" src="/assets/cases/demand-forecast/ru/decision-table-800.jpg" width="2400" height="1392" loading="lazy" alt="Таблица прогноза, где&nbsp;строка товара показывает сумму по&nbsp;26&nbsp;точкам продаж, а&nbsp;под&nbsp;ней раскрыты строки магазинов с&nbsp;их id">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lenta-section" aria-labelledby="lenta-color">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Решение</p>
+          <div class="lenta-heading lw-780">
+            <h2 class="lenta-h2" id="lenta-color">Цвет не&nbsp;должен путать</h2>
+            <p class="lenta-text">Отклонение прогноза плохо в&nbsp;обе стороны: недостача и&nbsp;списание. Красный и&nbsp;зелёный читаются как&nbsp;«плохо» и&nbsp;«хорошо»</p>
+          </div>
+          <div class="lenta-diffs">
+            <div class="lenta-diff-card">
+              <p class="lenta-diff-card__label">Было</p>
+              <ul>
+                <li class="lenta-diff lenta-diff--positive"><img src="/assets/cases/demand-forecast/icons/arrow-up-green.svg" width="16" height="16" alt="">выше прогноза</li>
+                <li class="lenta-diff lenta-diff--negative"><img src="/assets/cases/demand-forecast/icons/arrow-down-red.svg" width="16" height="16" alt="">ниже прогноза</li>
+              </ul>
+            </div>
+            <div class="lenta-diff-card">
+              <p class="lenta-diff-card__label">Стало</p>
+              <ul>
+                <li class="lenta-diff lenta-diff--up"><img src="/assets/cases/demand-forecast/icons/arrow-up-blue.svg" width="16" height="16" alt="">выше прогноза</li>
+                <li class="lenta-diff lenta-diff--down"><img src="/assets/cases/demand-forecast/icons/arrow-down-brown.svg" width="16" height="16" alt="">ниже прогноза</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--grey" aria-labelledby="lenta-top5">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Решение</p>
+          <div class="lenta-row">
+            <div class="lenta-row__text">
+              <div class="lenta-heading">
+                <h2 class="lenta-h2" id="lenta-top5">Топ-5&nbsp;отклонений вместо&nbsp;всех 26</h2>
+                <p class="lenta-text">Инфографика могла показать все 26&nbsp;точек продаж списком.<br class="lenta-br-wide"> Я&nbsp;показываю только пять с&nbsp;самым большим отклонением от&nbsp;прогноза. Дизайн сам подсказывает, где&nbsp;искать проблему</p>
+              </div>
+              <ul class="lenta-stats">
+                <li class="lenta-stat">
+                  <span class="lenta-stat__value lenta-stat__value--before">26</span>
+                  <span class="lenta-stat__label">точек продаж всего</span>
+                </li>
+                <li class="lenta-stat">
+                  <span class="lenta-stat__value">5</span>
+                  <span class="lenta-stat__label">показаны как&nbsp;самые заметные</span>
+                </li>
+              </ul>
+            </div>
+            <div class="lenta-art lenta-zoomcard">
+              <div class="lenta-shot lenta-shot--art">
+                <a class="zoom" href="/assets/cases/demand-forecast/ru/showcase-infographic-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/ru/showcase-infographic-2400.webp" data-zoom-width="1248">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 568px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/ru/showcase-infographic-800.webp 800w, /assets/cases/demand-forecast/ru/showcase-infographic-1400.webp 1400w, /assets/cases/demand-forecast/ru/showcase-infographic-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 568px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/ru/showcase-infographic-800.jpg 800w, /assets/cases/demand-forecast/ru/showcase-infographic-1400.jpg 1400w, /assets/cases/demand-forecast/ru/showcase-infographic-2400.jpg 2400w" src="/assets/cases/demand-forecast/ru/showcase-infographic-800.jpg" width="2400" height="1392" loading="lazy" alt="Инфографика: справа список «Топ-5&nbsp;отклонений», у&nbsp;каждого товара разница факта и&nbsp;прогноза со&nbsp;стрелкой">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lenta-section" aria-labelledby="lenta-filter">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Решение</p>
+          <div class="lenta-row">
+            <div class="lenta-row__text">
+              <div class="lenta-heading">
+                <h2 class="lenta-h2" id="lenta-filter">Имя фильтра придумывает дизайн</h2>
+                <p class="lenta-text">Сохранить фильтр обычно значит придумать ему имя. Здесь имя собирается само: город, ТК и&nbsp;товар. Остаётся только нажать «Сохранить»</p>
+              </div>
+              <ul class="lenta-stats">
+                <li class="lenta-stat">
+                  <span class="lenta-stat__value">3</span>
+                  <span class="lenta-stat__label">части имени: город, ТК, товар</span>
+                </li>
+              </ul>
+            </div>
+            <div class="lenta-art lenta-zoomcard">
+              <div class="lenta-shot lenta-shot--art">
+                <a class="zoom" href="/assets/cases/demand-forecast/ru/filter-2000.jpg" data-zoom-src="/assets/cases/demand-forecast/ru/filter-2000.webp" data-zoom-width="1248">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 568px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/ru/filter-800.webp 800w, /assets/cases/demand-forecast/ru/filter-1400.webp 1400w, /assets/cases/demand-forecast/ru/filter-2000.webp 2000w">
+                    <img sizes="(min-width: 1280px) 568px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/ru/filter-800.jpg 800w, /assets/cases/demand-forecast/ru/filter-1400.jpg 1400w, /assets/cases/demand-forecast/ru/filter-2000.jpg 2000w" src="/assets/cases/demand-forecast/ru/filter-800.jpg" width="2000" height="1160" loading="lazy" alt="Раскрытый список «Сохранённые фильтры» с&nbsp;именами вида «Москва, id 12345, ржано-пшеничный», ниже пустой экран «Прогноз появится здесь»">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--grey" aria-labelledby="lenta-review">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Проверка</p>
+          <h2 class="lenta-h2 lw-700" id="lenta-review">Два цикла ревью</h2>
+          <ul class="lenta-reviews">
+            <li class="lenta-review">
+              <p class="lenta-tag">Цикл 1</p>
+              <p>Панель фильтров сворачивается после&nbsp;«Применить»</p>
+              <p>График на&nbsp;1440&nbsp;опущен ниже. Таблице стало больше места</p>
+              <div class="lenta-review__media lenta-zoomarea">
+                <div class="lenta-shot lenta-shot--review">
+                  <a class="zoom" href="/assets/cases/demand-forecast/ru/review-chart-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/ru/review-chart-2400.webp" data-zoom-width="948">
+                    <picture>
+                      <source type="image/webp" sizes="(min-width: 1280px) 526px, (min-width: 768px) calc(100vw - 150px), calc(100vw - 94px)" srcset="/assets/cases/demand-forecast/ru/review-chart-800.webp 800w, /assets/cases/demand-forecast/ru/review-chart-1400.webp 1400w, /assets/cases/demand-forecast/ru/review-chart-2400.webp 2400w">
+                      <img sizes="(min-width: 1280px) 526px, (min-width: 768px) calc(100vw - 150px), calc(100vw - 94px)" srcset="/assets/cases/demand-forecast/ru/review-chart-800.jpg 800w, /assets/cases/demand-forecast/ru/review-chart-1400.jpg 1400w, /assets/cases/demand-forecast/ru/review-chart-2400.jpg 2400w" src="/assets/cases/demand-forecast/ru/review-chart-800.jpg" width="2400" height="1642" loading="lazy" alt="Экран «Прогноз» на&nbsp;1440&nbsp;с&nbsp;открытым графиком продаж по&nbsp;дням: под&nbsp;ним видны только две строки таблицы">
+                    </picture>
+                    <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                  </a>
+                </div>
+              </div>
+              <h3 class="lenta-review__subject">График «Прогноз» на&nbsp;1440</h3>
+              <p class="lenta-review__status lenta-review__status--open">Открыто. На&nbsp;1440&nbsp;при&nbsp;открытом графике таблице остаётся только 1–&#8288;2&nbsp;строки. Исправление готовится</p>
+            </li>
+            <li class="lenta-review">
+              <p class="lenta-tag">Цикл 2</p>
+              <p>«Точных прогнозов» переименовано в&nbsp;«Качество 8–&#8288;10»</p>
+              <p>«Топ-5» на&nbsp;планшете сворачивается. Графику достаётся больше места</p>
+              <div class="lenta-review__media lenta-zoomarea">
+                <div class="lenta-shot lenta-shot--review-tablet">
+                  <a class="zoom" href="/assets/cases/demand-forecast/ru/review-tablet-1828.jpg" data-zoom-src="/assets/cases/demand-forecast/ru/review-tablet-1828.webp" data-zoom-width="570">
+                    <picture>
+                      <source type="image/webp" sizes="(min-width: 1280px) 258px, (min-width: 768px) calc(100vw - 150px), calc(100vw - 94px)" srcset="/assets/cases/demand-forecast/ru/review-tablet-800.webp 800w, /assets/cases/demand-forecast/ru/review-tablet-1400.webp 1400w, /assets/cases/demand-forecast/ru/review-tablet-1828.webp 1828w">
+                      <img sizes="(min-width: 1280px) 258px, (min-width: 768px) calc(100vw - 150px), calc(100vw - 94px)" srcset="/assets/cases/demand-forecast/ru/review-tablet-800.jpg 800w, /assets/cases/demand-forecast/ru/review-tablet-1400.jpg 1400w, /assets/cases/demand-forecast/ru/review-tablet-1828.jpg 1828w" src="/assets/cases/demand-forecast/ru/review-tablet-800.jpg" width="1828" height="2548" loading="lazy" alt="Инфографика на&nbsp;планшете 834: показатели в&nbsp;две строки, график уровней качества и&nbsp;свёрнутый «Топ-5&nbsp;отклонений» из&nbsp;трёх строк со&nbsp;ссылкой «Показать все»">
+                    </picture>
+                    <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                  </a>
+                </div>
+              </div>
+              <h3 class="lenta-review__subject">Инфографика на&nbsp;планшете 834</h3>
+              <p class="lenta-review__status lenta-review__status--fixed">Исправлено. На&nbsp;планшете «Топ-5» сворачивается до&nbsp;трёх строк со&nbsp;ссылкой «Показать все». Графику досталось больше места</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="lenta-section" aria-labelledby="lenta-states">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Состояния</p>
+          <div class="lenta-heading lw-760">
+            <h2 class="lenta-h2 lw-700" id="lenta-states">Состояния и&nbsp;крайние случаи</h2>
+            <p class="lenta-sub lenta-sub--normal">44&nbsp;кадра состояний, 6&nbsp;из&nbsp;них критичные (К1–&#8288;К6): что&nbsp;видит пользователь,<br class="lenta-br-wide"> если что-то пошло не&nbsp;так</p>
+          </div>
+          <ul class="lenta-states">
+            <li class="lenta-state lenta-zoomcard">
+              <div class="lenta-state__media">
+                <div class="lenta-shot lenta-shot--state">
+                  <a class="zoom" href="/assets/cases/demand-forecast/ru/state-period-2000.jpg" data-zoom-src="/assets/cases/demand-forecast/ru/state-period-2000.webp" data-zoom-width="1248">
+                    <picture>
+                      <source type="image/webp" sizes="(min-width: 1280px) 330px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/ru/state-period-800.webp 800w, /assets/cases/demand-forecast/ru/state-period-1400.webp 1400w, /assets/cases/demand-forecast/ru/state-period-2000.webp 2000w">
+                      <img sizes="(min-width: 1280px) 330px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/ru/state-period-800.jpg 800w, /assets/cases/demand-forecast/ru/state-period-1400.jpg 1400w, /assets/cases/demand-forecast/ru/state-period-2000.jpg 2000w" src="/assets/cases/demand-forecast/ru/state-period-800.jpg" width="2000" height="1160" loading="lazy" alt="Выбор своего периода: в&nbsp;календаре сообщение, что&nbsp;данных за&nbsp;выбранные даты нет, кнопка «Готово» недоступна">
+                    </picture>
+                    <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                  </a>
+                </div>
+              </div>
+              <div class="lenta-state__body">
+                <p class="lenta-label">Свой период</p>
+                <h3 class="lenta-state__title">Даты без&nbsp;данных</h3>
+                <p class="lenta-state__text">Календарь показывает «Данных за&nbsp;эти даты нет, доступны периоды с&nbsp;01.01.2023». Кнопка «Готово» недоступна</p>
+              </div>
+            </li>
+            <li class="lenta-state lenta-zoomcard">
+              <div class="lenta-state__media">
+                <div class="lenta-shot lenta-shot--state">
+                  <a class="zoom" href="/assets/cases/demand-forecast/ru/state-zero-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/ru/state-zero-2400.webp" data-zoom-width="1248">
+                    <picture>
+                      <source type="image/webp" sizes="(min-width: 1280px) 330px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/ru/state-zero-800.webp 800w, /assets/cases/demand-forecast/ru/state-zero-1400.webp 1400w, /assets/cases/demand-forecast/ru/state-zero-2400.webp 2400w">
+                      <img sizes="(min-width: 1280px) 330px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/ru/state-zero-800.jpg 800w, /assets/cases/demand-forecast/ru/state-zero-1400.jpg 1400w, /assets/cases/demand-forecast/ru/state-zero-2400.jpg 2400w" src="/assets/cases/demand-forecast/ru/state-zero-800.jpg" width="2400" height="1392" loading="lazy" alt="Статистика продаж: в&nbsp;колонке качества у&nbsp;товара с&nbsp;нулевым значением вместо&nbsp;оценки надпись «нет оценки»">
+                    </picture>
+                    <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                  </a>
+                </div>
+              </div>
+              <div class="lenta-state__body">
+                <p class="lenta-label">Нулевые значения</p>
+                <h3 class="lenta-state__title">Факт или&nbsp;прогноз равны нулю</h3>
+                <p class="lenta-state__text">Если прогноз или&nbsp;факт равны нулю, качество не&nbsp;считается. Вместо&nbsp;числа показывается<br>«— нет оценки»</p>
+              </div>
+            </li>
+            <li class="lenta-state lenta-zoomcard">
+              <div class="lenta-state__media">
+                <div class="lenta-shot lenta-shot--state">
+                  <a class="zoom" href="/assets/cases/demand-forecast/ru/state-retry-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/ru/state-retry-2400.webp" data-zoom-width="1248">
+                    <picture>
+                      <source type="image/webp" sizes="(min-width: 1280px) 330px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/ru/state-retry-800.webp 800w, /assets/cases/demand-forecast/ru/state-retry-1400.webp 1400w, /assets/cases/demand-forecast/ru/state-retry-2400.webp 2400w">
+                      <img sizes="(min-width: 1280px) 330px, (min-width: 768px) calc(100vw - 98px), calc(100vw - 42px)" srcset="/assets/cases/demand-forecast/ru/state-retry-800.jpg 800w, /assets/cases/demand-forecast/ru/state-retry-1400.jpg 1400w, /assets/cases/demand-forecast/ru/state-retry-2400.jpg 2400w" src="/assets/cases/demand-forecast/ru/state-retry-800.jpg" width="2400" height="1392" loading="lazy" alt="Ошибка загрузки: сообщение «Не&nbsp;удалось загрузить данные», недоступная кнопка «Загружаем…» и&nbsp;серая заглушка таблицы">
+                    </picture>
+                    <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                  </a>
+                </div>
+              </div>
+              <div class="lenta-state__body">
+                <p class="lenta-label">Ошибка сервера</p>
+                <h3 class="lenta-state__title">Повтор после&nbsp;сбоя</h3>
+                <p class="lenta-state__text">Кнопка «Загружаем…» недоступна, пока идёт повторный запрос. Это&nbsp;не&nbsp;даёт нажать дважды</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--grey" aria-labelledby="lenta-handoff">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Передача</p>
+          <h2 class="lenta-h2 lw-700" id="lenta-handoff">Что&nbsp;уходит в&nbsp;разработку</h2>
+          <div class="lenta-row">
+            <div class="lenta-row__text">
+              <ul class="lenta-handoff-stats">
+                <li class="lenta-stat">
+                  <span class="lenta-stat__value">24</span>
+                  <span class="lenta-stat__label">иконки-ассета, контуром</span>
+                </li>
+                <li class="lenta-stat">
+                  <span class="lenta-stat__value">10</span>
+                  <span class="lenta-stat__label">открытых вопросов</span>
+                </li>
+              </ul>
+              <ul class="lenta-checks">
+                <li><img src="/assets/cases/demand-forecast/icons/check.svg" width="22" height="22" alt="">Компоненты, переменные и&nbsp;стили названы, как&nbsp;в&nbsp;Figma</li>
+                <li><img src="/assets/cases/demand-forecast/icons/check.svg" width="22" height="22" alt="">График не&nbsp;компонент. Это&nbsp;спецификация: оси, цвета, число серий</li>
+                <li><img src="/assets/cases/demand-forecast/icons/check.svg" width="22" height="22" alt="">Формула качества прогноза не&nbsp;известна. Открытый вопрос</li>
+              </ul>
+              <div class="lenta-questions">
+                <h3>Топ-3&nbsp;вопроса:</h3>
+                <ul>
+                  <li>Полный список ТК и&nbsp;городов</li>
+                  <li>Приходит&nbsp;ли единица «кг» для&nbsp;весовых товаров</li>
+                  <li>Формула и&nbsp;порог для&nbsp;«Отклонения от&nbsp;среднего»</li>
+                </ul>
+              </div>
+            </div>
+            <div class="lenta-art lenta-art--handoff lenta-zoomcard">
+              <div class="lenta-shot lenta-shot--handoff">
+                <a class="zoom" href="/assets/cases/demand-forecast/ru/handoff-chart-2400.jpg" data-zoom-src="/assets/cases/demand-forecast/ru/handoff-chart-2400.webp" data-zoom-width="948">
+                  <picture>
+                    <source type="image/webp" sizes="(min-width: 1280px) 460px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/ru/handoff-chart-800.webp 800w, /assets/cases/demand-forecast/ru/handoff-chart-1400.webp 1400w, /assets/cases/demand-forecast/ru/handoff-chart-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 460px, (min-width: 768px) calc(100vw - 130px), calc(100vw - 74px)" srcset="/assets/cases/demand-forecast/ru/handoff-chart-800.jpg 800w, /assets/cases/demand-forecast/ru/handoff-chart-1400.jpg 1400w, /assets/cases/demand-forecast/ru/handoff-chart-2400.jpg 2400w" src="/assets/cases/demand-forecast/ru/handoff-chart-800.jpg" width="2400" height="1642" loading="lazy" alt="Экран «Прогноз» с&nbsp;графиком продаж по&nbsp;дням над&nbsp;таблицей товаров">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lenta-section lenta-section--dark" aria-labelledby="lenta-next">
+        <div class="lenta-inner">
+          <p class="lenta-eyebrow">Дальше</p>
+          <div class="lenta-heading lw-760">
+            <h2 class="lenta-h2 lenta-h2--next" id="lenta-next">Юзабилити-тест с&nbsp;реальными менеджерами и&nbsp;аналитиками</h2>
+            <p class="lenta-text lw-640">Дальше нужна проверка на&nbsp;живых людях. Ещё есть открытые вопросы: формула качества прогноза, привязка id к&nbsp;названию магазина, шаг графика на&nbsp;1440</p>
+          </div>
+          <ul class="lenta-next">
+            <li><img src="/assets/cases/demand-forecast/icons/chevron.svg" width="20" height="20" alt="">Юзабилити-тест с&nbsp;реальными менеджерами и&nbsp;аналитиками</li>
+            <li><img src="/assets/cases/demand-forecast/icons/chevron.svg" width="20" height="20" alt="">Уточнить формулу качества и&nbsp;id → название точки продаж</li>
+            <li><img src="/assets/cases/demand-forecast/icons/chevron.svg" width="20" height="20" alt="">Довести график на&nbsp;1440</li>
+          </ul>
+          <p class="lenta-goal">Цель: меньше списаний и&nbsp;меньше упущенных продаж</p>
+          <!-- Ссылка на рабочий прототип: показать, когда будет адрес (убрать hidden, вписать href и текст) -->
+          <p class="lenta-prototype" hidden><a href="#">[Ссылка на&nbsp;рабочий прототип]</a></p>
+        </div>
+      </section>
+    </article>
+    <!-- typograph:end -->
+
+    <section class="pager" aria-labelledby="pager-title">
+      <div class="container">
+        <h2 class="section__title t-h2" id="pager-title">Другие кейсы</h2>
+        <ul class="pager__list">
+          <li>
+            <a class="pager-link" href="/ru/cases/complex-routes/">
+              <span class="t-label-sm c-secondary"><span aria-hidden="true">←&nbsp;</span>Предыдущий кейс</span>
+              <span class="t-h4">Сложные маршруты</span>
+            </a>
+          </li>
+          <li>
+            <a class="pager-link pager-link--next" href="/ru/cases/shifted/">
+              <span class="t-label-sm c-secondary">Следующий кейс<span aria-hidden="true">&nbsp;→</span></span>
+              <span class="t-h4">Shifted: маркетплейс б/&#8288;у&nbsp;авто с&nbsp;ИИ</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <section class="contacts" id="contacts" aria-labelledby="contacts-title">
+        <div class="contacts__intro">
+          <h2 class="t-label-sm c-secondary" id="contacts-title">Контакты</h2>
+          <p class="t-body-l">Открыт к&nbsp;предложениям: офис, удалённо, готов к&nbsp;переезду</p>
+        </div>
+        <ul class="contacts__list">
+          <li class="contact">
+            <span class="t-label-sm c-secondary" id="contact-telegram">Telegram</span>
+            <a class="value-link t-body-m-strong" href="https://t.me/PeMendo" aria-describedby="contact-telegram">@PeMendo</a>
+          </li>
+          <li class="contact">
+            <span class="t-label-sm c-secondary" id="contact-email">Почта</span>
+            <a class="value-link t-body-m-strong" href="mailto:phontaniwe@gmail.com" aria-describedby="contact-email">phontaniwe@gmail.com</a>
+          </li>
+          <li class="contact">
+            <span class="t-label-sm c-secondary" id="contact-linkedin">LinkedIn</span>
+            <a class="value-link t-body-m-strong" href="https://www.linkedin.com/in/pavel-menkov-669a09234/" aria-describedby="contact-linkedin">pavel-menkov</a>
+          </li>
+        </ul>
+      </section>
+      <div class="footer-bar">
+        <p class="t-body-s c-secondary">©&nbsp;2026&nbsp;Павел Меньков</p>
+        <div class="footer-bar__right">
+          <ul class="lang" aria-label="Язык">
+            <li><a class="lang__link t-label-md" href="/ru/cases/demand-forecast/" aria-current="page">RU<span class="visually-hidden">, русский</span></a></li>
+            <li><a class="lang__link t-label-md" href="/en/cases/demand-forecast/" hreflang="en" lang="en">EN<span class="visually-hidden">, English</span></a></li>
+          </ul>
+          <span class="divider" aria-hidden="true"></span>
+          <a class="nav-link t-label-md" href="#top">Наверх&nbsp;↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

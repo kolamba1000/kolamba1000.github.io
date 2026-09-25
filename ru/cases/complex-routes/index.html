@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сложные маршруты · Павел Меньков</title>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/icons/favicon-ru.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon-ru.png">
+  <meta name="description" content="Фича в сервисе для путешествий: билеты с пересадками и длинные путешествия с несколькими точками назначения в одном сценарии">
+  <link rel="canonical" href="https://kolamba1000.github.io/ru/cases/complex-routes/">
+  <link rel="alternate" hreflang="ru" href="https://kolamba1000.github.io/ru/cases/complex-routes/">
+  <link rel="alternate" hreflang="en" href="https://kolamba1000.github.io/en/cases/complex-routes/">
+  <link rel="alternate" hreflang="x-default" href="https://kolamba1000.github.io/en/cases/complex-routes/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://kolamba1000.github.io/ru/cases/complex-routes/">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="Сложные маршруты · Павел Меньков">
+  <meta property="og:description" content="Фича в сервисе для путешествий: билеты с пересадками и длинные путешествия с несколькими точками назначения в одном сценарии">
+  <meta property="og:image" content="https://kolamba1000.github.io/assets/og/complex-routes-ru.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Кейс «Сложные маршруты»: карточка маршрута с пересадками">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="/assets/fonts/golos/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/ibm-plex-sans-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="/assets/js/lang-scroll.js" defer></script>
+  <script src="/assets/js/back-bar.js" defer></script>
+  <link rel="stylesheet" href="/assets/css/case-routes.css">
+  <script src="/assets/js/zoom.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к&nbsp;содержимому</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="name-link t-body-m-strong" href="/ru/">Павел Меньков</a>
+      <nav class="site-nav" aria-label="Контакты и&nbsp;язык">
+        <span class="from-tablet">
+          <a class="nav-link t-label-md" href="https://t.me/PeMendo">Telegram</a>
+          <a class="nav-link t-label-md" href="mailto:phontaniwe@gmail.com">phontaniwe@gmail.com</a>
+          <a class="nav-link t-label-md" href="https://www.linkedin.com/in/pavel-menkov-669a09234/">LinkedIn</a>
+        </span>
+        <span class="only-phone">
+          <a class="nav-link t-label-md" href="#contacts">Контакты</a>
+        </span>
+        <span class="divider" aria-hidden="true"></span>
+        <ul class="lang">
+          <li><a class="lang__link t-label-md" href="/ru/cases/complex-routes/" aria-current="page">RU<span class="visually-hidden">, русский</span></a></li>
+          <li><a class="lang__link t-label-md" href="/en/cases/complex-routes/" hreflang="en" lang="en">EN<span class="visually-hidden">, English</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="back-bar">
+      <div class="container">
+        <a class="name-link t-body-m-strong back-bar__link" href="/ru/#cases">←&nbsp;Все кейсы</a>
+      </div>
+    </div>
+
+    <!-- typograph:start -->
+    <article class="routes" aria-labelledby="case-title">
+      <section class="routes-section routes-section--hero">
+        <div class="routes-section__inner">
+          <h1 class="routes-h1" id="case-title">Сложные маршруты</h1>
+          <p class="routes-center w-720">Фича в&nbsp;сервисе для&nbsp;путешествий, позволяющая покупать билеты с&nbsp;пересадками (самолёт, поезд, автобус) и&nbsp;билеты для&nbsp;длинных путешествий с&nbsp;несколькими точками назначения в&nbsp;одном сценарии</p>
+          <p class="routes-badge">Продуктовый дизайнер, соло · 1&nbsp;спринт · Figma</p>
+          <figure class="routes-shot">
+            <a class="zoom" href="/assets/cases/complex-routes/ru/hero-2400.jpg" data-zoom-src="/assets/cases/complex-routes/ru/hero-2400.webp" data-zoom-width="1200">
+              <picture>
+                <source type="image/webp" sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/hero-800.webp 800w, /assets/cases/complex-routes/ru/hero-1400.webp 1400w, /assets/cases/complex-routes/ru/hero-2400.webp 2400w">
+                <img sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/hero-800.jpg 800w, /assets/cases/complex-routes/ru/hero-1400.jpg 1400w, /assets/cases/complex-routes/ru/hero-2400.jpg 2400w" src="/assets/cases/complex-routes/ru/hero-800.jpg" width="2400" height="764" alt="Карточка маршрута через&nbsp;9&nbsp;городов с&nbsp;7&nbsp;пересадками: даты, время, города, виды транспорта и&nbsp;цена от&nbsp;78&nbsp;212&nbsp;₽ за&nbsp;весь маршрут">
+              </picture>
+              <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+            </a>
+          </figure>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-problems">
+        <div class="routes-section__inner">
+          <h2 class="routes-h2" id="routes-problems">Ключевые проблемы пользователей</h2>
+          <ul class="routes-cards w-944">
+            <li class="routes-card">
+              <span class="routes-icon"><img src="/assets/cases/complex-routes/icons/zap.svg" width="24" height="24" alt=""></span>
+              <div class="routes-card__text">
+                <h3 class="routes-h3">Высокая когнитивная нагрузка</h3>
+                <p>Если маршрут путешествия сложный, приходится покупать разные и&nbsp;часто друг с&nbsp;другом несвязанные билеты, сопоставлять маршруты в&nbsp;уме или&nbsp;выписывать их в&nbsp;заметки, чтобы не&nbsp;запутаться</p>
+              </div>
+            </li>
+            <li class="routes-card">
+              <span class="routes-icon"><img src="/assets/cases/complex-routes/icons/clock.svg" width="24" height="24" alt=""></span>
+              <div class="routes-card__text">
+                <h3 class="routes-h3">Долгое оформление</h3>
+                <p>Оформление билетов занимает больше времени, потому что&nbsp;каждый билет приходится покупать отдельно, начиная процесс заново</p>
+              </div>
+            </li>
+          </ul>
+          <ul class="routes-quotes w-944" aria-label="Цитаты респондентов">
+            <li class="routes-quote">
+              <p>«Я&nbsp;записываю маршруты путешествий на&nbsp;бумажке»</p>
+              <p class="routes-small">Аня, 32&nbsp;года · Опытный путешественник</p>
+            </li>
+            <li class="routes-quote">
+              <p>«Я&nbsp;проверяю всё как&nbsp;маньяк и&nbsp;держу маршрут в&nbsp;голове, потому что&nbsp;боюсь что-то забыть»</p>
+              <p class="routes-small">Андрей, 26&nbsp;лет · Путешествует с&nbsp;друзьями</p>
+            </li>
+            <li class="routes-quote">
+              <p>«Один раз пришлось покупать билеты на&nbsp;разные виды транспорта по&nbsp;отдельности. Проходила оформление с&nbsp;нуля три раза. Это&nbsp;было ужасно»</p>
+              <p class="routes-small">Катя, 35&nbsp;лет · Путешествует с&nbsp;семьёй</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-business">
+        <div class="routes-section__inner">
+          <h2 class="routes-h2" id="routes-business">Ключевые проблемы бизнеса</h2>
+          <ul class="routes-cards w-944">
+            <li class="routes-card">
+              <span class="routes-icon"><img src="/assets/cases/complex-routes/icons/warning.svg" width="24" height="24" alt=""></span>
+              <div class="routes-card__text">
+                <h3 class="routes-h3">Разрыв с&nbsp;конкурентами</h3>
+                <p>Конкуренты уже предлагают функцию сложных маршрутов, из-за&nbsp;этого сервис теряет часть клиентов и&nbsp;отстаёт от&nbsp;рынка</p>
+              </div>
+            </li>
+            <li class="routes-card">
+              <span class="routes-icon"><img src="/assets/cases/complex-routes/icons/percent.svg" width="24" height="24" alt=""></span>
+              <div class="routes-card__text">
+                <h3 class="routes-h3">Низкий AOV</h3>
+                <p>Пользователи не&nbsp;могут купить весь маршрут в&nbsp;одном чеке, поэтому сервис теряет часть выручки с&nbsp;каждой такой поездки</p>
+              </div>
+            </li>
+          </ul>
+          <p class="routes-small routes-center w-780">Гипотеза по&nbsp;собственному расчёту: ожидается рост прибыли на&nbsp;10% и&nbsp;рост AOV на&nbsp;15% после&nbsp;запуска</p>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-switch">
+        <div class="routes-section__inner">
+          <div class="routes-heading">
+            <h2 class="routes-h2" id="routes-switch">Умное переключение на&nbsp;сложный маршрут</h2>
+            <p class="routes-center w-720">Пользователь ищет билеты из&nbsp;Москвы в&nbsp;Тольятти, не&nbsp;зная, что&nbsp;прямых рейсов нет. Система сама меняет флоу на&nbsp;сложные маршруты и&nbsp;сразу показывает подсказку с&nbsp;объяснением и&nbsp;дальнейшими шагами</p>
+          </div>
+          <p class="routes-small routes-center w-640">До&nbsp;финального варианта рассматривались другие подходы: другая логика самого переключения, другой визуал карточки маршрута и&nbsp;другой способ показать предупреждение о&nbsp;пересадке. Финальный вариант выбран по&nbsp;итогам тестов</p>
+          <div class="routes-compare">
+            <div class="routes-compare__item">
+              <p class="routes-small routes-center">До</p>
+              <figure class="routes-shot routes-shot--fit routes-shot--before">
+                <a class="zoom" href="/assets/cases/complex-routes/ru/before-2400.jpg" data-zoom-src="/assets/cases/complex-routes/ru/before-2400.webp" data-zoom-width="942">
+                  <picture>
+                    <source media="(max-width: 767px)" type="image/webp" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/phone-before-800.webp 800w, /assets/cases/complex-routes/ru/phone-before-1400.webp 1400w" width="1926" height="345">
+                    <source media="(max-width: 767px)" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/phone-before-800.jpg 800w, /assets/cases/complex-routes/ru/phone-before-1400.jpg 1400w" width="1926" height="345">
+                    <source type="image/webp" sizes="(min-width: 1280px) 942px, calc(100vw - 80px)" srcset="/assets/cases/complex-routes/ru/before-800.webp 800w, /assets/cases/complex-routes/ru/before-1400.webp 1400w, /assets/cases/complex-routes/ru/before-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 942px, calc(100vw - 80px)" srcset="/assets/cases/complex-routes/ru/before-800.jpg 800w, /assets/cases/complex-routes/ru/before-1400.jpg 1400w, /assets/cases/complex-routes/ru/before-2400.jpg 2400w" src="/assets/cases/complex-routes/ru/before-800.jpg" width="2400" height="344" loading="lazy" alt="Форма поиска до&nbsp;изменений: откуда, куда, даты, число пассажиров и&nbsp;кнопка «Найти»">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                </a>
+                <figcaption class="routes-caption">Десктопный экран, сужен для&nbsp;телефона</figcaption>
+              </figure>
+            </div>
+            <div class="routes-compare__item">
+              <p class="routes-small routes-center">После</p>
+              <figure class="routes-shot routes-shot--fit routes-shot--after">
+                <a class="zoom" href="/assets/cases/complex-routes/ru/after-2400.jpg" data-zoom-src="/assets/cases/complex-routes/ru/after-2400.webp" data-zoom-width="939">
+                  <picture>
+                    <source media="(max-width: 767px)" type="image/webp" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/phone-after-800.webp 800w, /assets/cases/complex-routes/ru/phone-after-1400.webp 1400w" width="1926" height="799">
+                    <source media="(max-width: 767px)" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/phone-after-800.jpg 800w, /assets/cases/complex-routes/ru/phone-after-1400.jpg 1400w" width="1926" height="799">
+                    <source type="image/webp" sizes="(min-width: 1280px) 939px, calc(100vw - 80px)" srcset="/assets/cases/complex-routes/ru/after-800.webp 800w, /assets/cases/complex-routes/ru/after-1400.webp 1400w, /assets/cases/complex-routes/ru/after-2400.webp 2400w">
+                    <img sizes="(min-width: 1280px) 939px, calc(100vw - 80px)" srcset="/assets/cases/complex-routes/ru/after-800.jpg 800w, /assets/cases/complex-routes/ru/after-1400.jpg 1400w, /assets/cases/complex-routes/ru/after-2400.jpg 2400w" src="/assets/cases/complex-routes/ru/after-800.jpg" width="2400" height="792" loading="lazy" alt="Форма поиска после&nbsp;изменений: над&nbsp;полями подсказка, что&nbsp;в&nbsp;выбранный город нет прямого рейса и&nbsp;путь будет с&nbsp;пересадкой">
+                  </picture>
+                  <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+                </a>
+                <figcaption class="routes-caption">Десктопный экран, сужен для&nbsp;телефона</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-tests">
+        <div class="routes-section__inner">
+          <div class="routes-panel w-960">
+            <h2 class="routes-h3" id="routes-tests">Что&nbsp;показали тесты</h2>
+            <p>Юзабилити-тесты показали, что&nbsp;пользователям важна заметная подсказка о&nbsp;том, что&nbsp;маршрут изменился. Без&nbsp;неё сложно понять, идти дальше к&nbsp;билетам или&nbsp;выбрать город с&nbsp;прямым перелётом</p>
+            <ul class="routes-iterations">
+              <li class="routes-iteration">
+                <span class="routes-mark routes-mark--no"><img src="/assets/cases/complex-routes/icons/x.svg" width="16" height="16" alt=""></span>
+                <p class="routes-small">1-я версия</p>
+                <p class="routes-h3">Пользователи не&nbsp;замечали, что&nbsp;маршрут стал сложным</p>
+              </li>
+              <li class="routes-iteration">
+                <span class="routes-mark"><img src="/assets/cases/complex-routes/icons/check.svg" width="16" height="16" alt=""></span>
+                <p class="routes-small">Финальная версия</p>
+                <p class="routes-h3">Пользователи сразу видели, что&nbsp;маршрут изменился</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="routes-section routes-section--wide-gap" aria-labelledby="routes-scenarios">
+        <div class="routes-section__inner">
+          <h2 class="routes-h2" id="routes-scenarios">Фича закрывает разные сценарии</h2>
+          <div class="routes-scenario">
+            <div class="routes-scenario__text">
+              <h3 class="routes-h3">Семейное путешествие</h3>
+              <p>Когда вся семья летит вместе, пассажиры обычно остаются в&nbsp;одном составе на&nbsp;всём пути. Это&nbsp;основной сценарий, поэтому по&nbsp;умолчанию количество пассажиров общее для&nbsp;всего маршрута</p>
+              <p class="routes-small">Закрывает потребность Кати: покупать всё путешествие в&nbsp;одном чеке, а&nbsp;не&nbsp;по&nbsp;частям</p>
+            </div>
+            <figure class="routes-shot">
+              <a class="zoom" href="/assets/cases/complex-routes/ru/family-2400.jpg" data-zoom-src="/assets/cases/complex-routes/ru/family-2400.webp" data-zoom-width="1200">
+                <picture>
+                  <source media="(max-width: 767px)" type="image/webp" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/phone-family-800.webp 800w, /assets/cases/complex-routes/ru/phone-family-1400.webp 1400w" width="1852" height="918">
+                  <source media="(max-width: 767px)" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/phone-family-800.jpg 800w, /assets/cases/complex-routes/ru/phone-family-1400.jpg 1400w" width="1852" height="918">
+                  <source type="image/webp" sizes="(min-width: 1280px) 1200px, calc(100vw - 80px)" srcset="/assets/cases/complex-routes/ru/family-800.webp 800w, /assets/cases/complex-routes/ru/family-1400.webp 1400w, /assets/cases/complex-routes/ru/family-2400.webp 2400w">
+                  <img sizes="(min-width: 1280px) 1200px, calc(100vw - 80px)" srcset="/assets/cases/complex-routes/ru/family-800.jpg 800w, /assets/cases/complex-routes/ru/family-1400.jpg 1400w, /assets/cases/complex-routes/ru/family-2400.jpg 2400w" src="/assets/cases/complex-routes/ru/family-800.jpg" width="2400" height="880" loading="lazy" alt="Форма сложного маршрута из&nbsp;трёх перелётов с&nbsp;общим числом пассажиров и&nbsp;кнопкой «Разделить пассажиров»">
+                </picture>
+                <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+              </a>
+              <figcaption class="routes-caption">Десктопный экран, сужен для&nbsp;телефона</figcaption>
+            </figure>
+          </div>
+          <div class="routes-scenario">
+            <div class="routes-scenario__text">
+              <h3 class="routes-h3">Командировка</h3>
+              <p>Когда коллеги разделяются в&nbsp;разные дни, сервис позволяет указывать количество пассажиров отдельно для&nbsp;каждого перелёта</p>
+            </div>
+            <figure class="routes-shot">
+              <a class="zoom" href="/assets/cases/complex-routes/ru/business-2400.jpg" data-zoom-src="/assets/cases/complex-routes/ru/business-2400.webp" data-zoom-width="1200">
+                <picture>
+                  <source media="(max-width: 767px)" type="image/webp" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/phone-business-800.webp 800w, /assets/cases/complex-routes/ru/phone-business-1400.webp 1400w" width="1852" height="907">
+                  <source media="(max-width: 767px)" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/phone-business-800.jpg 800w, /assets/cases/complex-routes/ru/phone-business-1400.jpg 1400w" width="1852" height="907">
+                  <source type="image/webp" sizes="(min-width: 1280px) 1200px, calc(100vw - 80px)" srcset="/assets/cases/complex-routes/ru/business-800.webp 800w, /assets/cases/complex-routes/ru/business-1400.webp 1400w, /assets/cases/complex-routes/ru/business-2400.webp 2400w">
+                  <img sizes="(min-width: 1280px) 1200px, calc(100vw - 80px)" srcset="/assets/cases/complex-routes/ru/business-800.jpg 800w, /assets/cases/complex-routes/ru/business-1400.jpg 1400w, /assets/cases/complex-routes/ru/business-2400.jpg 2400w" src="/assets/cases/complex-routes/ru/business-800.jpg" width="2400" height="880" loading="lazy" alt="Форма сложного маршрута, где&nbsp;число пассажиров задано отдельно для&nbsp;каждого перелёта, и&nbsp;кнопка «Совместить пассажиров»">
+                </picture>
+                <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+              </a>
+              <figcaption class="routes-caption">Десктопный экран, сужен для&nbsp;телефона</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-results">
+        <div class="routes-section__inner">
+          <div class="routes-heading">
+            <h2 class="routes-h2" id="routes-results">Результаты поиска</h2>
+            <p class="routes-center w-720">Нажатие кнопки «Найти» отправляет пользователя к&nbsp;результирующему экрану со&nbsp;всеми доступными билетами</p>
+          </div>
+          <figure class="routes-shot">
+            <a class="zoom" href="/assets/cases/complex-routes/ru/results-2400.jpg" data-zoom-src="/assets/cases/complex-routes/ru/results-2400.webp" data-zoom-width="1200">
+              <picture>
+                <source type="image/webp" sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/results-800.webp 800w, /assets/cases/complex-routes/ru/results-1400.webp 1400w, /assets/cases/complex-routes/ru/results-2400.webp 2400w">
+                <img sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/results-800.jpg 800w, /assets/cases/complex-routes/ru/results-1400.jpg 1400w, /assets/cases/complex-routes/ru/results-2400.jpg 2400w" src="/assets/cases/complex-routes/ru/results-800.jpg" width="2400" height="834" loading="lazy" alt="Результат поиска: маршрут туда и&nbsp;обратно с&nbsp;пересадками на&nbsp;поезд и&nbsp;самолёт и&nbsp;общая цена от&nbsp;76&nbsp;236&nbsp;₽">
+              </picture>
+              <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+            </a>
+          </figure>
+          <p class="routes-center w-900">Пользователям понравился этот дизайн: карточки маршрутов оказались понятны, отдельно отметили секцию «Что&nbsp;включено» (Services)</p>
+          <p class="routes-small routes-center w-780">Заменяет способ Андрея, который раньше выписывал маршрут на&nbsp;бумаге</p>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-setup">
+        <div class="routes-section__inner">
+          <div class="routes-heading">
+            <h2 class="routes-h2" id="routes-setup">Настройка маршрута</h2>
+            <p class="routes-center w-720">Сервис позволяет полностью настроить маршрут, как&nbsp;в&nbsp;конструкторе</p>
+          </div>
+          <figure class="routes-shot routes-shot--926">
+            <a class="zoom" href="/assets/cases/complex-routes/ru/setup-2400.jpg" data-zoom-src="/assets/cases/complex-routes/ru/setup-2400.webp" data-zoom-width="926">
+              <picture>
+                <source media="(max-width: 767px)" type="image/webp" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/phone-setup-800.webp 800w, /assets/cases/complex-routes/ru/phone-setup-1400.webp 1400w" width="1674" height="1210">
+                <source media="(max-width: 767px)" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/phone-setup-800.jpg 800w, /assets/cases/complex-routes/ru/phone-setup-1400.jpg 1400w" width="1674" height="1210">
+                <source type="image/webp" sizes="(min-width: 1280px) 926px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/setup-800.webp 800w, /assets/cases/complex-routes/ru/setup-1400.webp 1400w, /assets/cases/complex-routes/ru/setup-2400.webp 2400w">
+                <img sizes="(min-width: 1280px) 926px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/setup-800.jpg 800w, /assets/cases/complex-routes/ru/setup-1400.jpg 1400w, /assets/cases/complex-routes/ru/setup-2400.jpg 2400w" src="/assets/cases/complex-routes/ru/setup-800.jpg" width="2400" height="1845" loading="lazy" alt="Настройка маршрута: для&nbsp;каждого участка выбор из&nbsp;восьми предложений разных сервисов, багаж и&nbsp;возврат билета">
+              </picture>
+              <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+            </a>
+          </figure>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-partner">
+        <div class="routes-section__inner">
+          <div class="routes-heading">
+            <h2 class="routes-h2" id="routes-partner">Билет можно купить только внутри&nbsp;сервиса</h2>
+            <p class="routes-center w-780">Если часть маршрута можно купить дешевле у&nbsp;партнёра, эта часть не&nbsp;входит в&nbsp;общий чек, и&nbsp;пользователю нужно понятно объяснить, что&nbsp;произошло</p>
+          </div>
+          <figure class="routes-shot routes-shot--750">
+            <a class="zoom" href="/assets/cases/complex-routes/ru/partner-1650.jpg" data-zoom-src="/assets/cases/complex-routes/ru/partner-1650.webp" data-zoom-width="750">
+              <picture>
+                <source media="(max-width: 767px)" type="image/webp" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/phone-partner-800.webp 800w, /assets/cases/complex-routes/ru/phone-partner-1400.webp 1400w" width="1474" height="793">
+                <source media="(max-width: 767px)" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/phone-partner-800.jpg 800w, /assets/cases/complex-routes/ru/phone-partner-1400.jpg 1400w" width="1474" height="793">
+                <source type="image/webp" sizes="(min-width: 768px) 750px, calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/partner-800.webp 800w, /assets/cases/complex-routes/ru/partner-1400.webp 1400w, /assets/cases/complex-routes/ru/partner-1650.webp 1650w">
+                <img sizes="(min-width: 768px) 750px, calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/partner-800.jpg 800w, /assets/cases/complex-routes/ru/partner-1400.jpg 1400w, /assets/cases/complex-routes/ru/partner-1650.jpg 1650w" src="/assets/cases/complex-routes/ru/partner-800.jpg" width="1650" height="915" loading="lazy" alt="Предложения партнёров и&nbsp;уведомление, что&nbsp;билеты не&nbsp;получится продать вместе: авиабилет оформляется на&nbsp;сайте партнёра">
+              </picture>
+              <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+            </a>
+          </figure>
+          <p class="routes-small routes-center w-780">Тесты показали: сначала пользователи не&nbsp;понимали, что&nbsp;билет оформляется отдельно, а&nbsp;после&nbsp;явного уведомления это&nbsp;стало ясно с&nbsp;первого взгляда</p>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-details">
+        <div class="routes-section__inner">
+          <h2 class="routes-h2 w-780" id="routes-details">Детали маршрута и&nbsp;данные пассажиров</h2>
+          <figure class="routes-shot routes-shot--750">
+            <a class="zoom" href="/assets/cases/complex-routes/ru/details-2221.jpg" data-zoom-src="/assets/cases/complex-routes/ru/details-2221.webp" data-zoom-width="750">
+              <picture>
+                <source type="image/webp" sizes="(min-width: 768px) 750px, calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/details-800.webp 800w, /assets/cases/complex-routes/ru/details-1400.webp 1400w, /assets/cases/complex-routes/ru/details-2221.webp 2221w">
+                <img sizes="(min-width: 768px) 750px, calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/details-800.jpg 800w, /assets/cases/complex-routes/ru/details-1400.jpg 1400w, /assets/cases/complex-routes/ru/details-2221.jpg 2221w" src="/assets/cases/complex-routes/ru/details-800.jpg" width="2221" height="1232" loading="lazy" alt="Оформление: блок «Детали маршрута», контакты покупателя и&nbsp;данные пассажира с&nbsp;переключателем «Данные из&nbsp;профиля»">
+              </picture>
+              <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+            </a>
+          </figure>
+          <p class="routes-center w-900">Пользователи особенно отметили два момента: раздел «Детали маршрута» позволяет дважды проверить данные, а&nbsp;переключатель «Данные из&nbsp;профиля» ускоряет заполнение полей</p>
+          <p class="routes-small routes-center">Отвечает потребности Андрея и&nbsp;Кати: важно перепроверить каждую деталь маршрута, важно купить билеты быстро</p>
+        </div>
+      </section>
+
+      <section class="routes-section" aria-labelledby="routes-success">
+        <div class="routes-section__inner">
+          <h2 class="routes-h2" id="routes-success">Успех</h2>
+          <figure class="routes-shot">
+            <a class="zoom" href="/assets/cases/complex-routes/ru/success-2400.jpg" data-zoom-src="/assets/cases/complex-routes/ru/success-2400.webp" data-zoom-width="1200">
+              <picture>
+                <source media="(max-width: 767px)" type="image/webp" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/phone-success-800.webp 800w, /assets/cases/complex-routes/ru/phone-success-1400.webp 1400w" width="1835" height="865">
+                <source media="(max-width: 767px)" sizes="calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/phone-success-800.jpg 800w, /assets/cases/complex-routes/ru/phone-success-1400.jpg 1400w" width="1835" height="865">
+                <source type="image/webp" sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/success-800.webp 800w, /assets/cases/complex-routes/ru/success-1400.webp 1400w, /assets/cases/complex-routes/ru/success-2400.webp 2400w">
+                <img sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)" srcset="/assets/cases/complex-routes/ru/success-800.jpg 800w, /assets/cases/complex-routes/ru/success-1400.jpg 1400w, /assets/cases/complex-routes/ru/success-2400.jpg 2400w" src="/assets/cases/complex-routes/ru/success-800.jpg" width="2400" height="1020" loading="lazy" alt="Экран успешной оплаты: билеты оформлены, кнопки «Выбрать отели» и&nbsp;«Скачать билеты», детали маршрута и&nbsp;данные пассажиров">
+              </picture>
+              <span class="zoom__button" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 3H17V8M8 17H3V12M17 3L11.5 8.5M3 17L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="visually-hidden">, открыть крупно</span>
+            </a>
+          </figure>
+          <ul class="routes-cards w-944">
+            <li class="routes-card">
+              <span class="routes-icon"><img src="/assets/cases/complex-routes/icons/heart.svg" width="24" height="24" alt=""></span>
+              <h3 class="routes-h3">Бронирование отеля:<br>выгода пользователю</h3>
+            </li>
+            <li class="routes-card">
+              <span class="routes-icon"><img src="/assets/cases/complex-routes/icons/orders.svg" width="24" height="24" alt=""></span>
+              <h3 class="routes-h3">Дополнительная выручка:<br>выгода бизнесу</h3>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="routes-section routes-section--conclusion routes-section--wide-gap" aria-labelledby="routes-conclusion">
+        <div class="routes-section__inner">
+          <div class="routes-heading">
+            <h2 class="routes-h2" id="routes-conclusion">Заключение</h2>
+            <p class="routes-center w-800">Тесты на&nbsp;реальных пользователях показали, что&nbsp;фича снимает когнитивную нагрузку и&nbsp;экономит время при&nbsp;сложном маршруте. После&nbsp;запуска это&nbsp;должно помочь бизнесу догнать конкурентов и&nbsp;увеличить AOV</p>
+          </div>
+          <div class="routes-panel routes-panel--gap-8 w-800">
+            <h3 class="routes-h3">Что&nbsp;было сложнее всего</h3>
+            <p>Самым сложным было спроектировать не&nbsp;отдельные экраны, а&nbsp;сквозную логику переключения между&nbsp;обычным и&nbsp;сложным флоу, а&nbsp;также доступно показать настройку маршрута, чтобы пользователь собирал его как&nbsp;в&nbsp;конструкторе и&nbsp;не&nbsp;терялся в&nbsp;деталях. Эти части пришлось несколько раз пересобирать по&nbsp;итогам тестов</p>
+          </div>
+        </div>
+      </section>
+    </article>
+    <!-- typograph:end -->
+
+    <section class="pager" aria-labelledby="pager-title">
+      <div class="container">
+        <h2 class="section__title t-h2" id="pager-title">Другие кейсы</h2>
+        <ul class="pager__list">
+          <li>
+            <a class="pager-link" href="/ru/cases/shifted/">
+              <span class="t-label-sm c-secondary"><span aria-hidden="true">←&nbsp;</span>Предыдущий кейс</span>
+              <span class="t-h4">Shifted: маркетплейс б/&#8288;у&nbsp;авто с&nbsp;ИИ</span>
+            </a>
+          </li>
+          <li>
+            <a class="pager-link pager-link--next" href="/ru/cases/demand-forecast/">
+              <span class="t-label-sm c-secondary">Следующий кейс<span aria-hidden="true">&nbsp;→</span></span>
+              <span class="t-h4">Дашборд прогноза спроса</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <section class="contacts" id="contacts" aria-labelledby="contacts-title">
+        <div class="contacts__intro">
+          <h2 class="t-label-sm c-secondary" id="contacts-title">Контакты</h2>
+          <p class="t-body-l">Открыт к&nbsp;предложениям: офис, удалённо, готов к&nbsp;переезду</p>
+        </div>
+        <ul class="contacts__list">
+          <li class="contact">
+            <span class="t-label-sm c-secondary" id="contact-telegram">Telegram</span>
+            <a class="value-link t-body-m-strong" href="https://t.me/PeMendo" aria-describedby="contact-telegram">@PeMendo</a>
+          </li>
+          <li class="contact">
+            <span class="t-label-sm c-secondary" id="contact-email">Почта</span>
+            <a class="value-link t-body-m-strong" href="mailto:phontaniwe@gmail.com" aria-describedby="contact-email">phontaniwe@gmail.com</a>
+          </li>
+          <li class="contact">
+            <span class="t-label-sm c-secondary" id="contact-linkedin">LinkedIn</span>
+            <a class="value-link t-body-m-strong" href="https://www.linkedin.com/in/pavel-menkov-669a09234/" aria-describedby="contact-linkedin">pavel-menkov</a>
+          </li>
+        </ul>
+      </section>
+      <div class="footer-bar">
+        <p class="t-body-s c-secondary">©&nbsp;2026&nbsp;Павел Меньков</p>
+        <div class="footer-bar__right">
+          <ul class="lang" aria-label="Язык">
+            <li><a class="lang__link t-label-md" href="/ru/cases/complex-routes/" aria-current="page">RU<span class="visually-hidden">, русский</span></a></li>
+            <li><a class="lang__link t-label-md" href="/en/cases/complex-routes/" hreflang="en" lang="en">EN<span class="visually-hidden">, English</span></a></li>
+          </ul>
+          <span class="divider" aria-hidden="true"></span>
+          <a class="nav-link t-label-md" href="#top">Наверх&nbsp;↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

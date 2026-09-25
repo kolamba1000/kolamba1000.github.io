@@ -1,0 +1,1317 @@
+/* Портфолио Павла Менькова. Токены из Figma (Z3nhGgA3xRH8BIgK13D86E), спецификация: docs/handoff-main.md */
+
+/* ---------- Шрифт: IBM Plex Sans 400–600, два подмножества ---------- */
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/assets/fonts/ibm-plex-sans-latin.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2190-2193, U+2212;
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/assets/fonts/ibm-plex-sans-cyrillic.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-045F, U+0490-0491, U+2116;
+}
+
+/* ---------- Токены ---------- */
+:root {
+  --gray-0: #FFFFFF;
+  --gray-50: #F6F7F9;
+  --gray-100: #ECEEF2;
+  --gray-200: #D9DDE3;
+  --gray-500: #7B8594;
+  --gray-600: #566070;
+  --gray-800: #2B323A;
+  --gray-900: #12171C;
+
+  --color-bg-page: var(--gray-50);
+  --color-bg-surface: var(--gray-0);
+  --color-bg-subtle: var(--gray-100);
+  --color-bg-hover: var(--gray-200);
+  --color-text-primary: var(--gray-900);
+  --color-text-secondary: var(--gray-600);
+  --color-text-on-accent: var(--gray-0);
+  --color-border-default: var(--gray-200);
+  --color-border-strong: var(--gray-500);
+  --color-accent-default: var(--gray-900);
+  --color-accent-hover: var(--gray-800);
+  --color-focus-ring: var(--gray-900);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 999px;
+
+  /* Layout: Phone */
+  --layout-page-pad: 20px;
+  --layout-section-gap: 56px;
+  --layout-grid-gap: 16px;
+  --layout-card-pad: 20px;
+  --layout-preview-height: 240px;
+
+  --content-max: 1200px;
+  --header-height: 65px;
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --layout-page-pad: 48px;
+    --layout-section-gap: 80px;
+    --layout-grid-gap: 24px;
+    --layout-card-pad: 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --layout-page-pad: 120px;
+    --layout-section-gap: 96px;
+    --layout-grid-gap: 24px;
+    --layout-card-pad: 32px;
+  }
+}
+
+/* ---------- База ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Подвал прижат к низу окна, если содержимого меньше высоты экрана (404) */
+body {
+  display: flex;
+}
+
+/* на 404 обе языковые версии в обёртках [data-lang], их display задаёт встроенный стиль страницы */
+body,
+[data-lang] {
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+h1, h2, h3, p, ul, ol, dl, dd, figure {
+  margin: 0;
+}
+
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Узкие телефоны: слово «исследовательским» в H1 шире колонки 280 px */
+@media (max-width: 359px) {
+  p,
+  h1,
+  h2,
+  h3 {
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Колонка контента: не шире 1200, по центру */
+.container {
+  width: 100%;
+  max-width: calc(var(--content-max) + 2 * var(--layout-page-pad));
+  margin-inline: auto;
+  padding-inline: var(--layout-page-pad);
+}
+
+/* ---------- Типографика ---------- */
+.t-h1 {
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 600;
+  letter-spacing: -0.6px;
+}
+
+.t-h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+@media (min-width: 768px) {
+  .t-h1 {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.8px;
+  }
+
+  .t-h2 {
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -0.4px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .t-h1 {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -1px;
+  }
+
+  .t-h2 {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.5px;
+  }
+}
+
+.t-h4 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.t-body-l {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.t-body-m {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.t-body-m-strong {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.t-body-s {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.t-label-md {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.t-label-sm {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.t-number-xl {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.c-secondary {
+  color: var(--color-text-secondary);
+}
+
+/* ---------- Ссылка пропуска ---------- */
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 100;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+/* ---------- Ссылки (компоненты Nav link, Name link, Value link, Language link) ---------- */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: var(--space-3) var(--space-2);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  white-space: nowrap;
+}
+
+/* Имя в шапке и «← Все кейсы»: подложка выходит на 8 px за текст, текст на сетке */
+.name-link,
+.value-link {
+  position: relative;
+  z-index: 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.name-link {
+  padding: var(--space-3) var(--space-1) var(--space-3) 0;
+  text-decoration: none;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.value-link {
+  padding: var(--space-3) 0;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.name-link::before,
+.value-link::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 calc(-1 * var(--space-2));
+  border-radius: var(--radius-sm);
+}
+
+.value-link::before {
+  inset: var(--space-1) calc(-1 * var(--space-2));
+}
+
+.name-link:focus-visible,
+.value-link:focus-visible {
+  outline: none;
+}
+
+.name-link:focus-visible::before,
+.value-link:focus-visible::before {
+  outline: 2px solid var(--color-focus-ring);
+}
+
+.lang {
+  display: flex;
+  align-items: center;
+}
+
+.lang__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.lang__link[aria-current] {
+  background: var(--color-bg-surface);
+  border-color: var(--color-border-strong);
+  color: var(--color-text-primary);
+}
+
+.lang__link:focus-visible {
+  border-color: transparent;
+  color: var(--color-text-primary);
+}
+
+.divider {
+  flex: none;
+  width: 1px;
+  height: 24px;
+  background: var(--color-border-strong);
+}
+
+@media (hover: hover) {
+  .nav-link:hover {
+    background: var(--color-bg-hover);
+    text-decoration: underline;
+  }
+
+  .name-link:hover {
+    text-decoration: underline;
+  }
+
+  .name-link:hover::before,
+  .value-link:hover::before {
+    background: var(--color-bg-hover);
+  }
+
+  .lang__link:hover {
+    background: var(--color-bg-hover);
+    color: var(--color-text-primary);
+  }
+}
+
+/* ---------- Кнопка ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 11px 23px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button--primary {
+  background: var(--color-accent-default);
+  color: var(--color-text-on-accent);
+}
+
+.button--secondary {
+  border-color: var(--color-border-strong);
+  color: var(--color-text-primary);
+}
+
+.button:focus-visible {
+  border-color: transparent;
+}
+
+@media (hover: hover) {
+  .button--primary:hover {
+    background: var(--color-accent-hover);
+  }
+
+  .button--secondary:hover {
+    background: var(--color-bg-subtle);
+  }
+}
+
+/* ---------- Шапка ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-bg-page);
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.site-nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.only-phone {
+  display: contents;
+}
+
+.from-tablet {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .only-phone {
+    display: none;
+  }
+
+  .from-tablet {
+    display: contents;
+  }
+}
+
+/* Узкие телефоны (макета нет): на 320 шапка не помещалась на 33 px.
+   Имя в две строки в той же высоте 48, разделитель скрыт */
+@media (max-width: 374px) {
+  .site-header .name-link {
+    padding-block: 0;
+    white-space: normal;
+  }
+
+  .site-header .divider {
+    display: none;
+  }
+}
+
+/* Якоря не прячутся под закреплённую шапку */
+[id] {
+  scroll-margin-top: var(--header-height);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding-block: var(--space-7) var(--space-8);
+}
+
+@media (min-width: 1280px) {
+  .hero {
+    padding-top: var(--space-8);
+  }
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.hero__title {
+  max-width: 820px;
+}
+
+/* pretty разрывал «usability / tests» на телефоне; переносы держат неразрывные пробелы */
+.hero__subtitle {
+  text-wrap: wrap;
+}
+
+/* Английский H1: на планшете и десктопе «with a research background» не рвётся (как в Figma) */
+@media (min-width: 768px) {
+  .keep-from-tablet {
+    white-space: nowrap;
+  }
+}
+
+/* На телефоне «a research background» одной строкой (как в Figma); уже 360 связка шире колонки и переносится */
+@media (min-width: 360px) {
+  .keep-from-360 {
+    white-space: nowrap;
+  }
+}
+
+/* ---------- 404 ---------- */
+.not-found {
+  padding-block: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .not-found {
+    padding-block: var(--space-10);
+  }
+}
+
+.not-found__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-5);
+}
+
+.not-found__text {
+  max-width: 560px;
+}
+
+@media (min-width: 768px) {
+  .not-found__inner {
+    align-items: flex-start;
+  }
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ---------- Секции ---------- */
+.section {
+  padding-bottom: var(--layout-section-gap);
+}
+
+.section__title {
+  margin-bottom: var(--space-5);
+}
+
+.section--about .section__title {
+  margin-bottom: var(--space-6);
+}
+
+/* ---------- Карточки кейсов ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--layout-grid-gap);
+}
+
+@media (min-width: 1280px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards[data-count="4"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .cards[data-count="4"],
+  .cards[data-count="5"],
+  .cards[data-count="6"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+}
+
+.card__preview {
+  display: block;
+  height: var(--layout-preview-height);
+  background: var(--color-bg-subtle);
+  border-radius: 11px 11px 0 0;
+}
+
+.card__preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 11px 11px 0 0;
+  /* Текст alt при ошибке загрузки */
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.card__preview--top img {
+  object-position: 50% 0;
+}
+
+.card__preview--corner img {
+  object-position: 0 0;
+}
+
+/* В Figma у Body «Space between»: зазор 12 не действует, минимум задаёт отступ Content снизу */
+.card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-5);
+}
+
+/* balance переставлял перенос в утверждённых названиях карточек */
+.card h3 {
+  text-wrap: pretty;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tag {
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+}
+
+.card__link {
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+/* Вся карточка нажимаема */
+.card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+}
+
+.card__link:focus-visible {
+  outline: none;
+}
+
+.card:has(.card__link:focus-visible) {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 0;
+}
+
+@supports not selector(:has(*)) {
+  .card:focus-within {
+    outline: 2px solid var(--color-focus-ring);
+  }
+}
+
+.card__more {
+  margin-top: auto;
+  color: var(--color-accent-default);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    border-color: var(--color-border-strong);
+  }
+
+  .card:hover .card__more {
+    text-decoration: underline;
+  }
+}
+
+/* ---------- Обо мне ---------- */
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about__summary {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-5);
+}
+
+.about__text {
+  max-width: 620px;
+}
+
+.about__details {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.stat {
+  display: flex;
+  gap: var(--space-4);
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border-strong);
+}
+
+.stat__number {
+  flex: none;
+  width: 110px;
+}
+
+.stat__caption {
+  flex: 1;
+  min-width: 0;
+  /* pretty ставил «юзабилити-тестов» одно в первую строку (убрано после ревью) */
+  text-wrap: wrap;
+}
+
+.experience__row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border-default);
+}
+
+.experience__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+@media (min-width: 768px) {
+  .about__summary {
+    align-items: flex-start;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+  }
+
+  .stat {
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-4) 0 var(--space-1);
+  }
+
+  .stat__number {
+    width: auto;
+  }
+
+  .experience__row {
+    flex-direction: row;
+    gap: var(--space-5);
+  }
+
+  .experience__dates {
+    flex: none;
+    width: 230px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .about {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-9);
+  }
+
+  .about__summary {
+    flex: none;
+    width: 420px;
+  }
+
+  .about__details {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* ---------- Подвал ---------- */
+.site-footer {
+  background: var(--color-bg-subtle);
+  padding-block: var(--space-8) var(--space-5);
+}
+
+.site-footer--bar {
+  padding-top: 0;
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.contacts__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.contacts__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border-default);
+}
+
+.footer-bar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .contacts__list {
+    flex-direction: row;
+    gap: var(--space-7);
+  }
+
+  .footer-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-5);
+  }
+}
+
+@media (min-width: 1280px) {
+  .contacts {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--space-8);
+  }
+
+  .contacts__intro {
+    width: 420px;
+  }
+}
+
+/* ---------- Рамка страницы кейса ---------- */
+/* «← Все кейсы»: Name link на сетке страницы, строка 48 px. Закреплена под шапкой (65 px): при прокрутке вниз
+   уезжает за шапку, при прокрутке вверх появляется (assets/js/back-bar.js, предложение пользователя 26.09.2026).
+   Когда строка закреплена, снизу линия border/default, как у шапки */
+.back-bar {
+  position: sticky;
+  top: 65px;
+  z-index: 9;
+  background: var(--color-bg-page);
+  transition: transform 0.2s ease;
+}
+
+.back-bar.is-stuck {
+  box-shadow: inset 0 -1px 0 var(--color-border-default);
+}
+
+.back-bar.is-hidden:not(:focus-within) {
+  transform: translateY(-100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-bar {
+    transition: none;
+  }
+}
+
+.back-bar__link {
+  white-space: nowrap;
+}
+
+/* «Другие кейсы» (Case pager) */
+.pager {
+  padding-block: var(--layout-section-gap);
+}
+
+.pager__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .pager__list {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+  }
+}
+
+/* Pager link: отступы 24 с рамкой 1 px (высота 102, как в Figma) */
+.pager-link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  height: 100%;
+  padding: calc(var(--space-5) - 1px);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.pager-link:focus-visible {
+  outline-offset: 0;
+}
+
+@media (min-width: 768px) {
+  .pager-link--next {
+    text-align: right;
+  }
+}
+
+@media (hover: hover) {
+  .pager-link:hover {
+    background: var(--color-bg-subtle);
+    border-color: var(--color-border-strong);
+  }
+}
+
+/* ---------- Экран кейса: открыть крупно (Figma «v2 (по ревью)» 152:154, 153:154, 153:159) ---------- */
+/* Ссылка на картинку 2400 px: без JavaScript открывает саму картинку, со скриптом окно (assets/js/zoom.js) */
+.zoom {
+  position: relative;
+  display: block;
+  border-radius: 8px;
+  color: inherit;
+  cursor: zoom-in;
+}
+
+@media (min-width: 768px) {
+  .zoom {
+    border-radius: 16px;
+  }
+}
+
+.zoom__button {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 3px rgb(18 23 28 / 0.12);
+  color: var(--color-text-primary);
+}
+
+.zoom:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 0;
+}
+
+/* Окно отключено на этой ширине (data-zoom-from, assets/js/zoom.js): у ссылки нет адреса, это обычная картинка */
+.zoom:not([href]) {
+  cursor: auto;
+}
+
+.zoom:not([href]) .zoom__button {
+  display: none;
+}
+
+/* Тач-экраны: значок виден всегда, поэтому меньше (28 × 28, иконка 16, отступ 8), чтобы не закрывать низкие экраны.
+   Нажимается весь экран, значок только подсказка */
+@media (hover: none), (pointer: coarse) {
+  .zoom__button {
+    top: var(--space-2);
+    right: var(--space-2);
+    width: 28px;
+    height: 28px;
+  }
+
+  .zoom__button svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* С мышью значок появляется при наведении и фокусе; на тач-экранах виден всегда (наведения нет) */
+@media (hover: hover) and (pointer: fine) {
+  .zoom__button {
+    opacity: 0;
+  }
+
+  .zoom:hover .zoom__button,
+  .zoom:focus-visible .zoom__button {
+    opacity: 1;
+  }
+}
+
+@media (hover: hover) {
+  .zoom:hover img {
+    border-color: var(--color-border-strong);
+  }
+
+  .zoom:hover .zoom__button {
+    background: var(--color-bg-subtle);
+    border-color: var(--color-border-strong);
+  }
+}
+
+/* Окно: фон text/primary 92%, кнопка «Закрыть» 44 × 44 справа сверху */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgb(18 23 28 / 0.92);
+  color: var(--color-bg-hover);
+  font-family: var(--font-sans);
+}
+
+.lightbox::backdrop {
+  background: transparent;
+}
+
+/* margin: auto у экрана центрирует его, а увеличенный экран прокручивается до всех краёв (place-items: center обрезал бы левый и верхний край) */
+/* Экран в окне не выделяется как текст (случайное выделение закрашивало картинку синим) и не перетаскивается браузером */
+.lightbox__scroll {
+  -webkit-user-select: none;
+  user-select: none;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 76px 64px;
+}
+
+.lightbox__figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  margin: auto;
+}
+
+.lightbox__img {
+  max-width: calc(100vw - 128px);
+  max-height: calc(100vh - 152px);
+  width: auto;
+  height: auto;
+  border-radius: 16px;
+  background: var(--color-bg-surface);
+  cursor: default;
+}
+
+.lightbox__hint {
+  display: none;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.lightbox__close {
+  position: fixed;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 3px rgb(18 23 28 / 0.12);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+/* Кольцо gray-900 не видно на тёмном фоне: в окне кольцо белое с зазором 2 px */
+.lightbox__close:focus-visible {
+  outline: 2px solid var(--color-bg-surface);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .lightbox__close:hover {
+    background: var(--color-bg-hover);
+  }
+}
+
+/* Приближение (Figma 171:154, 171:1768): плашка внизу по центру, только для мыши и окна от 768 px.
+   Рамка и тень, чтобы плашка и «Закрыть» не сливались с белым увеличенным экраном */
+.lightbox__zoom {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 768px) {
+  .lightbox__zoom {
+    position: fixed;
+    bottom: var(--space-4);
+    left: 50%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 3px;
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-md);
+    box-shadow: 0 1px 3px rgb(18 23 28 / 0.12);
+    color: var(--color-text-primary);
+    transform: translateX(-50%);
+  }
+}
+
+.lightbox__zoom-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 42px;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: var(--radius-md);
+  color: inherit;
+  cursor: pointer;
+}
+
+.lightbox__zoom-btn:disabled {
+  color: var(--color-text-secondary);
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* Плашка белая: кольцо фокуса обычное (gray-900), внутри кнопки */
+.lightbox__zoom-btn:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: -2px;
+}
+
+@media (hover: hover) {
+  .lightbox__zoom-btn:not(:disabled):hover {
+    background: var(--color-bg-hover);
+  }
+}
+
+.lightbox__level {
+  width: 56px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.lightbox__divider {
+  width: 1px;
+  height: 24px;
+  background: var(--color-border-default);
+}
+
+/* Курсор: лупа, пока можно увеличить; у увеличенного экрана рука (двигается перетаскиванием) */
+.lightbox--zoomable .lightbox__img {
+  cursor: zoom-in;
+}
+
+.lightbox--zoomed .lightbox__img {
+  max-width: none;
+  max-height: none;
+  cursor: grab;
+}
+
+.lightbox--dragging .lightbox__img {
+  cursor: grabbing;
+  user-select: none;
+}
+
+/* Телефон: экран в 0,75 от десктопного размера, листается вбок и вниз */
+@media (max-width: 767px) {
+  .lightbox__scroll {
+    padding: 76px 16px 16px;
+  }
+
+  .lightbox__figure {
+    align-items: flex-start;
+    margin: 0;
+  }
+
+  .lightbox__img {
+    width: calc(var(--zoom-width, 1200) * 0.75px);
+    max-width: none;
+    max-height: none;
+    border-radius: 8px;
+  }
+
+  .lightbox--wide .lightbox__hint {
+    display: block;
+    position: sticky;
+    left: 0;
+    width: calc(100vw - 32px);
+  }
+}
+
+html.is-locked {
+  overflow: hidden;
+}
