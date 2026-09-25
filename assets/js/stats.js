@@ -62,7 +62,7 @@
     if (href.startsWith('https://t.me/')) send(`click/contact/telegram/${place(a)}`);
     else if (href.startsWith('mailto:')) send(`click/contact/email/${place(a)}`);
     else if (href.includes('linkedin.com')) send(`click/contact/linkedin/${place(a)}`);
-    else if (href.includes('/assets/resume/')) send(`click/resume/${href.includes('-en.') ? 'en' : 'ru'}`);
+    else if (href.includes('/assets/resume/')) send(`click/resume/${/-en\.pdf$/i.test(href) ? 'en' : 'ru'}`);
     else if (a.classList.contains('zoom')) send(`click/zoom${page}${(href.match(/([a-z0-9-]+?)-\d+\.jpg$/) || [, 'screen'])[1]}`);
     else if (a.classList.contains('pager-link')) send(`click/pager${page}→${href}`);
     else if (a.classList.contains('lang__link') && !a.hasAttribute('aria-current')) send(`click/lang/${lang(page) || 'root'}→${lang(href) || href}`);
