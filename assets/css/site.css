@@ -1,21 +1,23 @@
 /* Портфолио Павла Менькова. Токены из Figma (Z3nhGgA3xRH8BIgK13D86E), спецификация: docs/handoff-main.md */
 
-/* ---------- Шрифт: IBM Plex Sans 400–600, два подмножества ---------- */
+/* ---------- Шрифт: Geist 1.800 (OFL), вариативный, ось толщины 400–700, два подмножества ---------- */
+/* Нарезан из Geist[wght].ttf (google/fonts) fontTools: в latin добавлены стрелки ← ↑ → ↓ (U+2190–2193),
+   которых нет в стандартном latin-подмножестве Google Fonts */
 @font-face {
-  font-family: "IBM Plex Sans";
-  src: url("/assets/fonts/ibm-plex-sans-latin.woff2") format("woff2");
-  font-weight: 400 600;
+  font-family: "Geist";
+  src: url("/assets/fonts/geist/geist-latin.woff2") format("woff2");
+  font-weight: 400 700;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2190-2193, U+2212;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2190-2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: "IBM Plex Sans";
-  src: url("/assets/fonts/ibm-plex-sans-cyrillic.woff2") format("woff2");
-  font-weight: 400 600;
+  font-family: "Geist";
+  src: url("/assets/fonts/geist/geist-cyrillic.woff2") format("woff2");
+  font-weight: 400 700;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0400-045F, U+0490-0491, U+2116;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+20BD, U+2116;
 }
 
 /* ---------- Токены ---------- */
@@ -67,7 +69,7 @@
 
   --content-max: 1200px;
   --header-height: 65px;
-  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-sans: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -197,54 +199,49 @@ a {
   padding-inline: var(--layout-page-pad);
 }
 
-/* ---------- Типографика ---------- */
+/* ---------- Типографика (12 стилей Geist, docs/design-system.md, v5 от 29.09.2026) ---------- */
+/* Трекинг сжат только у заголовков; проценты Figma переведены в em */
 .t-h1 {
   font-size: 30px;
-  line-height: 38px;
-  font-weight: 600;
-  letter-spacing: -0.6px;
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.04em;
 }
 
 .t-h2 {
   font-size: 24px;
   line-height: 32px;
-  font-weight: 600;
-  letter-spacing: -0.3px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
 @media (min-width: 768px) {
   .t-h1 {
-    font-size: 40px;
-    line-height: 48px;
-    letter-spacing: -0.8px;
+    font-size: 42px;
   }
 
   .t-h2 {
     font-size: 28px;
     line-height: 36px;
-    letter-spacing: -0.4px;
   }
 }
 
 @media (min-width: 1280px) {
   .t-h1 {
-    font-size: 48px;
-    line-height: 56px;
-    letter-spacing: -1px;
+    font-size: 56px;
   }
 
   .t-h2 {
     font-size: 32px;
     line-height: 40px;
-    letter-spacing: -0.5px;
   }
 }
 
-.t-h4 {
+.t-h3 {
   font-size: 20px;
   line-height: 28px;
   font-weight: 600;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.02em;
 }
 
 .t-body-l {
@@ -268,27 +265,13 @@ a {
   line-height: 20px;
 }
 
-.t-label-md {
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 500;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-}
-
-.t-label-sm {
+/* Label: капс через CSS, в разметке обычный регистр (скринридеры не читают по буквам) */
+.t-label {
   font-size: 12px;
   line-height: 16px;
   font-weight: 500;
   letter-spacing: 0.7px;
   text-transform: uppercase;
-}
-
-.t-number-xl {
-  font-size: 40px;
-  line-height: 48px;
-  font-weight: 600;
-  letter-spacing: -0.5px;
 }
 
 .c-secondary {
@@ -494,12 +477,6 @@ a {
   gap: var(--space-2);
 }
 
-.site-nav__links {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
 .only-phone {
   display: contents;
 }
@@ -537,31 +514,99 @@ a {
 }
 
 /* ---------- Hero ---------- */
+/* Отступы 48 / 32 (телефон), 64 / 48 (планшет), 96 / 64 (десктоп) */
 .hero {
-  padding-block: var(--space-6) var(--space-7);
+  padding-block: var(--space-7) var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-block: var(--space-8) var(--space-7);
+  }
 }
 
 @media (min-width: 1280px) {
   .hero {
-    padding-top: var(--space-7);
+    padding-block: var(--space-9) var(--space-8);
   }
 }
 
-/* Подзаголовок ближе к заголовку (12), строка формата отдельно (16) */
+/* H1 → 16 → подзаголовок → 16 + 16 → ряд фактов */
 .hero__inner {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
 }
 
+/* Обычный перенос вместо balance: balance пользовался мягким переносом «исследователь-ским» и на 390,
+   где слово помещается целиком. С wrap мягкий перенос срабатывает только уже 360 px, где слово шире колонки */
 .hero__title {
-  max-width: 820px;
+  max-width: 1000px;
+  text-wrap: wrap;
 }
 
 /* pretty разрывал «usability / tests» на телефоне; переносы держат неразрывные пробелы */
 .hero__subtitle {
-  margin-top: calc(var(--space-3) - var(--space-4));
   text-wrap: wrap;
+}
+
+/* Ряд фактов: одна строка на планшете и десктопе, на телефоне две группы по два (зазор 8).
+   Для скринридера один список из четырёх пунктов (role="list"), группы только для раскладки.
+   Разделитель 1 × 20 border/default декоративный и не появляется в начале строки */
+.facts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.facts__group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+}
+
+.fact {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.facts__group > .fact + .fact::before {
+  content: "";
+  flex: none;
+  width: 1px;
+  height: 20px;
+  background: var(--color-border-default);
+}
+
+/* Узкие телефоны (макета нет): группа «Офис · Удалённо | Готов к переезду» шире колонки (около 291 px),
+   второй факт уходил на новую строку с разделителем в начале. До 339 px все факты столбцом без разделителей */
+@media (max-width: 339px) {
+  .facts__group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .facts__group > .fact + .fact::before {
+    content: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .facts {
+    flex-direction: row;
+    gap: var(--space-4);
+  }
+
+  .facts__group + .facts__group > .fact:first-child::before {
+    content: "";
+    flex: none;
+    width: 1px;
+    height: 20px;
+    background: var(--color-border-default);
+  }
 }
 
 /* Английский H1: на планшете и десктопе «with a research background» не рвётся (как в Figma) */
@@ -615,8 +660,11 @@ a {
   padding-bottom: var(--layout-section-gap);
 }
 
+/* Заголовок раздела («Кейсы», «Обо мне», «Другие кейсы»): линия 1 px на ширину колонки, 24 до заголовка */
 .section__title {
   margin-bottom: var(--space-5);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border-default);
 }
 
 .section--about .section__title {
@@ -624,10 +672,17 @@ a {
 }
 
 /* ---------- Карточки кейсов ---------- */
+/* Зазор 16 на телефоне и десктопе (space/4, с 29.09.2026; layout/grid-gap 24 здесь не используется), 24 на планшете */
 .cards {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--layout-grid-gap);
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .cards {
+    gap: var(--space-5);
+  }
 }
 
 @media (min-width: 1280px) {
@@ -657,10 +712,12 @@ a {
   border-radius: var(--radius-lg);
 }
 
+/* Превью 240 на всех ширинах, линия снизу входит в высоту (как в Figma). Кадрирование своё для каждой ширины (<picture>) */
 .card__preview {
   display: block;
   height: var(--layout-preview-height);
   background: var(--color-bg-subtle);
+  border-bottom: 1px solid var(--color-border-default);
   border-radius: 11px 11px 0 0;
 }
 
@@ -675,45 +732,66 @@ a {
   line-height: 20px;
 }
 
-.card__preview--top img {
-  object-position: 50% 0;
+/* Превью нарисованы под ширину карточки: телефон 348, планшет 736 (с окна 390 px), десктоп 387.
+   Карточка шире картинки (окно 833–1279): картинка целиком, по бокам продолжается однотонный фон кейса,
+   а не растягивается со срезанным верхом и низом (найдено при проверке промежуточных ширин 29.09.2026).
+   Карточка уже картинки: срезаются края; у «Ленты» там карточки показателей, поэтому она вписывается целиком */
+.card__preview--shifted {
+  background: #0F1317;
 }
 
-.card__preview--corner img {
-  object-position: 0 0;
+.card__preview--routes {
+  background: #FFE700;
 }
 
-/* В Figma у Body «Space between»: зазор 12 не действует, минимум задаёт отступ Content снизу */
+.card__preview--lenta {
+  background: #003C95;
+}
+
+@media (min-width: 833px) and (max-width: 1279.98px) {
+  .card__preview img {
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 389.98px), (min-width: 1280px) {
+  .card__preview--lenta img {
+    object-fit: contain;
+  }
+}
+
+/* Тело: [название, 12, описание], 24, нижний блок (линия, 16, метки, 16, «Смотреть кейс →»).
+   В ряду на десктопе карточки одной высоты: нижний блок прижат к низу, над ним минимум 24 */
 .card__body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  gap: var(--space-5);
   padding: var(--space-5);
 }
 
-/* balance переставлял перенос в утверждённых названиях карточек */
-.card h3 {
-  text-wrap: pretty;
+/* balance переставлял перенос в утверждённых названиях карточек. Обычный перенос, а не pretty: Firefox pretty
+   не знает и брал balance от h3, а Safari выравнивает строки сильнее Chrome («маркетплейс / б/у авто с ИИ»,
+   метки в три строки). Висячие слова держат неразрывные пробелы (проверка в WebKit и Firefox 29.09.2026) */
+.card h3,
+.card__footer p {
+  text-wrap: wrap;
 }
 
 .card__content {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  padding-bottom: var(--space-3);
 }
 
-.tags {
+.card__footer {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-.tag {
-  padding: var(--space-1) var(--space-2);
-  background: var(--color-bg-subtle);
-  border-radius: var(--radius-sm);
-  color: var(--color-text-secondary);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-default);
 }
 
 .card__link {
@@ -745,7 +823,6 @@ a {
 }
 
 .card__more {
-  margin-top: auto;
   color: var(--color-accent-default);
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
@@ -762,6 +839,9 @@ a {
 }
 
 /* ---------- Обо мне ---------- */
+/* Телефон и планшет: столбец, зазор 40. Десктоп: 12 колонок с зазором 16, «Summary» 5 колонок с отступом справа 32
+   (текст около 460 px на 1440), «Details» 7 колонок. До 29.09.2026 было 1 : 2 по колонкам карточек (текст 341 px):
+   пользователь попросил шире, выравнивание «Details» по второй карточке ради этого снято */
 .about {
   display: flex;
   flex-direction: column;
@@ -771,12 +851,15 @@ a {
 .about__summary {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: flex-start;
   gap: var(--space-5);
 }
 
+/* Два абзаца, между ними 12 */
 .about__text {
-  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
 }
 
 .about__details {
@@ -785,6 +868,7 @@ a {
   gap: 40px;
 }
 
+/* Цифры на телефоне строками: число в колонке 110, зазор 16 */
 .stat {
   display: flex;
   gap: var(--space-4);
@@ -818,15 +902,18 @@ a {
   gap: var(--space-1);
 }
 
+/* Планшет и десктоп: цифры и строки опыта одной сеткой (три колонки, зазор 24):
+   даты в колонке первой цифры, компания ровно под второй цифрой */
 @media (min-width: 768px) {
-  .about__summary {
-    align-items: flex-start;
+  .about__text {
+    max-width: 620px;
   }
 
-  .stats {
+  .stats,
+  .experience__row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-5);
+    column-gap: var(--space-5);
   }
 
   .stat {
@@ -839,32 +926,30 @@ a {
     width: auto;
   }
 
-  .experience__row {
-    flex-direction: row;
-    gap: var(--space-5);
-  }
-
-  .experience__dates {
-    flex: none;
-    width: 230px;
+  .experience__info {
+    grid-column: 2 / -1;
   }
 }
 
 @media (min-width: 1280px) {
   .about {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: var(--space-9);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--space-4);
+    align-items: start;
   }
 
   .about__summary {
-    flex: none;
-    width: 420px;
+    grid-column: 1 / span 5;
+    padding-right: var(--space-6);
+  }
+
+  .about__text {
+    max-width: none;
   }
 
   .about__details {
-    flex: 1;
-    min-width: 0;
+    grid-column: 6 / -1;
   }
 }
 
@@ -884,6 +969,7 @@ a {
   gap: var(--space-7);
 }
 
+/* Блок контактов по той же сетке, что «Обо мне» (5 : 7 из 12 колонок): три контакта встают на линии цифр */
 .contacts {
   display: flex;
   flex-direction: column;
@@ -896,6 +982,7 @@ a {
   gap: var(--space-2);
 }
 
+/* с pretty фраза переносится «…удалённо, / готов к переезду» (в макете «готов / к переезду»): так читается лучше */
 .contacts__list {
   display: flex;
   flex-direction: column;
@@ -906,6 +993,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  min-width: 0;
 }
 
 .footer-bar {
@@ -925,8 +1013,9 @@ a {
 
 @media (min-width: 768px) {
   .contacts__list {
-    flex-direction: row;
-    gap: var(--space-7);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
   }
 
   .footer-bar {
@@ -939,13 +1028,19 @@ a {
 
 @media (min-width: 1280px) {
   .contacts {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: var(--space-8);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--space-4);
+    align-items: start;
   }
 
   .contacts__intro {
-    width: 420px;
+    grid-column: 1 / span 5;
+    padding-right: var(--space-6);
+  }
+
+  .contacts__list {
+    grid-column: 6 / -1;
   }
 }
 
@@ -979,7 +1074,8 @@ a {
   white-space: nowrap;
 }
 
-/* «Другие кейсы» (Case pager) */
+/* «Другие кейсы» (Case pager): заголовок с линией сверху, как разделы главной; зазор между ссылками
+   16 на телефоне и десктопе (с 29.09.2026, как у карточек), 24 на планшете */
 .pager {
   padding-block: var(--layout-section-gap);
 }
@@ -993,6 +1089,11 @@ a {
 @media (min-width: 768px) {
   .pager__list {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .pager__list {
     gap: var(--space-5);
   }
 }
