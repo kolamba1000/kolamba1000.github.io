@@ -1090,7 +1090,9 @@
   display: flex;
   justify-content: center;
   height: var(--tb-clip-h);
-  padding-top: 8px;
+  /* над телефоном место под рамку и кольцо наведения / фокуса (рамка + 4 + 2 px), иначе верх кольца срезался
+     (замечание пользователя 02.10.2026; в Figma 8 px, телефон ниже на 6 px на десктопе и на 2 px уже) */
+  padding-top: calc(var(--tb-bezel) + 6px);
   overflow: hidden;
   container-type: inline-size;
 }
