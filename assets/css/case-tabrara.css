@@ -275,23 +275,16 @@
 }
 
 /* ---------- Телефон (рамка) ---------- */
-/* Экран заполняет рамку целиком (пропорции 300 × 650), рамка рисуется поверх (::after), скругление ≈ 11,7% ширины */
+/* Экран 300 × 650 (пропорции скриншота), рамка снаружи экрана, как обводка Outside 8 / 4 px в Figma: тенью с растяжением,
+   она повторяет скругление экрана (≈ 11,7% ширины) и не закрывает края скриншота. До 02.10.2026 рамка рисовалась поверх
+   экрана и срезала по 8 / 4 px с боков (замечание пользователя). Место под рамку: отступ колонки .tb-dev */
 .tb-device {
   position: relative;
   width: 100%;
   aspect-ratio: 300 / 650;
   border-radius: 11.7cqi;
   background: var(--tb-bezel-color);
-  box-shadow: var(--tb-shadow);
-}
-
-.tb-device::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: var(--tb-bezel) solid var(--tb-bezel-color);
-  border-radius: inherit;
-  pointer-events: none;
+  box-shadow: 0 0 0 var(--tb-bezel) var(--tb-bezel-color), var(--tb-shadow);
 }
 
 .tb-device .zoom,
@@ -1209,11 +1202,11 @@
 
 /* ---------- Фокус, наведение и окно просмотра ---------- */
 /* Кольцо фокуса сайта (gray-900 вплотную) сливалось с тёмной рамкой телефона, а на тёмных секциях его не было видно
-   (проверка доступности 02.10.2026): кольцо 2 px с отступом 4, на тёмном фоне салатовое.
+   (проверка доступности 02.10.2026): кольцо 2 px в 4 px от рамки телефона, на тёмном фоне салатовое.
    Наведение мышью выглядит так же (просьба пользователя 02.10.2026) */
 .tb-device .zoom:focus-visible {
   outline: 2px solid var(--tb-text);
-  outline-offset: 4px;
+  outline-offset: calc(var(--tb-bezel) + 4px);
 }
 
 .tb-dark .tb-device .zoom:focus-visible { outline-color: var(--tb-lime); }
@@ -1221,7 +1214,7 @@
 @media (hover: hover) {
   .tb-device .zoom[href]:hover {
     outline: 2px solid var(--tb-text);
-    outline-offset: 4px;
+    outline-offset: calc(var(--tb-bezel) + 4px);
   }
 
   .tb-dark .tb-device .zoom[href]:hover { outline-color: var(--tb-lime); }
