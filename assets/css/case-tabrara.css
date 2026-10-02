@@ -1,0 +1,1264 @@
+/* Лендинг кейса Tabrara iOS (Figma: страница «Cases», кадры 319:1800 / 319:754 / 319:1277 RU и 319:2324 / 319:3371 / 319:2848 EN).
+   Значения из переменных макета (режимы Desktop / Tablet / Phone), спецификация: docs/handoff-case-tabrara.md.
+   Шрифты кейса: Inter 400–700 (вариативный, подмножества latin и cyrillic, нарезаны fontTools, OFL) и JetBrains Mono 400 */
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/inter/inter-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+20BD, U+2122, U+2190-2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/inter/inter-cyrillic.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/jetbrains-mono/jetbrains-mono-400-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/jetbrains-mono/jetbrains-mono-400-cyrillic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* ---------- Токены: телефон по умолчанию, планшет от 768, десктоп от 1280 ---------- */
+.tb {
+  /* цвета (переменные макета) */
+  --tb-text: #1C1B1B;
+  --tb-text-2: #444842;
+  --tb-text-3: #62655F;
+  --tb-accent: #005E1B;
+  --tb-on-lime-2: #3B5700;
+  --tb-on-dark: #FCF8F8;
+  --tb-on-dark-2: #C5C7C0;
+  --tb-on-dark-3: #8F928B;
+  --tb-lime: #CCFF77;
+  --tb-bg-page: #FCF8F8;
+  --tb-bg-warm: #F1EDEB;
+  --tb-bg-card: #FFFFFF;
+  --tb-bg-dark: #141313;
+  --tb-bg-dark-card: #201F1F;
+  --tb-bg-green: #005E1B;
+  --tb-border: #E5E2E0;
+  --tb-border-warm: #D9D4D1;
+  --tb-border-dark: #31302F;
+  --tb-bezel-color: #1C1B1B;
+  --tb-shadow: 0 4px 12px rgba(20, 18, 18, 0.1), 0 32px 64px -16px rgba(20, 18, 18, 0.22);
+
+  /* отступы */
+  --tb-page-x: 20px;
+  --tb-section-y: 72px;
+  --tb-block-gap: 40px;
+  --tb-band-y: 40px;
+  --tb-gap-s: 8px;
+  --tb-gap-m: 12px;
+  --tb-gap-l: 16px;
+  --tb-gap-xl: 24px;
+  --tb-card-pad: 20px;
+  --tb-radius: 20px;
+  --tb-bezel: 4px;
+  --tb-stagger: 28px;
+  --tb-hero-clip: 320px;
+  --tb-hero-dev: 168px;
+  --tb-clip-dev: 158px;
+  --tb-clip-h: 280px;
+
+  /* текст: размер / строка */
+  --tb-caption: 13px / 20px;
+  --tb-body: 16px / 24px;
+  --tb-lead: 18px / 28px;
+  --tb-h3: 20px / 24px;
+  --tb-h2: 24px / 28px;
+  --tb-h1: 32px / 36px;
+  --tb-stat: 40px / 40px;
+  --tb-stat-xl: 56px / 56px;
+  --tb-display: 66px / 68px;
+  --tb-display-size: 66px;
+  --tb-display-lh: 1.03;
+  --tb-code: 13px / 20px;
+
+  --tb-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  background: var(--tb-bg-page);
+  color: var(--tb-text);
+  font: 400 var(--tb-body) "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  letter-spacing: -0.005em;
+}
+
+@media (min-width: 768px) {
+  .tb {
+    --tb-page-x: 40px;
+    --tb-section-y: 112px;
+    --tb-block-gap: 56px;
+    --tb-band-y: 48px;
+    --tb-gap-s: 12px;
+    --tb-gap-m: 20px;
+    --tb-gap-l: 24px;
+    --tb-gap-xl: 40px;
+    --tb-card-pad: 32px;
+    --tb-radius: 28px;
+    --tb-stagger: 40px;
+    --tb-hero-clip: 420px;
+    --tb-hero-dev: 224px;
+    --tb-clip-dev: 224px;
+    --tb-clip-h: 340px;
+
+    --tb-caption: 14px / 20px;
+    --tb-body: 17px / 24px;
+    --tb-lead: 20px / 28px;
+    --tb-h3: 22px / 28px;
+    --tb-h2: 32px / 36px;
+    --tb-h1: 48px / 52px;
+    --tb-stat: 56px / 56px;
+    --tb-stat-xl: 76px / 76px;
+    --tb-display: 140px / 132px;
+    --tb-display-size: 140px;
+    --tb-display-lh: 0.943;
+    --tb-code: 14px / 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .tb {
+    --tb-page-x: 120px;
+    --tb-section-y: 160px;
+    --tb-block-gap: 80px;
+    --tb-band-y: 64px;
+    --tb-gap-s: 16px;
+    --tb-gap-m: 24px;
+    --tb-gap-l: 32px;
+    --tb-gap-xl: 48px;
+    --tb-card-pad: 40px;
+    --tb-radius: 32px;
+    --tb-bezel: 8px;
+    --tb-stagger: 56px;
+    --tb-hero-clip: 560px;
+    --tb-hero-dev: 300px;
+    --tb-clip-dev: 264px;
+    --tb-clip-h: 380px;
+
+    --tb-caption: 14px / 20px;
+    --tb-body: 18px / 28px;
+    --tb-lead: 24px / 36px;
+    --tb-h3: 24px / 32px;
+    --tb-h2: 40px / 44px;
+    --tb-h1: 64px / 68px;
+    --tb-stat: 72px / 72px;
+    --tb-stat-xl: 120px / 120px;
+    --tb-display: 224px / 208px;
+    --tb-display-size: 224px;
+    --tb-display-lh: 0.929;
+    --tb-code: 15px / 24px;
+  }
+}
+
+/* Переносы как в макете: обычные, без balance и pretty из site.css */
+.tb h1, .tb h2, .tb h3, .tb h4, .tb p, .tb li, .tb td, .tb th, .tb blockquote, .tb figcaption {
+  text-wrap: wrap;
+}
+
+.tb h4, .tb blockquote {
+  margin: 0;
+}
+
+.tb table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tb th, .tb td {
+  padding: 0;
+  text-align: left;
+  font-weight: inherit;
+  vertical-align: top;
+}
+
+/* ---------- Типографика (стили case/* из Figma, трекинг в процентах) ---------- */
+/* «Tabrara iOS» всегда в одну строку (просьба пользователя 02.10.2026): кегль как в макете, но не больше ширины колонки / 5,3
+   (заголовок шириной 5,25 кегля). Строка в долях кегля: 208/224, 132/140, 68/66 */
+.tb-display {
+  font: 700 var(--tb-display) "Inter", sans-serif;
+  font-size: min(var(--tb-display-size), 100cqi / 5.3);
+  line-height: var(--tb-display-lh);
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+.tb-h1 { font: 600 var(--tb-h1) "Inter", sans-serif; letter-spacing: -0.03em; }
+.tb-h2 { font: 600 var(--tb-h2) "Inter", sans-serif; letter-spacing: -0.025em; }
+.tb-h3 { font: 600 var(--tb-h3) "Inter", sans-serif; letter-spacing: -0.015em; }
+.tb-lead { font: 400 var(--tb-lead) "Inter", sans-serif; letter-spacing: -0.01em; }
+.tb-body { font: 400 var(--tb-body) "Inter", sans-serif; letter-spacing: -0.005em; }
+.tb-body-strong { font: 600 var(--tb-body) "Inter", sans-serif; letter-spacing: -0.005em; }
+.tb-caption { font: 400 var(--tb-caption) "Inter", sans-serif; letter-spacing: 0; }
+.tb-caption-strong { font: 600 var(--tb-caption) "Inter", sans-serif; letter-spacing: 0; }
+.tb-stat { font: 600 var(--tb-stat) "Inter", sans-serif; letter-spacing: -0.04em; }
+.tb-stat-xl { font: 600 var(--tb-stat-xl) "Inter", sans-serif; letter-spacing: -0.05em; white-space: nowrap; }
+.tb-code { font: 400 var(--tb-code) var(--tb-mono); letter-spacing: 0; }
+
+.tb-c-accent { color: var(--tb-accent); }
+.tb-c-2 { color: var(--tb-text-2); }
+.tb-c-3 { color: var(--tb-text-3); }
+.tb-c-on-lime { color: var(--tb-on-lime-2); }
+.tb-c-lime { color: var(--tb-lime); }
+.tb-c-dark-2 { color: var(--tb-on-dark-2); }
+.tb-c-dark-3 { color: var(--tb-on-dark-3); }
+
+/* ---------- Секции: фон на всю ширину, колонка 1200 по центру ---------- */
+.tb-section {
+  padding-block: var(--tb-section-y);
+  background: var(--tb-bg-page);
+}
+
+.tb-warm { background: var(--tb-bg-warm); }
+.tb-lime { background: var(--tb-lime); }
+
+.tb-dark {
+  --tb-bezel-color: #444842;
+  background: var(--tb-bg-dark);
+  color: var(--tb-on-dark);
+}
+
+/* В тёмных секциях акцентные подписи салатовые (text/accent-on-dark) */
+.tb-dark .tb-c-accent,
+.tb-dark .tb-eyebrow { color: var(--tb-lime); }
+
+.tb-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-block-gap);
+  width: 100%;
+  max-width: calc(1200px + 2 * var(--tb-page-x));
+  margin-inline: auto;
+  padding-inline: var(--tb-page-x);
+}
+
+/* Шапка секции: [метка], заголовок, подзаголовок через gap-m */
+.tb-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-m);
+}
+
+.tb-head .tb-h1 { max-width: 1000px; }
+
+.tb-head__lead {
+  max-width: 800px;
+  color: var(--tb-text-2);
+}
+
+.tb-dark .tb-head__lead { color: var(--tb-on-dark-2); }
+.tb-lime .tb-head__lead { color: var(--tb-on-lime-2); }
+
+.tb-eyebrow { color: var(--tb-accent); }
+
+.tb-stack-l {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-l);
+}
+
+/* ---------- Телефон (рамка) ---------- */
+/* Экран заполняет рамку целиком (пропорции 300 × 650), рамка рисуется поверх (::after), скругление ≈ 11,7% ширины */
+.tb-device {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 300 / 650;
+  border-radius: 11.7cqi;
+  background: var(--tb-bezel-color);
+  box-shadow: var(--tb-shadow);
+}
+
+.tb-device::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: var(--tb-bezel) solid var(--tb-bezel-color);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.tb-device .zoom,
+.tb-device picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.tb-device img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Колонка «телефон + подпись»: отступ вокруг = толщина рамки, как в макете */
+.tb-dev {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-l);
+  min-width: 0;
+  padding: var(--tb-bezel);
+}
+
+.tb-dev .tb-device { border-radius: 11.7cqi; }
+
+.tb-cap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tb-cap__text { color: var(--tb-text-2); }
+.tb-dark .tb-cap__text { color: var(--tb-on-dark-2); }
+.tb-lime .tb-cap__text { color: var(--tb-on-lime-2); }
+
+/* Группы телефонов. Телефон: две колонки. Шире: колонки до размера макета, лишнее место между ними */
+.tb-devs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 240px));
+  align-items: start;
+  column-gap: 16px;
+  row-gap: 32px;
+}
+
+.tb-devs--login,
+.tb-devs--weight,
+.tb-devs--states { row-gap: 24px; }
+
+.tb-devs--login { column-gap: 12px; }
+
+.tb-formula-col {
+  grid-column: 1 / -1;
+  padding-inline: 0;
+}
+
+@media (min-width: 768px) {
+  .tb-devs--4,
+  .tb-devs--login {
+    grid-template-columns: repeat(4, minmax(0, 176px));
+    justify-content: space-between;
+    column-gap: 12px;
+  }
+
+  .tb-devs--2 {
+    grid-template-columns: repeat(2, minmax(0, 232px));
+    column-gap: 24px;
+  }
+
+  .tb-devs--weight {
+    grid-template-columns: repeat(3, minmax(0, 232px));
+    column-gap: 20px;
+    row-gap: 24px;
+  }
+
+  .tb-devs--states {
+    grid-template-columns: repeat(3, minmax(0, 232px));
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .tb-devs--4 {
+    grid-template-columns: repeat(4, minmax(0, 280px));
+    column-gap: 16px;
+  }
+
+  .tb-devs--login {
+    grid-template-columns: repeat(4, minmax(0, 248px));
+    column-gap: 16px;
+  }
+
+  .tb-devs--2 {
+    grid-template-columns: repeat(2, 280px);
+    column-gap: var(--tb-gap-l);
+  }
+
+  /* три телефона и плитка с формулой: на 1440 почти как в макете (278 × 3 и 270), уже телефоны уменьшаются, плитка не уже 270:
+     английский заголовок «…on the exact weight» после типографа неразрывен на 220 px */
+  .tb-devs--weight {
+    grid-template-columns: repeat(3, minmax(0, 280px)) minmax(270px, 1fr);
+    column-gap: var(--tb-gap-l);
+  }
+
+  .tb-formula-col { grid-column: auto; }
+
+  .tb-devs--states {
+    grid-template-columns: repeat(6, minmax(0, 184px));
+    justify-content: space-between;
+    column-gap: 16px;
+  }
+
+  .tb-devs--states .tb-dev { gap: var(--tb-gap-s); }
+}
+
+.tb-devs--states .tb-dev { gap: var(--tb-gap-s); }
+
+/* ---------- 1. Обложка ---------- */
+.tb-hero {
+  padding: var(--tb-gap-xl) 0 0;
+  background: var(--tb-lime);
+  overflow: hidden;
+}
+
+.tb-hero__content {
+  gap: var(--tb-gap-xl);
+}
+
+.tb-hero__titles {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-l);
+}
+
+.tb-hero__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-s);
+}
+
+.tb-hero__lead { max-width: 680px; }
+
+@media (min-width: 768px) and (max-width: 1279.98px) {
+  .tb-hero__lead { max-width: 580px; }
+}
+
+.tb-hero__devices {
+  display: flex;
+  justify-content: center;
+  gap: var(--tb-gap-l);
+  height: var(--tb-hero-clip);
+  margin-top: var(--tb-gap-xl);
+  padding-top: 24px;
+  overflow: hidden;
+}
+
+.tb-hero__slot {
+  flex: none;
+  width: var(--tb-hero-dev);
+  container-type: inline-size;
+}
+
+.tb-hero__slot--down { padding-top: var(--tb-stagger); }
+
+/* ---------- 2. Факты (тёмная полоса) ---------- */
+.tb-facts {
+  padding-block: var(--tb-band-y);
+}
+
+.tb-facts .tb-inner { gap: var(--tb-gap-xl); }
+
+.tb-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-l);
+}
+
+.tb-summary__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Задача, решение, результат: на телефоне и планшете стилем body, на десктопе lead (как в макете) */
+.tb-summary__item .tb-lead {
+  font: 400 var(--tb-body) "Inter", sans-serif;
+  letter-spacing: -0.005em;
+}
+
+@media (min-width: 1280px) {
+  .tb-summary__item .tb-lead {
+    font: 400 var(--tb-lead) "Inter", sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+.tb-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: var(--tb-gap-xl);
+  border-top: 1px solid var(--tb-border-dark);
+}
+
+.tb-stat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tb-stat + .tb-stat {
+  padding-top: 24px;
+  border-top: 1px solid var(--tb-border-dark);
+}
+
+.tb-stat__num {
+  flex: none;
+  width: 96px;
+  font: 600 var(--tb-stat) "Inter", sans-serif;
+  letter-spacing: -0.04em;
+  color: var(--tb-lime);
+}
+
+.tb-stat__label {
+  color: var(--tb-on-dark-2);
+}
+
+@media (min-width: 768px) {
+  .tb-summary {
+    flex-direction: row;
+  }
+
+  .tb-summary__item { flex: 1 1 0; }
+
+  .tb-stats {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  /* колонка не уже самой длинной неразрывной подписи (EN «each with a reason» на 768): соседние уступают место */
+  .tb-stat {
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .tb-stat + .tb-stat {
+    padding-top: 0;
+    padding-left: 12px;
+    border-top: 0;
+    border-left: 1px solid var(--tb-border-dark);
+  }
+
+  .tb-stat__num { width: auto; }
+}
+
+@media (min-width: 1280px) {
+  .tb-stats { gap: var(--tb-gap-m); }
+
+  .tb-stat { gap: 4px; }
+
+  .tb-stat + .tb-stat { padding-left: var(--tb-gap-m); }
+}
+
+/* ---------- 3. Почему iPhone ---------- */
+.tb-task-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tb-task-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: var(--tb-card-pad) var(--tb-card-pad) var(--tb-gap-m);
+  border-radius: var(--tb-radius);
+  background: var(--tb-bg-warm);
+}
+
+.tb-list li {
+  padding-block: 16px;
+}
+
+.tb-list li + li { border-top: 1px solid var(--tb-border-warm); }
+
+.tb-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: var(--tb-card-pad);
+  border-radius: var(--tb-radius);
+  background: var(--tb-bg-dark);
+  color: var(--tb-on-dark);
+}
+
+.tb-reqs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tb-req {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tb-req + .tb-req {
+  padding-top: 12px;
+  border-top: 1px solid var(--tb-border-dark);
+}
+
+.tb-req__num {
+  flex: none;
+  width: 28px;
+  font: 600 var(--tb-h1) "Inter", sans-serif;
+  letter-spacing: -0.03em;
+  color: var(--tb-lime);
+}
+
+@media (min-width: 768px) {
+  .tb-task-cards {
+    flex-direction: row;
+    gap: var(--tb-gap-l);
+  }
+
+  .tb-task-card {
+    flex: 1 1 0;
+    gap: var(--tb-gap-l);
+  }
+
+  .tb-strip { gap: var(--tb-gap-l); }
+
+  .tb-reqs {
+    flex-direction: row;
+    gap: var(--tb-gap-l);
+  }
+
+  .tb-req {
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--tb-gap-s);
+  }
+
+  .tb-req + .tb-req {
+    padding-top: 0;
+    padding-left: var(--tb-gap-l);
+    border-top: 0;
+    border-left: 1px solid var(--tb-border-dark);
+  }
+
+  .tb-req__num { width: auto; }
+}
+
+@media (min-width: 1280px) {
+  .tb-task-card { gap: var(--tb-gap-l); }
+
+  .tb-strip {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--tb-gap-xl);
+  }
+
+  .tb-strip__title {
+    flex: none;
+    width: 320px;
+  }
+
+  .tb-reqs { flex: 1 1 0; }
+}
+
+/* ---------- 4. Как шла работа ---------- */
+.tb-phases {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--tb-radius);
+  background: var(--tb-bg-card);
+}
+
+.tb-phase {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: var(--tb-gap-l);
+}
+
+.tb-phase + .tb-phase { border-top: 1px solid var(--tb-border); }
+
+.tb-phase__top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-m);
+}
+
+.tb-phase__result {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tb-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tb-chip,
+.tb-status {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--tb-bg-warm);
+  color: var(--tb-text-2);
+  font: 600 var(--tb-caption) "Inter", sans-serif;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) and (max-width: 1279.98px) {
+  .tb-process .tb-head__lead { max-width: 580px; }
+
+  .tb-phase {
+    flex-direction: row;
+    gap: var(--tb-gap-l);
+  }
+
+  .tb-phase__top { flex: 1 1 0; }
+
+  .tb-phase__result {
+    flex: none;
+    width: 220px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .tb-phases { flex-direction: row; }
+
+  /* в Figma распределение «по краям»: заданный зазор не действует, между блоками только отступ результата */
+  .tb-phase {
+    flex: 1 1 0;
+    justify-content: space-between;
+    gap: 0;
+    min-width: 0;
+    /* 32 на 1440, к 1280 плавно 24: «Проектирование» в колонке 1280 / 4 */
+    padding-inline: clamp(24px, calc((100vw - 1280px) / 20 + 24px), 32px);
+  }
+
+  .tb-phase + .tb-phase {
+    border-top: 0;
+    border-left: 1px solid var(--tb-border);
+  }
+
+  .tb-phase__result { padding-top: var(--tb-gap-l); }
+}
+
+/* ---------- 5. Что я изучил ---------- */
+.tb-research-cols {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-l);
+}
+
+.tb-research-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-s);
+  padding-top: var(--tb-gap-m);
+  border-top: 1px solid var(--tb-border-dark);
+}
+
+.tb-insight {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-m);
+  padding: var(--tb-card-pad);
+  border-radius: var(--tb-radius);
+  background: var(--tb-lime);
+  color: var(--tb-text);
+}
+
+.tb-insight__label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-s);
+}
+
+@media (min-width: 1280px) {
+  .tb-research-cols {
+    flex-direction: row;
+    gap: var(--tb-gap-l);
+  }
+
+  .tb-research-item { flex: 1 1 0; }
+
+  .tb-insight {
+    flex-direction: row;
+    gap: var(--tb-gap-xl);
+  }
+
+  .tb-insight__label {
+    flex: none;
+    width: 320px;
+  }
+}
+
+/* ---------- 6. Навигация и схема переходов ---------- */
+.tb-flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-m);
+}
+
+.tb-flow__image {
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid var(--tb-border);
+  border-radius: var(--tb-radius);
+  background: #FFFFFF;
+}
+
+.tb-flow__image .zoom,
+.tb-flow__image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.tb-flow__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .tb-flow__image {
+    height: auto;
+    aspect-ratio: 1200 / 404;
+  }
+}
+
+/* ---------- Таблица и телефоны рядом (Решение 1, Цвета и темы) ---------- */
+.tb-split {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-xl);
+}
+
+@media (min-width: 1280px) {
+  .tb-split {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .tb-split__main {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .tb-split > .tb-devs { flex: none; }
+
+  .tb-split--even > * { flex: 1 1 0; min-width: 0; }
+}
+
+.tb-pairs th {
+  padding-bottom: 12px;
+  color: var(--tb-on-dark-3);
+}
+
+.tb-pairs th + th { color: var(--tb-lime); }
+
+.tb-pairs td {
+  padding-block: 16px;
+  border-top: 1px solid var(--tb-border-dark);
+  color: var(--tb-on-dark);
+}
+
+.tb-pairs td:first-child { color: var(--tb-on-dark-3); }
+
+/* колонки поровну, зазор gap-m: первая колонка = половина + половина зазора (отступ входит в ширину) */
+.tb-pairs th:first-child,
+.tb-pairs td:first-child {
+  width: calc(50% + var(--tb-gap-m) / 2);
+  padding-right: var(--tb-gap-m);
+}
+
+/* ---------- 7. Решение 2, 3: варианты ---------- */
+.tb-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-xl);
+}
+
+.tb-options__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-m);
+}
+
+.tb-option {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-s);
+  padding: var(--tb-card-pad);
+  border-radius: var(--tb-radius);
+  background: var(--tb-bg-warm);
+}
+
+.tb-option--white { background: var(--tb-bg-card); }
+
+.tb-option__label { color: var(--tb-text-3); }
+.tb-option__text { color: var(--tb-text-2); }
+
+.tb-option--chosen {
+  background: var(--tb-bg-dark);
+  color: var(--tb-on-dark);
+}
+
+.tb-option--chosen .tb-option__label { color: var(--tb-lime); }
+.tb-option--chosen .tb-option__text { color: var(--tb-on-dark-2); }
+
+@media (min-width: 1280px) {
+  .tb-options { gap: var(--tb-gap-l); }
+
+  .tb-options__list {
+    flex-direction: row;
+    gap: var(--tb-gap-l);
+  }
+
+  .tb-option { flex: 1 1 0; }
+}
+
+/* ---------- 8. Решение 3: вес до грамма ---------- */
+.tb-weight .tb-inner { gap: var(--tb-block-gap); }
+
+.tb-weight-top {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tb-quote {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-m);
+  padding: var(--tb-card-pad);
+  border-radius: var(--tb-radius);
+  background: var(--tb-bg-green);
+  color: var(--tb-on-dark);
+}
+
+.tb-formula {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--tb-gap-l);
+  height: 168px;
+  padding: var(--tb-gap-m);
+  border-radius: var(--tb-radius);
+  background: var(--tb-lime);
+}
+
+.tb-formula__calc {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .tb-weight-top { gap: 24px; }
+
+  .tb-formula { height: 180px; }
+}
+
+@media (min-width: 1280px) {
+  .tb-weight-top {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: var(--tb-gap-xl);
+  }
+
+  .tb-weight-top > * { flex: 1 1 0; min-width: 0; }
+
+  /* плитка высотой с телефон: колонка с тем же отступом, что у телефонов, плитка в пропорциях рамки */
+  .tb-formula-col { padding: var(--tb-bezel) 0; }
+
+  .tb-formula {
+    height: auto;
+    aspect-ratio: 300 / 650;
+  }
+}
+
+/* ---------- 10. Цвета и темы ---------- */
+.tb-tokens th[scope="col"] {
+  padding-bottom: 12px;
+  color: var(--tb-on-dark-3);
+}
+
+.tb-tokens tbody th,
+.tb-tokens td {
+  padding-block: 12px;
+  border-top: 1px solid var(--tb-border-dark);
+  vertical-align: middle;
+}
+
+.tb-tokens th:not(:first-child),
+.tb-tokens td {
+  width: 104px;
+  padding-left: 8px;
+}
+
+.tb-swatch {
+  display: block;
+  padding: 8px 12px;
+  border: 1px solid var(--tb-border-dark);
+  border-radius: 12px;
+  background: var(--sw);
+  color: var(--tb-text);
+  font: 400 var(--tb-code) var(--tb-mono);
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.tb-swatch[data-tone="dark"] { color: var(--tb-on-dark); }
+
+@media (min-width: 768px) {
+  .tb-tokens th:not(:first-child),
+  .tb-tokens td {
+    width: 132px;
+    padding-left: 12px;
+  }
+}
+
+.tb-contrast {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: var(--tb-card-pad);
+  border-radius: var(--tb-radius);
+  background: var(--tb-bg-dark-card);
+}
+
+.tb-contrast__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-s);
+}
+
+@media (min-width: 768px) {
+  .tb-contrast {
+    flex-direction: row;
+    gap: var(--tb-gap-l);
+  }
+
+  .tb-contrast__item { flex: 1 1 0; }
+}
+
+.tb-statuses {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-s);
+}
+
+.tb-status--0 { background: #DCEBFF; color: #0B57B8; }
+.tb-status--1 { background: #D7F5D3; color: #005E1B; }
+.tb-status--2 { background: #FFEFC7; color: #7A4F00; }
+.tb-status--3 { background: #EBE7E6; color: #444842; }
+.tb-status--4 { background: #FFE1DA; color: #B3261E; }
+
+/* ---------- 11. Ревью ---------- */
+.tb-findings {
+  display: grid;
+  gap: var(--tb-gap-m);
+}
+
+.tb-finding {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: var(--tb-card-pad) var(--tb-card-pad) 0;
+  border-radius: var(--tb-radius);
+  background: var(--tb-bg-warm);
+}
+
+.tb-finding__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-s);
+}
+
+.tb-finding__text .tb-body { color: var(--tb-text-2); }
+
+.tb-finding__clip {
+  display: flex;
+  justify-content: center;
+  height: var(--tb-clip-h);
+  padding-top: 8px;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.tb-finding__clip .tb-device {
+  flex: none;
+  width: var(--tb-clip-dev);
+  height: max-content;
+  border-radius: calc(var(--tb-clip-dev) * 0.117);
+}
+
+@media (min-width: 768px) and (max-width: 1279.98px) {
+  .tb-finding {
+    flex-direction: row;
+    gap: var(--tb-gap-l);
+  }
+
+  .tb-finding__text { flex: 1 1 0; padding-bottom: var(--tb-card-pad); }
+
+  .tb-finding__clip { flex: none; width: 260px; }
+}
+
+@media (min-width: 1280px) {
+  .tb-findings {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--tb-gap-l);
+  }
+
+  /* «по краям» в Figma: зазор не действует, между текстом и телефоном только нижний отступ текста */
+  .tb-finding {
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .tb-finding__text { padding-bottom: var(--tb-gap-l); }
+
+  .tb-finding--feature {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: var(--tb-gap-xl);
+  }
+
+  .tb-finding--feature .tb-finding__text {
+    flex: 1 1 0;
+    padding-bottom: var(--tb-card-pad);
+  }
+
+  .tb-finding--feature .tb-finding__clip {
+    flex: none;
+    width: 400px;
+  }
+}
+
+/* ---------- 12. Что получают разработчики ---------- */
+.tb-deliverable {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-block: 20px;
+  border-top: 1px solid var(--tb-border-dark);
+}
+
+.tb-code-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-s);
+  padding: var(--tb-card-pad);
+  border-radius: var(--tb-radius);
+  background: var(--tb-bg-dark-card);
+}
+
+.tb-code-table th,
+.tb-code-table td {
+  padding-block: 12px;
+}
+
+.tb-code-table tr + tr th,
+.tb-code-table tr + tr td { border-top: 1px solid var(--tb-border-dark); }
+
+.tb-code-table th {
+  width: 116px;
+  padding-right: var(--tb-gap-m);
+  color: var(--tb-on-dark-3);
+}
+
+.tb-code-table td { color: var(--tb-lime); }
+
+@media (min-width: 768px) {
+  .tb-code-table th { width: 160px; }
+}
+
+@media (min-width: 1280px) {
+  .tb-code-table th { width: 164px; }
+}
+
+.tb-states {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tb-gap-l);
+}
+
+.tb-states__head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tb-states__head .tb-body { max-width: 800px; }
+
+/* ---------- Фокус, наведение и окно просмотра ---------- */
+/* Кольцо фокуса сайта (gray-900 вплотную) сливалось с тёмной рамкой телефона, а на тёмных секциях его не было видно
+   (проверка доступности 02.10.2026): кольцо 2 px с отступом 4, на тёмном фоне салатовое.
+   Наведение мышью выглядит так же (просьба пользователя 02.10.2026) */
+.tb-device .zoom:focus-visible {
+  outline: 2px solid var(--tb-text);
+  outline-offset: 4px;
+}
+
+.tb-dark .tb-device .zoom:focus-visible { outline-color: var(--tb-lime); }
+
+@media (hover: hover) {
+  .tb-device .zoom[href]:hover {
+    outline: 2px solid var(--tb-text);
+    outline-offset: 4px;
+  }
+
+  .tb-dark .tb-device .zoom[href]:hover { outline-color: var(--tb-lime); }
+}
+
+/* Схема: кольцо внутри картинки наезжало на зелёную линию схемы (замечание пользователя 02.10.2026), поэтому кольцо
+   у обёртки снаружи её рамки: сама обёртка обрезает всё, что выходит за неё */
+.tb-flow__image .zoom { border-radius: inherit; }
+.tb-flow__image .zoom:focus-visible { outline: none; }
+
+.tb-flow__image:has(.zoom:focus-visible) {
+  outline: 2px solid var(--tb-text);
+  outline-offset: 4px;
+}
+
+@media (hover: hover) {
+  .tb-flow__image:has(.zoom[href]:hover) {
+    outline: 2px solid var(--tb-text);
+    outline-offset: 4px;
+  }
+}
+
+/* Телефон: экран в окне по ширине окна (до 375 px), а не 0,75 размера макета (281 px), чтобы читался текст экрана.
+   Схема (data-zoom-width 1200) остаётся 900 px и листается вбок.
+   Экран уже окна стоит по центру (замечание пользователя 02.10.2026: на 400–767 px прижимался влево); auto-поля во flex
+   при нехватке места становятся 0, поэтому широкая схема по-прежнему начинается с левого края */
+@media (max-width: 767px) {
+  .lightbox__img {
+    width: max(min(375px, 100vw - 32px), calc(var(--zoom-width, 1200) * 0.75px));
+  }
+
+  .lightbox__figure { margin: auto; }
+}
+
+/* Оптический размер Inter: в макете текстовый вариант на всех кеглях (Inter Display у́же и переносил бы иначе).
+   Стоит в конце: шорткат font в классах выше сбрасывает font-optical-sizing */
+.tb,
+.tb * {
+  font-optical-sizing: none;
+}
